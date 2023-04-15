@@ -18,6 +18,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QWidget)
 import img_rc
+import sys
+import os
+
+####
+script_dir = os.path.dirname(os.path.abspath(__file__))
+moneymate_dir = os.path.abspath(os.path.join(script_dir, ".."))
+sys.path.insert(0, moneymate_dir)
+from User import User
+# import คนละ folder ยากชิบหาย
+
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -131,12 +142,25 @@ class Ui_Form(object):
 " {\n"
 "    border: none;\n"
 "}")
+        def on_signin_clicked():
+            username = self.lineEdit.text()
+            password = self.lineEdit_2.text()
+            if username == "" or password == "":
+                self.label_5.setText("Please fill all the fields")
+            else:
+                user = User(username, password) # actually this have be done in the register page
+                try:
+                    pass # check if user exists in database then login
+                except Exception as e:
+                    print(e)
+
         icon = QIcon()
         icon.addFile(u":/pics/images/x-button.png", QSize(), QIcon.Normal, QIcon.Off)
         self.closeButton.setIcon(icon)
 
         self.retranslateUi(Form)
         self.closeButton.clicked.connect(Form.close)
+        self.pushButton.clicked.connect(on_signin_clicked)
 
         QMetaObject.connectSlotsByName(Form)
     # setupUi
@@ -154,4 +178,7 @@ class Ui_Form(object):
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
         self.closeButton.setText("")
     # retranslateUi
+
+
+        
 
