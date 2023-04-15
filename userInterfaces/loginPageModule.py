@@ -17,21 +17,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
     QSizePolicy, QWidget)
-import img
-
-from PySide6 import QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QWidget, QGraphicsDropShadowEffect
-from PySide6.QtCore import Qt
-
+import img_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(1024, 768)
-        Form.setWindowFlags(Qt.FramelessWindowHint)
-        Form.setAttribute(Qt.WA_TranslucentBackground)
-        
+        Form.setWindowFlags(Qt.FramelessWindowHint) # Remove the window frame
+        Form.setAttribute(Qt.WA_TranslucentBackground) # Set the background to transparent
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(20, 20, 961, 731))
@@ -48,7 +42,7 @@ class Ui_Form(object):
 "border-bottom-right-radius: 50px;")
         self.label_3 = QLabel(self.widget)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(660, 120, 131, 51))
+        self.label_3.setGeometry(QRect(670, 130, 131, 51))
         font = QFont()
         font.setPointSize(40)
         font.setBold(True)
@@ -62,15 +56,6 @@ class Ui_Form(object):
         font1.setPointSize(18)
         self.lineEdit.setFont(font1)
         self.lineEdit.setStyleSheet(u"background-color:rgba(0,0,0,0);\n"
-"border:none;\n"
-"border-bottom: 2px solid rgba(46,82,101,200);\n"
-"color:rgba(0,0,0,100);\n"
-"padding-bottom:7px;")
-        self.lineEdit_2 = QLineEdit(self.widget)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(600, 350, 311, 51))
-        self.lineEdit_2.setFont(font1)
-        self.lineEdit_2.setStyleSheet(u"background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
 "border-bottom: 2px solid rgba(46,82,101,200);\n"
 "color:rgba(0,0,0,100);\n"
@@ -123,23 +108,35 @@ class Ui_Form(object):
         self.label_5.setGeometry(QRect(150, 130, 241, 61))
         self.label_5.setFont(font)
         self.label_5.setStyleSheet(u"color: white;\n"
-"")     
-        
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setBlurRadius(5)
-        shadow.setXOffset(0)
-        shadow.setYOffset(0)
-        shadow.setColor(Qt.black)
-        self.pushButton.setGraphicsEffect(shadow)
-        self.pushButton_2.setGraphicsEffect(shadow)
-        
-        
-        
-       
-        
-
+"")
+        self.lineEdit_2 = QLineEdit(self.widget)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setGeometry(QRect(600, 350, 311, 51))
+        self.lineEdit_2.setFont(font1)
+        self.lineEdit_2.setStyleSheet(u"background-color:rgba(0,0,0,0);\n"
+"border:none;\n"
+"border-bottom: 2px solid rgba(46,82,101,200);\n"
+"color:rgba(0,0,0,100);\n"
+"padding-bottom:7px;")
+        self.closeButton = QPushButton(self.widget)
+        self.closeButton.setObjectName(u"closeButton")
+        self.closeButton.setGeometry(QRect(910, 90, 31, 32))
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.closeButton.sizePolicy().hasHeightForWidth())
+        self.closeButton.setSizePolicy(sizePolicy)
+        self.closeButton.setBaseSize(QSize(0, 0))
+        self.closeButton.setStyleSheet(u"QPushButton#closeButton\n"
+" {\n"
+"    border: none;\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u":/pics/images/x-button.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeButton.setIcon(icon)
 
         self.retranslateUi(Form)
+        self.closeButton.clicked.connect(Form.close)
 
         QMetaObject.connectSlotsByName(Form)
     # setupUi
@@ -150,10 +147,11 @@ class Ui_Form(object):
         self.label_2.setText("")
         self.label_3.setText(QCoreApplication.translate("Form", u"Sign In", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"Username", None))
-        self.lineEdit_2.setText(QCoreApplication.translate("Form", u"Password", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"Username", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"S i g n  I n", None))
         self.pushButton_2.setText(QCoreApplication.translate("Form", u"R e g i s t er", None))
         self.label_4.setText("")
         self.label_5.setText(QCoreApplication.translate("Form", u"Money Mate", None))
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
+        self.closeButton.setText("")
     # retranslateUi
+

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pics">
+    <file>images/x-button.png</file>
     <file>images/Summary.png</file>
   </qresource>
 </RCC>
