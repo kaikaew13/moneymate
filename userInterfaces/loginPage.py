@@ -16,6 +16,8 @@ class loginPage(QWidget):
     def __init__(self):
         QWidget.__init__(self, None)
         self.ui = Ui_Form()
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
         self.ui.setupUi(self)
 
 

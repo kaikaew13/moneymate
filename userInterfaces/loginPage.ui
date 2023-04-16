@@ -190,7 +190,7 @@ QPushButton#GoRegisterButton:pressed {
 </string>
       </property>
       <property name="text">
-       <string>R e g i s t er</string>
+       <string>G o  R e g i s t er</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">

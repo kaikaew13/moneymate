@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginPagetest.ui'
+## Form generated from reading UI file 'loginPage.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -24,8 +24,6 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(1024, 768)
-        Form.setWindowFlags(Qt.FramelessWindowHint) # Remove the window frame
-        Form.setAttribute(Qt.WA_TranslucentBackground) # Set the background to transparent
         self.stackedWidget = QStackedWidget(Form)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setGeometry(QRect(0, 0, 1021, 771))
@@ -261,9 +259,6 @@ class Ui_Form(object):
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0.505682, x2:1, y2:0.477, stop:0 rgba(11,131,120,80), stop:1 rgba(85,98,112,80));\n"
 "}\n"
 "")
-        
-
-        
         self.stackedWidget.addWidget(self.page_4)
 
         self.retranslateUi(Form)
@@ -283,7 +278,7 @@ class Ui_Form(object):
         self.Signin_Label.setText(QCoreApplication.translate("Form", u"Sign In", None))
         self.lineEditUserLogin.setPlaceholderText(QCoreApplication.translate("Form", u"Username", None))
         self.loginButton.setText(QCoreApplication.translate("Form", u"S i g n  I n", None))
-        self.GoRegisterButton.setText(QCoreApplication.translate("Form", u"R e g i s t er", None))
+        self.GoRegisterButton.setText(QCoreApplication.translate("Form", u"G o  R e g i s t er", None))
         self.label_4.setText("")
         self.label_5.setText(QCoreApplication.translate("Form", u"Money Mate", None))
         self.lineEditPassLogin.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
