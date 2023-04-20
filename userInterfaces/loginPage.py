@@ -27,9 +27,11 @@ class loginPage(QWidget):
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
 
     def on_goregisterButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(1) 
+        self.ui.stackedWidget.setCurrentIndex(1)
+        self.ui.label_5.setText("Money Mate")
     def on_gosigninButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.label_10.setText("Money Mate")
     def on_loginButton_clicked(self):
         username = self.ui.lineEditUserLogin.text()
         password = self.ui.lineEditPassLogin.text()
@@ -46,7 +48,7 @@ class loginPage(QWidget):
         password = self.ui.lineEditUserPassword.text()
         confirmpassword = self.ui.lineEditUserPassword_2.text()
         if username == "" or password == "" or confirmpassword == "":
-            self.ui.label_5.setText("Please fill in all fields")
+            self.ui.label_10.setText("Please fill in all fields")
         else:
             if password == confirmpassword:
                 user = User(username, password)
@@ -56,6 +58,7 @@ class loginPage(QWidget):
                     print(e)
             else:
                 self.ui.label_10.setText("Password does not match")
+        
     
 
 
