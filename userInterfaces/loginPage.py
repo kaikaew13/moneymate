@@ -3,6 +3,10 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from loginPageModule import Ui_Form
 import os
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+import json
+from dotenv import load_dotenv
 
 ####
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -10,6 +14,8 @@ moneymate_dir = os.path.abspath(os.path.join(script_dir, ".."))
 sys.path.insert(0, moneymate_dir)
 from User import User
 # import คนละ folder ยากชิบหาย
+
+load_dotenv()
 
 
 class loginPage(QWidget):
@@ -51,7 +57,16 @@ class loginPage(QWidget):
             if password == confirmpassword:
                 user = User(username, password)
                 try:
-                    pass # add user to database
+                    #TODO: check if user exists in database
+                    #TODO: Move this to .env 
+                    uri = "mongodb+srv://Natheeran:NonMongo21072002@cluster1.piovgcn.mongodb.net/?retryWrites=true&w=majority"
+                    # Create a new client and connect to the server
+                    client = MongoClient(uri, server_api=ServerApi('1'),tls = True,tlsAllowInvalidCertificates=True)
+                    db = client.MoneyMate
+                    userData = db.Username
+                    user1 = user.__dict__
+                    p_id = userData.insert_one(user1).inserted_id
+                    print(p_id)
                 except Exception as e:
                     print(e)
             else:
@@ -65,5 +80,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     loginPage = loginPage()
     loginPage.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
         
