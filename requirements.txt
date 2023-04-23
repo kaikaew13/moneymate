@@ -20,6 +20,7 @@ cycler==0.11.0
 debugpy==1.6.2
 decorator==5.1.1
 defusedxml==0.7.1
+dnspython==2.3.0
 entrypoints==0.4
 exceptiongroup==1.1.0
 executing==0.9.1
@@ -93,6 +94,7 @@ pygame==2.1.2
 PyGetWindow==0.0.9
 Pygments==2.12.0
 PyJWT==2.6.0
+pymongo==4.3.3
 PyMsgBox==1.0.9
 pyobjc==8.5
 pyobjc-core==8.5
@@ -241,6 +243,7 @@ PySide6==6.4.2
 PySide6-Addons==6.4.2
 PySide6-Essentials==6.4.2
 python-dateutil==2.8.2
+python-dotenv==1.0.0
 pytweening==1.0.4
 pyzmq==23.2.0
 qtconsole==5.3.1
