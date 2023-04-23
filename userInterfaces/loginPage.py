@@ -45,7 +45,18 @@ class loginPage(QWidget):
             self.ui.label_5.setText("Please fill in all fields")
         else:
           try:
-            pass # check if user exists in database then login
+            uri = "mongodb+srv://Natheeran:NonMongo21072002@cluster1.piovgcn.mongodb.net/?retryWrites=true&w=majority"
+                 # Create a new client and connect to the server
+            client = MongoClient(uri, server_api=ServerApi('1'),tls = True,tlsAllowInvalidCertificates=True)
+            db = client.MoneyMate
+            userData = db.Username
+            query = {"username": username, "password": password}
+            #TODO: query for username, then unhash and check password.
+            fetchedData = userData.find_one(query)
+            print(fetchedData)
+            if fetchedData:
+                pass #TODO: Go to main menu.
+            client.close()
           except Exception as e:
             print(e)
 
@@ -67,10 +78,13 @@ class loginPage(QWidget):
                     db = client.MoneyMate
                     userData = db.Username
                     user1 = user.__dict__
+                    if userData.find_one({"username": user.getUsername()}):
+                        raise ValueError("User already exists")
                     p_id = userData.insert_one(user1).inserted_id
                     print(p_id)
                 except Exception as e:
                     print(e)
+                client.close()
             else:
                 self.ui.label_10.setText("Password does not match")
         
