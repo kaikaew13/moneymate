@@ -16,7 +16,6 @@ class User:
         self.__transactions = []
         # start session and assign session id?
         # store user info into database
-        print('User created')
 
         
 
