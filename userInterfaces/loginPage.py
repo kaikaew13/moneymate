@@ -60,7 +60,7 @@ class loginPage(QWidget):
             uri = mongodb_uri
                  # Create a new client and connect to the server
             client = MongoClient(uri, server_api=ServerApi('1'))
-            db = client.get_database()
+            db = client.get_database('MoneyMate')
             # db = client.MoneyMate
             
             
@@ -105,7 +105,7 @@ class loginPage(QWidget):
                     uri = mongodb_uri
                     # Create a new client and connect to the server
                     client = MongoClient(uri, server_api=ServerApi('1'))
-                    db = client.get_database()
+                    db = client.get_database('MoneyMate')
                     # db = client.MoneyMate
                     userData = db.Username
                     user1 = user.__dict__

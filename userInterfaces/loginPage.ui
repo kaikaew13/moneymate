@@ -1028,35 +1028,6 @@ QPushButton#tabsButton:hover {
       <string>Account Transaction:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_29">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>270</y>
-       <width>751</width>
-       <height>501</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255,255,255);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>310</y>
-       <width>751</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_30">
      <property name="geometry">
       <rect>
@@ -1076,92 +1047,6 @@ QPushButton#tabsButton:hover {
      </property>
      <property name="text">
       <string>← User Account</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_31">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>90</y>
-       <width>101</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string>Dashboard</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_32">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>140</y>
-       <width>101</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string>Accounts</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_33">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>190</y>
-       <width>131</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string>Transactions</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_34">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>240</y>
-       <width>61</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0,0,0);</string>
-     </property>
-     <property name="text">
-      <string>Goals</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_35">
@@ -1184,9 +1069,9 @@ QPushButton#tabsButton:hover {
      <property name="geometry">
       <rect>
        <x>980</x>
-       <y>10</y>
+       <y>11</y>
        <width>31</width>
-       <height>32</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -1221,6 +1106,1116 @@ QPushButton#closeButton_3:hover {
        <normaloff>:/pics/images/x-button.png</normaloff>:/pics/images/x-button.png</iconset>
      </property>
     </widget>
+    <widget class="QPushButton" name="goDashboardButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#goDashboardButton {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goDashboardButton:hover {
+    background-color: rgb(81,74,200);
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="goAccountButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>130</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#goAccountButton {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goAccountButton:hover {
+    background-color: rgb(81,74,200);
+}</string>
+     </property>
+     <property name="text">
+      <string>Account</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="goTransButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>190</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#goTransButton {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goTransButton:hover {
+    background-color: rgb(81,74,200);
+}</string>
+     </property>
+     <property name="text">
+      <string>Transactions</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="goGoalButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>250</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#goGoalButton {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goGoalButton:hover {
+    background-color: rgb(81,74,200);
+}</string>
+     </property>
+     <property name="text">
+      <string>Goal</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_36">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../resources/img.qrc">:/pics/images/user.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../resources/img.qrc">:/pics/images/trans.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>260</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../resources/img.qrc">:/pics/images/goal.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_31">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>300</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(148,148,148);</string>
+     </property>
+     <property name="text">
+      <string>Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>300</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(148,148,148);</string>
+     </property>
+     <property name="text">
+      <string>Amount</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>820</x>
+       <y>300</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(148,148,148);</string>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_34">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>300</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(148,148,148);</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>320</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>360</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_4">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>400</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_5">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>440</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_6">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>480</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_7">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>520</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_8">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>560</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_9">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>600</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_10">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>640</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_11">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>680</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_12">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>720</y>
+       <width>751</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel1">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>340</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>380</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>420</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel6">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>540</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>460</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel8">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>620</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel7">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>580</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel7</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel5">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>500</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel5</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel10">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>700</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel10</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel9">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>660</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel9</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel11">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>740</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DateLabel11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel9">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>660</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel9</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>380</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel10">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>700</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel10</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel11">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>740</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel7">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>580</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel7</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel8">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>620</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel1">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>340</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel5">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>500</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel5</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>420</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>460</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountLabel6">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>540</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>AmountLabel6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel9">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>660</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel9</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel2">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>380</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel10">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>700</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel10</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel11">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>740</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel7">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>580</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel7</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel8">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>620</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel1">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>340</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel5">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>500</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel5</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel3">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>420</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel4">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>460</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="CatLabel6">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>540</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>CatLabel6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel9">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>660</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel9</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel2">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>380</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel10">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>700</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel10</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DateLabel11_2">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>740</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel7">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>580</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel7</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel8">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>620</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel1">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>340</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel5">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>500</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel5</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel3">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>420</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel4">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>460</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="DesLabel6">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>540</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>DesLabel6</string>
+     </property>
+    </widget>
     <zorder>label_12</zorder>
     <zorder>label_11</zorder>
     <zorder>label_3</zorder>
@@ -1241,16 +2236,76 @@ QPushButton#closeButton_3:hover {
     <zorder>label_26</zorder>
     <zorder>label_27</zorder>
     <zorder>label_28</zorder>
-    <zorder>label_29</zorder>
-    <zorder>line</zorder>
     <zorder>label_30</zorder>
-    <zorder>label_35</zorder>
     <zorder>closeButton_3</zorder>
-    <zorder>label_32</zorder>
+    <zorder>tabsButton</zorder>
+    <zorder>goDashboardButton</zorder>
+    <zorder>label_35</zorder>
+    <zorder>goAccountButton</zorder>
+    <zorder>goTransButton</zorder>
+    <zorder>goGoalButton</zorder>
+    <zorder>label_36</zorder>
+    <zorder>label_37</zorder>
+    <zorder>label_38</zorder>
     <zorder>label_31</zorder>
+    <zorder>label_32</zorder>
     <zorder>label_33</zorder>
     <zorder>label_34</zorder>
-    <zorder>tabsButton</zorder>
+    <zorder>line_2</zorder>
+    <zorder>line_3</zorder>
+    <zorder>line_4</zorder>
+    <zorder>line_5</zorder>
+    <zorder>line_6</zorder>
+    <zorder>line_7</zorder>
+    <zorder>line_8</zorder>
+    <zorder>line_9</zorder>
+    <zorder>line_10</zorder>
+    <zorder>line_11</zorder>
+    <zorder>line_12</zorder>
+    <zorder>DateLabel1</zorder>
+    <zorder>DateLabel2</zorder>
+    <zorder>DateLabel3</zorder>
+    <zorder>DateLabel6</zorder>
+    <zorder>DateLabel4</zorder>
+    <zorder>DateLabel8</zorder>
+    <zorder>DateLabel7</zorder>
+    <zorder>DateLabel5</zorder>
+    <zorder>DateLabel10</zorder>
+    <zorder>DateLabel9</zorder>
+    <zorder>DateLabel11</zorder>
+    <zorder>AmountLabel9</zorder>
+    <zorder>AmountLabel2</zorder>
+    <zorder>AmountLabel10</zorder>
+    <zorder>AmountLabel11</zorder>
+    <zorder>AmountLabel7</zorder>
+    <zorder>AmountLabel8</zorder>
+    <zorder>AmountLabel1</zorder>
+    <zorder>AmountLabel5</zorder>
+    <zorder>AmountLabel3</zorder>
+    <zorder>AmountLabel4</zorder>
+    <zorder>AmountLabel6</zorder>
+    <zorder>CatLabel9</zorder>
+    <zorder>CatLabel2</zorder>
+    <zorder>CatLabel10</zorder>
+    <zorder>CatLabel11</zorder>
+    <zorder>CatLabel7</zorder>
+    <zorder>CatLabel8</zorder>
+    <zorder>CatLabel1</zorder>
+    <zorder>CatLabel5</zorder>
+    <zorder>CatLabel3</zorder>
+    <zorder>CatLabel4</zorder>
+    <zorder>CatLabel6</zorder>
+    <zorder>DesLabel9</zorder>
+    <zorder>DesLabel2</zorder>
+    <zorder>DesLabel10</zorder>
+    <zorder>DateLabel11_2</zorder>
+    <zorder>DesLabel7</zorder>
+    <zorder>DesLabel8</zorder>
+    <zorder>DesLabel1</zorder>
+    <zorder>DesLabel5</zorder>
+    <zorder>DesLabel3</zorder>
+    <zorder>DesLabel4</zorder>
+    <zorder>DesLabel6</zorder>
    </widget>
   </widget>
  </widget>
