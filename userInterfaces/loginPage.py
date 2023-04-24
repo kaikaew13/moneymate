@@ -1,4 +1,5 @@
 import sys
+
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from loginPageModule import Ui_Form
@@ -8,12 +9,24 @@ from pymongo.server_api import ServerApi
 import json
 from dotenv import load_dotenv
 import bcrypt
+current_file_path = os.path.abspath(__file__)
+current_dir_path = os.path.dirname(current_file_path)
+classes_dir_path = os.path.join(current_dir_path, 'classes')
+sys.path.append(classes_dir_path)
+
 
 from classes.User import User
+from classes.Goal import Goal
+from classes.Expense import Expense
+from classes.Income import Income
+
+
+
 
 LOGIN_PAGE = 0
 REGISTER_PAGE = 1
 DASHBOARD_PAGE = 2
+
 
 load_dotenv()
 mongodb_uri = os.getenv('MONGODB_URI')
@@ -29,14 +42,15 @@ class loginPage(QWidget):
 
         self.ui.setupUi(self)
 
-        self.ui.GoRegisterButton.clicked.connect(
-            self.on_goregisterButton_clicked)
+        self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
         self.ui.addButton.clicked.connect(self.on_addButton_clicked)
         self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_2.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
+        self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
 
     def on_goregisterButton_clicked(self):
         self.switchPage(REGISTER_PAGE)
@@ -50,6 +64,7 @@ class loginPage(QWidget):
 
     def on_goDashboardButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(2)
+
 
 
 
@@ -102,8 +117,6 @@ class loginPage(QWidget):
             if password == confirmpassword:
                 user = User(username, password)
                 try:
-                    # TODO: check if user exists in database
-                    # TODO: Move this to .env
                     uri = mongodb_uri
                     # Create a new client and connect to the server
                     client = MongoClient(uri, server_api=ServerApi('1'))
@@ -130,9 +143,33 @@ class loginPage(QWidget):
 
     def on_addButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
+    def on_saveTransactionButton_clicked(self):
+        transName = self.ui.transnameLineEdit.text()
+        transCat = self.ui.catLineEdit.text()
+        transAmount = self.ui.transamountLineEdit.text()
+        transDesc = self.ui.transDesc.toPlainText()
+
+        
+        if self.ui.income_radio.isChecked():
+            inc = Income(transName, transAmount, transCat, transDesc)
+            # TODO: save Income to a transaction list in database
+        elif self.ui.expense_radio.isChecked():
+            exp = Expense(transName, transAmount, transCat, transDesc)
+            # TODO: save Expense to a transaction list in database
+        else:
+            print("Please select income or expense")
+
+
+    def on_savegoalButton_clicked(self):
+        goalName = self.ui.goalnameLineEdit.text()
+        goalAmount = self.ui.goalamountLineEdit.text()
+        goalDesc = self.ui.GoalDesc.toPlainText()
+        goal = Goal(goalName, goalAmount, goalDesc)
+        # TODO: save goal to a goal list in database
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
+
 
 
 if __name__ == "__main__":

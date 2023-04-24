@@ -25,7 +25,7 @@
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="page_3">
+   <widget class="QWidget" name="loginPage">
     <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
@@ -304,7 +304,7 @@ QPushButton#closeButton:hover {
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_4">
+   <widget class="QWidget" name="registerPage">
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
@@ -611,7 +611,7 @@ QPushButton#goSigninButton:pressed {
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_5">
+   <widget class="QWidget" name="dashboardPage">
     <widget class="QWidget" name="widget_3" native="true">
      <property name="geometry">
       <rect>
@@ -2187,8 +2187,7 @@ QPushButton#goTransButton:hover {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);
-border: 5px solid black;</string>
+       <string notr="true">color: rgb(0,0,0);</string>
       </property>
       <property name="text">
        <string>add +</string>
@@ -2284,7 +2283,7 @@ border: 5px solid black;</string>
      <zorder>addButton</zorder>
     </widget>
    </widget>
-   <widget class="QWidget" name="page">
+   <widget class="QWidget" name="addPage">
     <widget class="QWidget" name="widget_4" native="true">
      <property name="geometry">
       <rect>
@@ -2637,12 +2636,342 @@ QPushButton#goTransButton_2:hover {
        <rect>
         <x>270</x>
         <y>120</y>
-        <width>101</width>
+        <width>151</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
       <property name="text">
        <string>New Transaction</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>150</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="transnameLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>200</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>170</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Transaction Name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="catLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>270</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>240</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Category</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>170</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>460</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>New Goal</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>490</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="goalnameLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>540</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="goalamountLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>620</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>510</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Goal Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>590</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Goal Amount</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>500</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="income_radio">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>380</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Income</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="expense_radio">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>380</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Expense</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveTransButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>420</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveGoalButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>680</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="transamountLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>340</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>310</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Transaction Amount</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="transDesc">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>210</y>
+        <width>431</width>
+        <height>261</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="GoalDesc">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>540</y>
+        <width>431</width>
+        <height>211</height>
+       </rect>
       </property>
      </widget>
      <zorder>label_83</zorder>
@@ -2660,6 +2989,427 @@ QPushButton#goTransButton_2:hover {
      <zorder>label_75</zorder>
      <zorder>label_76</zorder>
      <zorder>label_3</zorder>
+     <zorder>line</zorder>
+     <zorder>transnameLineEdit</zorder>
+     <zorder>label_8</zorder>
+     <zorder>catLineEdit</zorder>
+     <zorder>label_11</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_13</zorder>
+     <zorder>line_2</zorder>
+     <zorder>goalnameLineEdit</zorder>
+     <zorder>goalamountLineEdit</zorder>
+     <zorder>label_14</zorder>
+     <zorder>label_15</zorder>
+     <zorder>label_16</zorder>
+     <zorder>income_radio</zorder>
+     <zorder>expense_radio</zorder>
+     <zorder>saveTransButton</zorder>
+     <zorder>saveGoalButton</zorder>
+     <zorder>transamountLineEdit</zorder>
+     <zorder>label_17</zorder>
+     <zorder>transDesc</zorder>
+     <zorder>GoalDesc</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TransactionPage">
+    <widget class="QWidget" name="widget_5" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1021</width>
+       <height>771</height>
+      </rect>
+     </property>
+     <widget class="QPushButton" name="goGoalButton_3">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>280</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goGoalButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goGoalButton_3:hover {
+    background-color: rgb(81,74,200);
+}</string>
+      </property>
+      <property name="text">
+       <string>Goal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goDashboardButton_3">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>100</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goDashboardButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goDashboardButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Dashboard</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_77">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/user.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_78">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Money Mate</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="closeButton_5">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>30</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#closeButton_5 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#closeButton_5:hover {
+    border: 2px dashed grey; /* set the border to a solid color when hovering */
+    border-radius: 50%; /* set the border radius to create a circle */
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/x-button.png</normaloff>:/pics/images/x-button.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_84">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1071</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81,74,248);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goAccountButton_3">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>160</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goAccountButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goAccountButton_3:hover {
+    background-color: rgb(81,74,200);
+}</string>
+      </property>
+      <property name="text">
+       <string>Account</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_92">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>1021</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250,250,250);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_93">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/goal.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_95">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/trans.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabsButton_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#tabsButton_3 {
+    border: none;
+    background-color: rgb(81,74,248);
+   qproperty-iconSize: 40px;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#tabsButton_3:hover {
+    background-color: rgb(81,74,170);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_96">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>251</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goTransButton_3">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>220</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goTransButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goTransButton_3:hover {
+    background-color: rgb(81,74,200);
+}</string>
+      </property>
+      <property name="text">
+       <string>Transactions</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_97">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/pics/images/home.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>120</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Transaction</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>150</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <zorder>label_84</zorder>
+     <zorder>label_92</zorder>
+     <zorder>tabsButton_3</zorder>
+     <zorder>label_96</zorder>
+     <zorder>goTransButton_3</zorder>
+     <zorder>label_18</zorder>
+     <zorder>line_3</zorder>
+     <zorder>closeButton_5</zorder>
+     <zorder>goAccountButton_3</zorder>
+     <zorder>goDashboardButton_3</zorder>
+     <zorder>goGoalButton_3</zorder>
+     <zorder>label_77</zorder>
+     <zorder>label_78</zorder>
+     <zorder>label_93</zorder>
+     <zorder>label_95</zorder>
+     <zorder>label_97</zorder>
     </widget>
    </widget>
   </widget>

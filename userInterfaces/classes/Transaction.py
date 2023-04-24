@@ -3,7 +3,8 @@ from datetime import datetime
 
 
 class Transaction:
-    def __init__(self, amount=0):
+    def __init__(self, amount=0, date=datetime.now()):
+    
         self.__amount = amount
         self.__date = datetime.now()
         # generate random uuid

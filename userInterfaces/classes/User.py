@@ -14,6 +14,7 @@ class User:
         b = password.encode('utf-8')
         self.__hashedpass = bcrypt.hashpw(b, User.salt)
         self.__transactions = []
+        self.__goal=[]
         # start session and assign session id?
         # store user info into database
         print('User created')
@@ -28,6 +29,8 @@ class User:
 
     def addTransaction(self, transaction):
         self.__transactions.append(transaction)
+    def addGoal(self, goal):
+        self.__goal.append(goal)
     
 # if __name__ == "__main__":
 #     user = "test"
