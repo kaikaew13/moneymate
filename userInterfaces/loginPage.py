@@ -11,13 +11,9 @@ import bcrypt
 
 from classes.User import User
 
-
-####
-# script_dir = os.path.dirname(os.path.abspath(__file__))
-# moneymate_dir = os.path.abspath(os.path.join(script_dir, ".."))
-# sys.path.insert(0, moneymate_dir)
-
-# import คนละ folder ยากชิบหาย
+LOGIN_PAGE = 0
+REGISTER_PAGE = 1
+DASHBOARD_PAGE = 2
 
 load_dotenv()
 mongodb_uri = os.getenv('MONGODB_URI')
@@ -40,12 +36,12 @@ class loginPage(QWidget):
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
 
     def on_goregisterButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(1)
+        self.switchPage(REGISTER_PAGE)
         self.ui.label_5.setText("Money Mate")
         self.ui.label_5.setStyleSheet("color: white")
 
     def on_gosigninButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(0)
+        self.switchPage(LOGIN_PAGE)
         self.ui.label_10.setText("Money Mate")
         self.ui.label_10.setStyleSheet("color: white")
 
@@ -71,8 +67,7 @@ class loginPage(QWidget):
                     # Compare the hashed password with the provided password
                     hashedpass = fetchedData['_User__hashedpass']
                     if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
-
-                        self.ui.stackedWidget.setCurrentIndex(2)
+                        self.switchPage(DASHBOARD_PAGE)
                         self.setWindowFlags(Qt.Window)
                         self.setAttribute(Qt.WA_OpaquePaintEvent)
                         self.show()
@@ -123,6 +118,9 @@ class loginPage(QWidget):
             else:
                 self.ui.label_10.setText("Password does not match")
                 self.ui.label_10.setStyleSheet("color: red")
+
+    def switchPage(self, page):
+        self.ui.stackedWidget.setCurrentIndex(page)
 
 
 if __name__ == "__main__":
