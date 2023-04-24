@@ -40,6 +40,9 @@ class loginPage(QWidget):
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
+        self.ui.addButton.clicked.connect(self.on_addButton_clicked)
+        self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_2.clicked.connect(self.on_goDashboardButton_clicked)
 
     def on_goregisterButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -49,6 +52,8 @@ class loginPage(QWidget):
         self.ui.stackedWidget.setCurrentIndex(0)
         self.ui.label_10.setText("Money Mate")
         self.ui.label_10.setStyleSheet("color: white")
+    def on_goDashboardButton_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(2)
     def on_loginButton_clicked(self):
         username = self.ui.lineEditUserLogin.text()
         password = self.ui.lineEditPassLogin.text()
@@ -124,6 +129,12 @@ class loginPage(QWidget):
             else:
                 self.ui.label_10.setText("Password does not match")
                 self.ui.label_10.setStyleSheet("color: red")
+
+    def on_addButton_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(3)
+
+
+
         
     
 
