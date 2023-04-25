@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
-    QPushButton, QRadioButton, QSizePolicy, QStackedWidget,
-    QTextEdit, QWidget)
+    QPushButton, QRadioButton, QScrollArea, QSizePolicy,
+    QStackedWidget, QTextEdit, QVBoxLayout, QWidget)
 import img_rc
 
 class Ui_Form(object):
@@ -25,6 +25,11 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(1024, 768)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Ignored)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
+        Form.setSizePolicy(sizePolicy)
         self.stackedWidget = QStackedWidget(Form)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setGeometry(QRect(0, 0, 1021, 771))
@@ -126,11 +131,11 @@ class Ui_Form(object):
         self.closeButton = QPushButton(self.widget)
         self.closeButton.setObjectName(u"closeButton")
         self.closeButton.setGeometry(QRect(910, 90, 31, 32))
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.closeButton.sizePolicy().hasHeightForWidth())
-        self.closeButton.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.closeButton.sizePolicy().hasHeightForWidth())
+        self.closeButton.setSizePolicy(sizePolicy1)
         self.closeButton.setBaseSize(QSize(0, 0))
         self.closeButton.setStyleSheet(u"QPushButton#closeButton {\n"
 "    border: none;\n"
@@ -218,8 +223,8 @@ class Ui_Form(object):
         self.closeButton_2 = QPushButton(self.widget_2)
         self.closeButton_2.setObjectName(u"closeButton_2")
         self.closeButton_2.setGeometry(QRect(910, 90, 31, 32))
-        sizePolicy.setHeightForWidth(self.closeButton_2.sizePolicy().hasHeightForWidth())
-        self.closeButton_2.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.closeButton_2.sizePolicy().hasHeightForWidth())
+        self.closeButton_2.setSizePolicy(sizePolicy1)
         self.closeButton_2.setBaseSize(QSize(0, 0))
         self.closeButton_2.setStyleSheet(u"QPushButton#closeButton_2 {\n"
 "    border: none;\n"
@@ -492,8 +497,8 @@ class Ui_Form(object):
         self.closeButton_3 = QPushButton(self.widget_3)
         self.closeButton_3.setObjectName(u"closeButton_3")
         self.closeButton_3.setGeometry(QRect(970, 30, 31, 31))
-        sizePolicy.setHeightForWidth(self.closeButton_3.sizePolicy().hasHeightForWidth())
-        self.closeButton_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.closeButton_3.sizePolicy().hasHeightForWidth())
+        self.closeButton_3.setSizePolicy(sizePolicy1)
         self.closeButton_3.setBaseSize(QSize(0, 0))
         self.closeButton_3.setStyleSheet(u"QPushButton#closeButton_3 {\n"
 "    border: none;\n"
@@ -859,8 +864,8 @@ class Ui_Form(object):
         self.closeButton_4 = QPushButton(self.widget_4)
         self.closeButton_4.setObjectName(u"closeButton_4")
         self.closeButton_4.setGeometry(QRect(970, 30, 31, 31))
-        sizePolicy.setHeightForWidth(self.closeButton_4.sizePolicy().hasHeightForWidth())
-        self.closeButton_4.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.closeButton_4.sizePolicy().hasHeightForWidth())
+        self.closeButton_4.setSizePolicy(sizePolicy1)
         self.closeButton_4.setBaseSize(QSize(0, 0))
         self.closeButton_4.setStyleSheet(u"QPushButton#closeButton_4 {\n"
 "    border: none;\n"
@@ -1114,8 +1119,8 @@ class Ui_Form(object):
         self.closeButton_5 = QPushButton(self.widget_5)
         self.closeButton_5.setObjectName(u"closeButton_5")
         self.closeButton_5.setGeometry(QRect(970, 30, 31, 31))
-        sizePolicy.setHeightForWidth(self.closeButton_5.sizePolicy().hasHeightForWidth())
-        self.closeButton_5.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.closeButton_5.sizePolicy().hasHeightForWidth())
+        self.closeButton_5.setSizePolicy(sizePolicy1)
         self.closeButton_5.setBaseSize(QSize(0, 0))
         self.closeButton_5.setStyleSheet(u"QPushButton#closeButton_5 {\n"
 "    border: none;\n"
@@ -1205,10 +1210,46 @@ class Ui_Form(object):
         self.line_3.setGeometry(QRect(270, 150, 731, 16))
         self.line_3.setFrameShape(QFrame.HLine)
         self.line_3.setFrameShadow(QFrame.Sunken)
-        self.label_84.raise_()
+        self.scrollArea = QScrollArea(self.widget_5)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QRect(290, 220, 701, 511))
+        self.scrollArea.setStyleSheet(u"background-color: rgb(240,240,240)")
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 699, 509))
+        self.verticalLayout = QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents_2)
+        self.widget_6 = QWidget(self.widget_5)
+        self.widget_6.setObjectName(u"widget_6")
+        self.widget_6.setGeometry(QRect(70, 410, 151, 31))
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Minimum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.widget_6.sizePolicy().hasHeightForWidth())
+        self.widget_6.setSizePolicy(sizePolicy2)
+        self.widget_7 = QWidget(self.widget_5)
+        self.widget_7.setObjectName(u"widget_7")
+        self.widget_7.setGeometry(QRect(290, 190, 691, 31))
+        self.label_19 = QLabel(self.widget_7)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setGeometry(QRect(20, 10, 111, 16))
+        self.label_20 = QLabel(self.widget_7)
+        self.label_20.setObjectName(u"label_20")
+        self.label_20.setGeometry(QRect(460, 10, 111, 16))
+        self.label_21 = QLabel(self.widget_7)
+        self.label_21.setObjectName(u"label_21")
+        self.label_21.setGeometry(QRect(230, 10, 131, 16))
+        self.label_22 = QLabel(self.widget_5)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setGeometry(QRect(290, 180, 701, 41))
+        self.label_22.setStyleSheet(u"background-color: rgb(240,240,240)")
         self.label_92.raise_()
-        self.tabsButton_3.raise_()
+        self.label_22.raise_()
         self.label_96.raise_()
+        self.label_84.raise_()
+        self.tabsButton_3.raise_()
         self.goTransButton_3.raise_()
         self.label_18.raise_()
         self.line_3.raise_()
@@ -1221,13 +1262,341 @@ class Ui_Form(object):
         self.label_93.raise_()
         self.label_95.raise_()
         self.label_97.raise_()
+        self.scrollArea.raise_()
+        self.widget_6.raise_()
+        self.widget_7.raise_()
         self.stackedWidget.addWidget(self.TransactionPage)
+        self.goalPage = QWidget()
+        self.goalPage.setObjectName(u"goalPage")
+        self.widget_8 = QWidget(self.goalPage)
+        self.widget_8.setObjectName(u"widget_8")
+        self.widget_8.setGeometry(QRect(0, 0, 1021, 771))
+        self.goGoalButton_4 = QPushButton(self.widget_8)
+        self.goGoalButton_4.setObjectName(u"goGoalButton_4")
+        self.goGoalButton_4.setGeometry(QRect(-10, 280, 261, 61))
+        self.goGoalButton_4.setFont(font3)
+        self.goGoalButton_4.setStyleSheet(u"QPushButton#goGoalButton_4 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goGoalButton_4:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.goDashboardButton_4 = QPushButton(self.widget_8)
+        self.goDashboardButton_4.setObjectName(u"goDashboardButton_4")
+        self.goDashboardButton_4.setGeometry(QRect(-10, 100, 261, 61))
+        self.goDashboardButton_4.setFont(font3)
+        self.goDashboardButton_4.setStyleSheet(u"QPushButton#goDashboardButton_4 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goDashboardButton_4:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}\n"
+"")
+        self.label_79 = QLabel(self.widget_8)
+        self.label_79.setObjectName(u"label_79")
+        self.label_79.setGeometry(QRect(20, 170, 31, 31))
+        self.label_79.setStyleSheet(u"")
+        self.label_79.setPixmap(QPixmap(u":/pics/images/user.png"))
+        self.label_79.setScaledContents(True)
+        self.label_80 = QLabel(self.widget_8)
+        self.label_80.setObjectName(u"label_80")
+        self.label_80.setGeometry(QRect(100, 60, 121, 21))
+        self.label_80.setFont(font2)
+        self.label_80.setStyleSheet(u"color: white;\n"
+"")
+        self.closeButton_6 = QPushButton(self.widget_8)
+        self.closeButton_6.setObjectName(u"closeButton_6")
+        self.closeButton_6.setGeometry(QRect(970, 30, 31, 31))
+        sizePolicy1.setHeightForWidth(self.closeButton_6.sizePolicy().hasHeightForWidth())
+        self.closeButton_6.setSizePolicy(sizePolicy1)
+        self.closeButton_6.setBaseSize(QSize(0, 0))
+        self.closeButton_6.setStyleSheet(u"QPushButton#closeButton_6 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"}\n"
+"\n"
+"QPushButton#closeButton_6:hover {\n"
+"    border: 2px dashed grey; /* set the border to a solid color when hovering */\n"
+"    border-radius: 50%; /* set the border radius to create a circle */\n"
+"}\n"
+"")
+        self.closeButton_6.setIcon(icon)
+        self.label_85 = QLabel(self.widget_8)
+        self.label_85.setObjectName(u"label_85")
+        self.label_85.setGeometry(QRect(0, 0, 1071, 101))
+        self.label_85.setStyleSheet(u"background-color: rgb(81,74,248);")
+        self.goAccountButton_4 = QPushButton(self.widget_8)
+        self.goAccountButton_4.setObjectName(u"goAccountButton_4")
+        self.goAccountButton_4.setGeometry(QRect(-10, 160, 261, 61))
+        self.goAccountButton_4.setFont(font3)
+        self.goAccountButton_4.setStyleSheet(u"QPushButton#goAccountButton_4 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goAccountButton_4:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.label_98 = QLabel(self.widget_8)
+        self.label_98.setObjectName(u"label_98")
+        self.label_98.setGeometry(QRect(0, 100, 1021, 701))
+        self.label_98.setStyleSheet(u"background-color: rgb(250,250,250);")
+        self.label_99 = QLabel(self.widget_8)
+        self.label_99.setObjectName(u"label_99")
+        self.label_99.setGeometry(QRect(20, 290, 31, 31))
+        self.label_99.setStyleSheet(u"")
+        self.label_99.setPixmap(QPixmap(u":/pics/images/goal.png"))
+        self.label_99.setScaledContents(True)
+        self.label_100 = QLabel(self.widget_8)
+        self.label_100.setObjectName(u"label_100")
+        self.label_100.setGeometry(QRect(20, 230, 31, 31))
+        self.label_100.setStyleSheet(u"")
+        self.label_100.setPixmap(QPixmap(u":/pics/images/trans.png"))
+        self.label_100.setScaledContents(True)
+        self.tabsButton_4 = QPushButton(self.widget_8)
+        self.tabsButton_4.setObjectName(u"tabsButton_4")
+        self.tabsButton_4.setGeometry(QRect(50, 50, 41, 41))
+        self.tabsButton_4.setStyleSheet(u"QPushButton#tabsButton_4 {\n"
+"    border: none;\n"
+"    background-color: rgb(81,74,248);\n"
+"   qproperty-iconSize: 40px;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"}\n"
+"\n"
+"QPushButton#tabsButton_4:hover {\n"
+"    background-color: rgb(81,74,170);\n"
+"}\n"
+"")
+        self.tabsButton_4.setIcon(icon1)
+        self.label_101 = QLabel(self.widget_8)
+        self.label_101.setObjectName(u"label_101")
+        self.label_101.setGeometry(QRect(0, 100, 251, 701))
+        self.label_101.setStyleSheet(u"background-color: rgb(255,255,255);")
+        self.goTransButton_4 = QPushButton(self.widget_8)
+        self.goTransButton_4.setObjectName(u"goTransButton_4")
+        self.goTransButton_4.setGeometry(QRect(-10, 220, 261, 61))
+        self.goTransButton_4.setFont(font3)
+        self.goTransButton_4.setStyleSheet(u"QPushButton#goTransButton_4 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goTransButton_4:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.label_102 = QLabel(self.widget_8)
+        self.label_102.setObjectName(u"label_102")
+        self.label_102.setGeometry(QRect(20, 110, 31, 31))
+        self.label_102.setStyleSheet(u"background-image: url(:/pics/images/home.png);")
+        self.label_23 = QLabel(self.widget_8)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setGeometry(QRect(270, 120, 151, 31))
+        self.label_23.setFont(font3)
+        self.label_23.setStyleSheet(u"color: rgb(0,0,0);")
+        self.line_4 = QFrame(self.widget_8)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setGeometry(QRect(270, 150, 731, 16))
+        self.line_4.setFrameShape(QFrame.HLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
+        self.widget_9 = QWidget(self.widget_8)
+        self.widget_9.setObjectName(u"widget_9")
+        self.widget_9.setGeometry(QRect(70, 410, 151, 31))
+        sizePolicy2.setHeightForWidth(self.widget_9.sizePolicy().hasHeightForWidth())
+        self.widget_9.setSizePolicy(sizePolicy2)
+        self.label_85.raise_()
+        self.label_98.raise_()
+        self.tabsButton_4.raise_()
+        self.label_23.raise_()
+        self.line_4.raise_()
+        self.label_80.raise_()
+        self.widget_9.raise_()
+        self.closeButton_6.raise_()
+        self.label_101.raise_()
+        self.goAccountButton_4.raise_()
+        self.goDashboardButton_4.raise_()
+        self.goGoalButton_4.raise_()
+        self.goTransButton_4.raise_()
+        self.label_100.raise_()
+        self.label_102.raise_()
+        self.label_79.raise_()
+        self.label_99.raise_()
+        self.stackedWidget.addWidget(self.goalPage)
+        self.logoutPage = QWidget()
+        self.logoutPage.setObjectName(u"logoutPage")
+        self.widget_11 = QWidget(self.logoutPage)
+        self.widget_11.setObjectName(u"widget_11")
+        self.widget_11.setGeometry(QRect(0, 0, 1021, 771))
+        self.goGoalButton_5 = QPushButton(self.widget_11)
+        self.goGoalButton_5.setObjectName(u"goGoalButton_5")
+        self.goGoalButton_5.setGeometry(QRect(-10, 280, 261, 61))
+        self.goGoalButton_5.setFont(font3)
+        self.goGoalButton_5.setStyleSheet(u"QPushButton#goGoalButton_5 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goGoalButton_5:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.goDashboardButton_5 = QPushButton(self.widget_11)
+        self.goDashboardButton_5.setObjectName(u"goDashboardButton_5")
+        self.goDashboardButton_5.setGeometry(QRect(-10, 100, 261, 61))
+        self.goDashboardButton_5.setFont(font3)
+        self.goDashboardButton_5.setStyleSheet(u"QPushButton#goDashboardButton_5 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goDashboardButton_5:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}\n"
+"")
+        self.label_81 = QLabel(self.widget_11)
+        self.label_81.setObjectName(u"label_81")
+        self.label_81.setGeometry(QRect(20, 170, 31, 31))
+        self.label_81.setStyleSheet(u"")
+        self.label_81.setPixmap(QPixmap(u":/pics/images/user.png"))
+        self.label_81.setScaledContents(True)
+        self.label_82 = QLabel(self.widget_11)
+        self.label_82.setObjectName(u"label_82")
+        self.label_82.setGeometry(QRect(100, 60, 121, 21))
+        self.label_82.setFont(font2)
+        self.label_82.setStyleSheet(u"color: white;\n"
+"")
+        self.closeButton_7 = QPushButton(self.widget_11)
+        self.closeButton_7.setObjectName(u"closeButton_7")
+        self.closeButton_7.setGeometry(QRect(970, 30, 31, 31))
+        sizePolicy1.setHeightForWidth(self.closeButton_7.sizePolicy().hasHeightForWidth())
+        self.closeButton_7.setSizePolicy(sizePolicy1)
+        self.closeButton_7.setBaseSize(QSize(0, 0))
+        self.closeButton_7.setStyleSheet(u"QPushButton#closeButton_7 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"}\n"
+"\n"
+"QPushButton#closeButton_7:hover {\n"
+"    border: 2px dashed grey; /* set the border to a solid color when hovering */\n"
+"    border-radius: 50%; /* set the border radius to create a circle */\n"
+"}\n"
+"")
+        self.closeButton_7.setIcon(icon)
+        self.label_86 = QLabel(self.widget_11)
+        self.label_86.setObjectName(u"label_86")
+        self.label_86.setGeometry(QRect(0, 0, 1071, 101))
+        self.label_86.setStyleSheet(u"background-color: rgb(81,74,248);")
+        self.goAccountButton_5 = QPushButton(self.widget_11)
+        self.goAccountButton_5.setObjectName(u"goAccountButton_5")
+        self.goAccountButton_5.setGeometry(QRect(-10, 160, 261, 61))
+        self.goAccountButton_5.setFont(font3)
+        self.goAccountButton_5.setStyleSheet(u"QPushButton#goAccountButton_5 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goAccountButton_5:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.label_103 = QLabel(self.widget_11)
+        self.label_103.setObjectName(u"label_103")
+        self.label_103.setGeometry(QRect(0, 100, 1021, 701))
+        self.label_103.setStyleSheet(u"background-color: rgb(250,250,250);")
+        self.label_104 = QLabel(self.widget_11)
+        self.label_104.setObjectName(u"label_104")
+        self.label_104.setGeometry(QRect(20, 290, 31, 31))
+        self.label_104.setStyleSheet(u"")
+        self.label_104.setPixmap(QPixmap(u":/pics/images/goal.png"))
+        self.label_104.setScaledContents(True)
+        self.label_105 = QLabel(self.widget_11)
+        self.label_105.setObjectName(u"label_105")
+        self.label_105.setGeometry(QRect(20, 230, 31, 31))
+        self.label_105.setStyleSheet(u"")
+        self.label_105.setPixmap(QPixmap(u":/pics/images/trans.png"))
+        self.label_105.setScaledContents(True)
+        self.tabsButton_5 = QPushButton(self.widget_11)
+        self.tabsButton_5.setObjectName(u"tabsButton_5")
+        self.tabsButton_5.setGeometry(QRect(50, 50, 41, 41))
+        self.tabsButton_5.setStyleSheet(u"QPushButton#tabsButton_5 {\n"
+"    border: none;\n"
+"    background-color: rgb(81,74,248);\n"
+"   qproperty-iconSize: 40px;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"}\n"
+"\n"
+"QPushButton#tabsButton_5:hover {\n"
+"    background-color: rgb(81,74,170);\n"
+"}\n"
+"")
+        self.tabsButton_5.setIcon(icon1)
+        self.label_106 = QLabel(self.widget_11)
+        self.label_106.setObjectName(u"label_106")
+        self.label_106.setGeometry(QRect(0, 100, 251, 701))
+        self.label_106.setStyleSheet(u"background-color: rgb(255,255,255);")
+        self.goTransButton_5 = QPushButton(self.widget_11)
+        self.goTransButton_5.setObjectName(u"goTransButton_5")
+        self.goTransButton_5.setGeometry(QRect(-10, 220, 261, 61))
+        self.goTransButton_5.setFont(font3)
+        self.goTransButton_5.setStyleSheet(u"QPushButton#goTransButton_5 {\n"
+"    border: none;\n"
+"    border-radius: 10px; /* set the initial border radius */\n"
+"	color: rgb(0,0,0);\n"
+"}\n"
+"QPushButton#goTransButton_5:hover {\n"
+"    background-color: rgb(81,74,200);\n"
+"}")
+        self.label_107 = QLabel(self.widget_11)
+        self.label_107.setObjectName(u"label_107")
+        self.label_107.setGeometry(QRect(20, 110, 31, 31))
+        self.label_107.setStyleSheet(u"background-image: url(:/pics/images/home.png);")
+        self.label_28 = QLabel(self.widget_11)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setGeometry(QRect(270, 120, 151, 31))
+        self.label_28.setFont(font3)
+        self.label_28.setStyleSheet(u"color: rgb(0,0,0);")
+        self.line_5 = QFrame(self.widget_11)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setGeometry(QRect(270, 150, 731, 16))
+        self.line_5.setFrameShape(QFrame.HLine)
+        self.line_5.setFrameShadow(QFrame.Sunken)
+        self.widget_12 = QWidget(self.widget_11)
+        self.widget_12.setObjectName(u"widget_12")
+        self.widget_12.setGeometry(QRect(70, 410, 151, 31))
+        sizePolicy2.setHeightForWidth(self.widget_12.sizePolicy().hasHeightForWidth())
+        self.widget_12.setSizePolicy(sizePolicy2)
+        self.logoutButton = QPushButton(self.widget_11)
+        self.logoutButton.setObjectName(u"logoutButton")
+        self.logoutButton.setGeometry(QRect(520, 410, 161, 71))
+        self.widget_12.raise_()
+        self.label_86.raise_()
+        self.label_103.raise_()
+        self.tabsButton_5.raise_()
+        self.label_28.raise_()
+        self.line_5.raise_()
+        self.label_82.raise_()
+        self.label_106.raise_()
+        self.goGoalButton_5.raise_()
+        self.goDashboardButton_5.raise_()
+        self.goAccountButton_5.raise_()
+        self.closeButton_7.raise_()
+        self.goTransButton_5.raise_()
+        self.label_104.raise_()
+        self.label_105.raise_()
+        self.label_107.raise_()
+        self.label_81.raise_()
+        self.logoutButton.raise_()
+        self.stackedWidget.addWidget(self.logoutPage)
 
         self.retranslateUi(Form)
         self.closeButton.clicked.connect(Form.close)
         self.closeButton_2.clicked.connect(Form.close)
         self.closeButton_3.clicked.connect(Form.close)
         self.closeButton_4.clicked.connect(Form.close)
+        self.closeButton_5.clicked.connect(Form.close)
+        self.closeButton_6.clicked.connect(Form.close)
+        self.closeButton_7.clicked.connect(Form.close)
 
         self.stackedWidget.setCurrentIndex(0)
 
@@ -1377,5 +1746,40 @@ class Ui_Form(object):
         self.goTransButton_3.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_97.setText("")
         self.label_18.setText(QCoreApplication.translate("Form", u"Transaction", None))
+        self.label_19.setText(QCoreApplication.translate("Form", u"Transaction Name", None))
+        self.label_20.setText(QCoreApplication.translate("Form", u"Transaction Date", None))
+        self.label_21.setText(QCoreApplication.translate("Form", u"Transaction Amount", None))
+        self.label_22.setText("")
+        self.goGoalButton_4.setText(QCoreApplication.translate("Form", u"Goal", None))
+        self.goDashboardButton_4.setText(QCoreApplication.translate("Form", u"Dashboard", None))
+        self.label_79.setText("")
+        self.label_80.setText(QCoreApplication.translate("Form", u"Money Mate", None))
+        self.closeButton_6.setText("")
+        self.label_85.setText("")
+        self.goAccountButton_4.setText(QCoreApplication.translate("Form", u"Account", None))
+        self.label_98.setText("")
+        self.label_99.setText("")
+        self.label_100.setText("")
+        self.tabsButton_4.setText("")
+        self.label_101.setText("")
+        self.goTransButton_4.setText(QCoreApplication.translate("Form", u"Transactions", None))
+        self.label_102.setText("")
+        self.label_23.setText(QCoreApplication.translate("Form", u"Goals", None))
+        self.goGoalButton_5.setText(QCoreApplication.translate("Form", u"Goal", None))
+        self.goDashboardButton_5.setText(QCoreApplication.translate("Form", u"Dashboard", None))
+        self.label_81.setText("")
+        self.label_82.setText(QCoreApplication.translate("Form", u"Money Mate", None))
+        self.closeButton_7.setText("")
+        self.label_86.setText("")
+        self.goAccountButton_5.setText(QCoreApplication.translate("Form", u"Account", None))
+        self.label_103.setText("")
+        self.label_104.setText("")
+        self.label_105.setText("")
+        self.tabsButton_5.setText("")
+        self.label_106.setText("")
+        self.goTransButton_5.setText(QCoreApplication.translate("Form", u"Transactions", None))
+        self.label_107.setText("")
+        self.label_28.setText(QCoreApplication.translate("Form", u"User", None))
+        self.logoutButton.setText(QCoreApplication.translate("Form", u"Logout", None))
     # retranslateUi
 
