@@ -8,6 +8,9 @@ from pymongo.server_api import ServerApi
 import json
 from dotenv import load_dotenv
 import bcrypt
+import transaction
+import ZODB.FileStorage
+import ZODB
 
 from classes.User import User
 from classes.Goal import Goal
@@ -133,36 +136,52 @@ class loginPage(QWidget):
             self.ui.label_5.setText("Please fill in all fields")
             self.ui.label_5.setStyleSheet("color: red")
         else:
-            try:
-                uri = mongodb_uri
-                # Create a new client and connect to the server
-                client = MongoClient(uri, server_api=ServerApi('1'))
-                db = client.get_database('MoneyMate')
-                # db = client.MoneyMate
-
-                userData = db.Username
-                query = {"_User__username": username}
-                # TODO: query for username, then unhash and check password.
-                fetchedData = userData.find_one(query)
-                if fetchedData:
-                    # Compare the hashed password with the provided password
-                    hashedpass = fetchedData['_User__hashedpass']
-                    if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
-                        self.switchPage(DASHBOARD_PAGE)
-                        self.setWindowFlags(Qt.Window)
-                        self.setAttribute(Qt.WA_OpaquePaintEvent)
-                        self.show()
-                    else:
-                        print("Wrong password")
-                        self.ui.label_5.setText("Password does not match")
-                        self.ui.label_5.setStyleSheet("color: red")
+            if (username in root['user']):
+                user = root['user'][username]
+                hashedpass = user.getHashedpass()
+                if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
+                    self.switchPage(DASHBOARD_PAGE)
+                    self.setWindowFlags(Qt.Window)
+                    self.setAttribute(Qt.WA_OpaquePaintEvent)
+                    self.show()
                 else:
-                    print("Username not found")
-                    self.ui.label_5.setText("Username not found")
+                    print("Wrong password")
+                    self.ui.label_5.setText("Password does not match")
                     self.ui.label_5.setStyleSheet("color: red")
-                client.close()
-            except Exception as e:
-                print(e)
+            else:
+                print("Username not found")
+                self.ui.label_5.setText("Username not found")
+                self.ui.label_5.setStyleSheet("color: red")
+            # try:
+            #     uri = mongodb_uri
+            #     # Create a new client and connect to the server
+            #     client = MongoClient(uri, server_api=ServerApi('1'))
+            #     db = client.get_database('MoneyMate')
+            #     # db = client.MoneyMate
+
+            #     userData = db.Username
+            #     query = {"_User__username": username}
+            #     # TODO: query for username, then unhash and check password.
+            #     fetchedData = userData.find_one(query)
+            #     if fetchedData:
+            #         # Compare the hashed password with the provided password
+            #         hashedpass = fetchedData['_User__hashedpass']
+            #         if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
+            #             self.switchPage(DASHBOARD_PAGE)
+            #             self.setWindowFlags(Qt.Window)
+            #             self.setAttribute(Qt.WA_OpaquePaintEvent)
+            #             self.show()
+            #         else:
+            #             print("Wrong password")
+            #             self.ui.label_5.setText("Password does not match")
+            #             self.ui.label_5.setStyleSheet("color: red")
+            #     else:
+            #         print("Username not found")
+            #         self.ui.label_5.setText("Username not found")
+            #         self.ui.label_5.setStyleSheet("color: red")
+            #     client.close()
+            # except Exception as e:
+            #     print(e)
 
     def on_registerButton_clicked(self):
         username = self.ui.lineEditUserRegister.text()
@@ -173,27 +192,43 @@ class loginPage(QWidget):
             self.ui.label_10.setStyleSheet("color: red")
         else:
             if password == confirmpassword:
+                if username in root['user']:
+                    self.ui.label_10.setText("User already exists")
+                    self.ui.label_10.setStyleSheet("color: red")
+                    return
+                tmp = root['user']
                 user = User(username, password)
-                try:
-                    uri = mongodb_uri
-                    # Create a new client and connect to the server
-                    client = MongoClient(uri, server_api=ServerApi('1'))
-                    db = client.get_database('MoneyMate')
-                    # db = client.MoneyMate
-                    userData = db.Username
-                    user1 = user.__dict__
-                    if userData.find_one({"_User__username": user.getUsername()}):
-                        self.ui.label_10.setText("User already exists")
-                        self.ui.label_10.setStyleSheet("color: red")
-                        raise ValueError("User already exists")
+                tmp[username] = user
+                root['user'] = tmp
+                # root['user'][username] = user
+                transaction.commit()
+                conn.close()
+                self.ui.label_10.setText("User created")
+                self.ui.label_10.setStyleSheet("color: green")
 
-                    p_id = userData.insert_one(user1).inserted_id
-                    self.ui.label_10.setText("User created")
-                    self.ui.label_10.setStyleSheet("color: green")
-                    print(p_id)
-                except Exception as e:
-                    print(e)
-                client.close()
+            # if password == confirmpassword:
+
+            #     user = User(username, password)
+            #     try:
+            #         uri = mongodb_uri
+            #         # Create a new client and connect to the server
+            #         client = MongoClient(uri, server_api=ServerApi('1'))
+            #         db = client.get_database('MoneyMate')
+            #         # db = client.MoneyMate
+            #         userData = db.Username
+            #         user1 = user.__dict__
+            #         if userData.find_one({"_User__username": user.getUsername()}):
+            #             self.ui.label_10.setText("User already exists")
+            #             self.ui.label_10.setStyleSheet("color: red")
+            #             raise ValueError("User already exists")
+
+            #         p_id = userData.insert_one(user1).inserted_id
+            #         self.ui.label_10.setText("User created")
+            #         self.ui.label_10.setStyleSheet("color: green")
+            #         print(p_id)
+            #     except Exception as e:
+            #         print(e)
+            #     client.close()
             else:
                 self.ui.label_10.setText("Password does not match")
                 self.ui.label_10.setStyleSheet("color: red")
@@ -253,6 +288,13 @@ class ButtonWithLabels(QWidget):
 
 
 if __name__ == "__main__":
+    storage = ZODB.FileStorage.FileStorage('testdata.fs')
+    db = ZODB.DB(storage)
+    conn = db.open()
+    root = conn.root()
+    if ('user' not in root):
+        root['user'] = {}
+
     app = QApplication(sys.argv)
     loginPage = loginPage()
     loginPage.show()
