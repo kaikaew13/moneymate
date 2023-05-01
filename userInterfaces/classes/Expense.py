@@ -1,4 +1,4 @@
-from Transaction import Transaction
+from classes.Transaction import Transaction
 
 # expense categories (to add more)
 FOOD = 'Food'
@@ -22,10 +22,10 @@ class Expense(Transaction):
 
     def getCategory(self):
         return self.__category
-    
+
     def getName(self):
         return self.__name
-    
+
     def setName(self, name):
         self.__name = name
 
@@ -34,4 +34,3 @@ class Expense(Transaction):
 
     def getDesc(self):
         return self.__desc
-    

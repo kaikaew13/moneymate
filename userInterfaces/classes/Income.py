@@ -1,4 +1,4 @@
-from Transaction import Transaction
+from classes.Transaction import Transaction
 
 
 class Income(Transaction):
@@ -10,15 +10,16 @@ class Income(Transaction):
 
     def setCategory(self, category):
         self.__category = category
+
     def getCategory(self):
         return self.__category
-    
+
     def getName(self):
         return self.__name
-    
+
     def setName(self, name):
         self.__name = name
-    
+
     def setDesc(self, desc):
         self.__desc = desc
 

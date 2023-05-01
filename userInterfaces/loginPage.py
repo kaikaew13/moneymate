@@ -1,5 +1,4 @@
 import sys
-
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from loginPageModule import Ui_Form
@@ -9,18 +8,11 @@ from pymongo.server_api import ServerApi
 import json
 from dotenv import load_dotenv
 import bcrypt
-current_file_path = os.path.abspath(__file__)
-current_dir_path = os.path.dirname(current_file_path)
-classes_dir_path = os.path.join(current_dir_path, 'classes')
-sys.path.append(classes_dir_path)
-
 
 from classes.User import User
 from classes.Goal import Goal
 from classes.Expense import Expense
 from classes.Income import Income
-
-
 
 
 LOGIN_PAGE = 0
@@ -43,15 +35,14 @@ class loginPage(QWidget):
         self.ui = Ui_Form()
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
-        # create a button at stackedwithget index 4 
-        
+        # create a button at stackedwithget index 4
+
         self.ui.setupUi(self)
-        
+
         scroll_widget = self.ui.scrollArea.widget()
         layout = scroll_widget.layout()
         layout.setSpacing(20)  # Set spacing to 0
         layout.setAlignment(Qt.AlignTop)  # Align to top
-
 
         for i in range(50):
             button = QPushButton()
@@ -68,19 +59,25 @@ class loginPage(QWidget):
             button.setLayout(button_layout)
             button.setMinimumHeight(50)  # Set minimum height here
             scroll_widget.layout().addWidget(button)
-        
-        
-        self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_2.clicked.connect(self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_3.clicked.connect(self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_4.clicked.connect(self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_5.clicked.connect(self.on_goDashboardButton_clicked)
-        self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
+
+        self.ui.goDashboardButton.clicked.connect(
+            self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_2.clicked.connect(
+            self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_3.clicked.connect(
+            self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_4.clicked.connect(
+            self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_5.clicked.connect(
+            self.on_goDashboardButton_clicked)
+        self.ui.GoRegisterButton.clicked.connect(
+            self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
         self.ui.addButton.clicked.connect(self.on_addButton_clicked)
-        self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
+        self.ui.saveTransButton.clicked.connect(
+            self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
         self.ui.goTransButton.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_2.clicked.connect(self.on_gotransButton_clicked)
@@ -92,25 +89,30 @@ class loginPage(QWidget):
         self.ui.goGoalButton_3.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_4.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_5.clicked.connect(self.on_gogoalButton_clicked)
-        self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_3.clicked.connect(self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_4.clicked.connect(self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton.clicked.connect(
+            self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_2.clicked.connect(
+            self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_3.clicked.connect(
+            self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_4.clicked.connect(
+            self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_5.clicked.connect(
+            self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
 
-    
     def on_logoutButton_clicked(self):
         self.switchPage(LOGIN_PAGE)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.show()
-        
 
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
+
     def on_gogoalButton_clicked(self):
         self.switchPage(GOAL_PAGE)
+
     def on_goregisterButton_clicked(self):
         self.switchPage(REGISTER_PAGE)
         self.ui.label_5.setText("Money Mate")
@@ -123,10 +125,6 @@ class loginPage(QWidget):
 
     def on_goDashboardButton_clicked(self):
         self.switchPage(DASHBOARD_PAGE)
-
-
-
-
 
     def on_loginButton_clicked(self):
         username = self.ui.lineEditUserLogin.text()
@@ -203,17 +201,15 @@ class loginPage(QWidget):
     def on_goDashboardButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
-
     def on_addButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
+
     def on_saveTransactionButton_clicked(self):
         transName = self.ui.transnameLineEdit.text()
         transCat = self.ui.catLineEdit.text()
         transAmount = self.ui.transamountLineEdit.text()
         transDesc = self.ui.transDesc.toPlainText()
-        
 
-        
         if self.ui.income_radio.isChecked():
             inc = Income(transName, transAmount, transCat, transDesc)
             # TODO: save Income to a transaction list in database
@@ -226,8 +222,6 @@ class loginPage(QWidget):
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(4)
 
-
-
     def on_savegoalButton_clicked(self):
         goalName = self.ui.goalnameLineEdit.text()
         goalAmount = self.ui.goalamountLineEdit.text()
@@ -237,6 +231,7 @@ class loginPage(QWidget):
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
+
 
 class ButtonWithLabels(QWidget):
     def __init__(self, parent=None):
