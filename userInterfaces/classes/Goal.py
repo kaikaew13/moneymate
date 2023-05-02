@@ -1,5 +1,5 @@
 class Goal:
-    def __init__(self, title, amount,desc):
+    def __init__(self, title, amount, desc):
         self.__title = title
         self.__amount = amount
         self.__desc = desc
@@ -15,12 +15,15 @@ class Goal:
 
     def getAmount(self):
         return self.__amount
+
     def setDesc(self, desc):
         self.__desc = desc
+
     def getDesc(self):
         return self.__desc
 
+
 if __name__ == "__main__":
-    goal = Goal("test", 1000,"test")
+    goal = Goal("test", 1000, "test")
     print(goal.getTitle())
     print(goal.getAmount())

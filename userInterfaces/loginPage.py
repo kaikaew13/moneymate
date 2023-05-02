@@ -32,9 +32,11 @@ mongodb_uri = os.getenv('MONGODB_URI')
 
 
 class loginPage(QWidget):
-    def __init__(self):
+    def __init__(self, root, conn):
 
         QWidget.__init__(self, None)
+        self.root = root
+        self.conn = conn
         self.ui = Ui_Form()
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
@@ -136,8 +138,8 @@ class loginPage(QWidget):
             self.ui.label_5.setText("Please fill in all fields")
             self.ui.label_5.setStyleSheet("color: red")
         else:
-            if (username in root['user']):
-                user = root['user'][username]
+            if (username in self.root['user']):
+                user = self.root['user'][username]
                 hashedpass = user.getHashedpass()
                 if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
                     self.switchPage(DASHBOARD_PAGE)
@@ -192,17 +194,17 @@ class loginPage(QWidget):
             self.ui.label_10.setStyleSheet("color: red")
         else:
             if password == confirmpassword:
-                if username in root['user']:
+                if username in self.root['user']:
                     self.ui.label_10.setText("User already exists")
                     self.ui.label_10.setStyleSheet("color: red")
                     return
-                tmp = root['user']
+                tmp = self.root['user']
                 user = User(username, password)
                 tmp[username] = user
-                root['user'] = tmp
-                # root['user'][username] = user
+                self.root['user'] = tmp
+                # self.root['user'][username] = user
                 transaction.commit()
-                conn.close()
+                self.conn.close()
                 self.ui.label_10.setText("User created")
                 self.ui.label_10.setStyleSheet("color: green")
 
@@ -287,15 +289,15 @@ class ButtonWithLabels(QWidget):
         self.label2.setText(text)
 
 
-if __name__ == "__main__":
-    storage = ZODB.FileStorage.FileStorage('testdata.fs')
-    db = ZODB.DB(storage)
-    conn = db.open()
-    root = conn.root()
-    if ('user' not in root):
-        root['user'] = {}
+# if __name__ == "__main__":
+#     storage = ZODB.FileStorage.FileStorage('testdata.fs')
+#     db = ZODB.DB(storage)
+#     conn = db.open()
+#     root = conn.root()
+#     if ('user' not in root):
+#         root['user'] = {}
 
-    app = QApplication(sys.argv)
-    loginPage = loginPage()
-    loginPage.show()
-    sys.exit(app.exec())
+#     app = QApplication(sys.argv)
+#     loginPage = loginPage()
+#     loginPage.show()
+#     sys.exit(app.exec())
