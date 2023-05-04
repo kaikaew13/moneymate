@@ -45,27 +45,7 @@ class loginPage(QWidget):
 
         self.ui.setupUi(self)
 
-        scroll_widget = self.ui.scrollArea.widget()
-        layout = scroll_widget.layout()
-        layout.setSpacing(20)  # Set spacing to 0
-        layout.setAlignment(Qt.AlignTop)  # Align to top
-
-        if self.curUser:
-            for t in self.curUser.getTransactions():
-                button = QPushButton()
-                button_layout = QHBoxLayout(button)
-
-                left_label = QLabel("Transaction Name")
-                middle_label = QLabel("Transaction Amount")
-                right_label = QLabel("Transaction Date")
-
-                button_layout.addWidget(left_label)
-                button_layout.addWidget(middle_label)
-                button_layout.addWidget(right_label)
-
-                button.setLayout(button_layout)
-                button.setMinimumHeight(50)  # Set minimum height here
-                scroll_widget.layout().addWidget(button)
+        self.update()
 
         self.ui.goDashboardButton.clicked.connect(
             self.on_goDashboardButton_clicked)
@@ -146,6 +126,7 @@ class loginPage(QWidget):
                 hashedpass = user.getHashedpass()
                 if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
                     self.curUser = user
+                    self.update()
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
@@ -208,7 +189,7 @@ class loginPage(QWidget):
                 self.root['user'] = tmp
                 # self.root['user'][username] = user
                 transaction.commit()
-                self.conn.close()
+                # self.conn.close()
                 self.ui.label_10.setText("User created")
                 self.ui.label_10.setStyleSheet("color: green")
 
@@ -252,10 +233,22 @@ class loginPage(QWidget):
         transDesc = self.ui.transDesc.toPlainText()
 
         if self.ui.income_radio.isChecked():
+            tmp = self.root['user']
+            user = tmp[self.curUser.getUsername()]
             inc = Income(transName, transAmount, transCat, transDesc)
+            user.addTransaction(inc)
+            transaction.commit()
+            self.clearScroll()
+            self.update()
             # TODO: save Income to a transaction list in database
         elif self.ui.expense_radio.isChecked():
+            tmp = self.root['user']
+            user = tmp[self.curUser.getUsername()]
             exp = Expense(transName, transAmount, transCat, transDesc)
+            user.addTransaction(exp)
+            transaction.commit()
+            self.clearScroll()
+            self.update()
             # TODO: save Expense to a transaction list in database
         else:
             print("Please select income or expense")
@@ -272,6 +265,33 @@ class loginPage(QWidget):
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
+
+    def clearScroll(self):
+        for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
+            self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
+
+    def update(self):
+        scroll_widget = self.ui.scrollArea.widget()
+        layout = scroll_widget.layout()
+        layout.setSpacing(20)  # Set spacing to 0
+        layout.setAlignment(Qt.AlignTop)  # Align to top
+
+        if self.curUser:
+            for t in self.curUser.getTransactions():
+                button = QPushButton()
+                button_layout = QHBoxLayout(button)
+
+                left_label = QLabel(t.getName())
+                middle_label = QLabel(str(t.getAmount()))
+                right_label = QLabel(str(t.getDate()))
+
+                button_layout.addWidget(left_label)
+                button_layout.addWidget(middle_label)
+                button_layout.addWidget(right_label)
+
+                button.setLayout(button_layout)
+                button.setMinimumHeight(50)  # Set minimum height here
+                scroll_widget.layout().addWidget(button)
 
 
 class ButtonWithLabels(QWidget):

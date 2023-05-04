@@ -1,3 +1,5 @@
+import persistent
+
 from classes.Transaction import Transaction
 
 # expense categories (to add more)
@@ -10,7 +12,7 @@ TAX = 'Tax'
 PERSONAL = 'Personal'
 
 
-class Expense(Transaction):
+class Expense(Transaction, persistent.Persistent):
     def __init__(self, name, amount, category, desc=''):
         super().__init__(amount)
         self.__name = name

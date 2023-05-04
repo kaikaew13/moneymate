@@ -1,10 +1,11 @@
 import uuid
 from datetime import datetime
+import persistent
 
 
-class Transaction:
+class Transaction (persistent.Persistent):
     def __init__(self, amount=0, date=datetime.now()):
-    
+
         self.__amount = amount
         self.__date = datetime.now()
         # generate random uuid

@@ -1,7 +1,9 @@
+import persistent
+
 from classes.Transaction import Transaction
 
 
-class Income(Transaction):
+class Income(Transaction, persistent.Persistent):
     def __init__(self, name, amount, category, desc=''):
         super().__init__(amount)
         self.__category = category
