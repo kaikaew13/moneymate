@@ -27,11 +27,16 @@ class User(persistent.Persistent):
     def getHashedpass(self):
         return self.__hashedpass
 
+    def getTransactions(self):
+        return self.__transactions
+
     def addTransaction(self, transaction):
         self.__transactions.append(transaction)
+        self._p_changed = True
 
     def addGoal(self, goal):
         self.__goal.append(goal)
+        self._p_changed = True
 
 # if __name__ == "__main__":
 #     user = "test"

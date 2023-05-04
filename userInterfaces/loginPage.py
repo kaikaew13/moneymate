@@ -35,6 +35,7 @@ class loginPage(QWidget):
     def __init__(self, root, conn):
 
         QWidget.__init__(self, None)
+        self.curUser: User = None
         self.root = root
         self.conn = conn
         self.ui = Ui_Form()
@@ -49,21 +50,22 @@ class loginPage(QWidget):
         layout.setSpacing(20)  # Set spacing to 0
         layout.setAlignment(Qt.AlignTop)  # Align to top
 
-        for i in range(50):
-            button = QPushButton()
-            button_layout = QHBoxLayout(button)
+        if self.curUser:
+            for t in self.curUser.getTransactions():
+                button = QPushButton()
+                button_layout = QHBoxLayout(button)
 
-            left_label = QLabel("Transaction Name")
-            middle_label = QLabel("Transaction Amount")
-            right_label = QLabel("Transaction Date")
+                left_label = QLabel("Transaction Name")
+                middle_label = QLabel("Transaction Amount")
+                right_label = QLabel("Transaction Date")
 
-            button_layout.addWidget(left_label)
-            button_layout.addWidget(middle_label)
-            button_layout.addWidget(right_label)
+                button_layout.addWidget(left_label)
+                button_layout.addWidget(middle_label)
+                button_layout.addWidget(right_label)
 
-            button.setLayout(button_layout)
-            button.setMinimumHeight(50)  # Set minimum height here
-            scroll_widget.layout().addWidget(button)
+                button.setLayout(button_layout)
+                button.setMinimumHeight(50)  # Set minimum height here
+                scroll_widget.layout().addWidget(button)
 
         self.ui.goDashboardButton.clicked.connect(
             self.on_goDashboardButton_clicked)
@@ -107,6 +109,7 @@ class loginPage(QWidget):
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
 
     def on_logoutButton_clicked(self):
+        self.curUser = None
         self.switchPage(LOGIN_PAGE)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
@@ -142,6 +145,7 @@ class loginPage(QWidget):
                 user = self.root['user'][username]
                 hashedpass = user.getHashedpass()
                 if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
+                    self.curUser = user
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
