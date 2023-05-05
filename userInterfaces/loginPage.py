@@ -28,12 +28,11 @@ USER_PAGE = 6
 
 
 load_dotenv()
-mongodb_uri = os.getenv('MONGODB_URI')
+mongodb_uri = os.getenv("MONGODB_URI")
 
 
 class loginPage(QWidget):
     def __init__(self, root, conn):
-
         QWidget.__init__(self, None)
         self.curUser: User = None
         self.root = root
@@ -45,26 +44,19 @@ class loginPage(QWidget):
 
         self.ui.setupUi(self)
 
-        self.update()
+        self.updateScroll()
 
-        self.ui.goDashboardButton.clicked.connect(
-            self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_2.clicked.connect(
-            self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_3.clicked.connect(
-            self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_4.clicked.connect(
-            self.on_goDashboardButton_clicked)
-        self.ui.goDashboardButton_5.clicked.connect(
-            self.on_goDashboardButton_clicked)
-        self.ui.GoRegisterButton.clicked.connect(
-            self.on_goregisterButton_clicked)
+        self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_2.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_3.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_4.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_5.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
         self.ui.addButton.clicked.connect(self.on_addButton_clicked)
-        self.ui.saveTransButton.clicked.connect(
-            self.on_saveTransactionButton_clicked)
+        self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
         self.ui.goTransButton.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_2.clicked.connect(self.on_gotransButton_clicked)
@@ -76,16 +68,11 @@ class loginPage(QWidget):
         self.ui.goGoalButton_3.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_4.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_5.clicked.connect(self.on_gogoalButton_clicked)
-        self.ui.goAccountButton.clicked.connect(
-            self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_2.clicked.connect(
-            self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_3.clicked.connect(
-            self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_4.clicked.connect(
-            self.on_goaccountButton_clicked)
-        self.ui.goAccountButton_5.clicked.connect(
-            self.on_goaccountButton_clicked)
+        self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_3.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_4.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
 
     def on_logoutButton_clicked(self):
@@ -121,12 +108,12 @@ class loginPage(QWidget):
             self.ui.label_5.setText("Please fill in all fields")
             self.ui.label_5.setStyleSheet("color: red")
         else:
-            if (username in self.root['user']):
-                user = self.root['user'][username]
+            if username in self.root["user"]:
+                user = self.root["user"][username]
                 hashedpass = user.getHashedpass()
-                if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
+                if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
                     self.curUser = user
-                    self.update()
+                    self.updateScroll()
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
@@ -179,14 +166,14 @@ class loginPage(QWidget):
             self.ui.label_10.setStyleSheet("color: red")
         else:
             if password == confirmpassword:
-                if username in self.root['user']:
+                if username in self.root["user"]:
                     self.ui.label_10.setText("User already exists")
                     self.ui.label_10.setStyleSheet("color: red")
                     return
-                tmp = self.root['user']
+                tmp = self.root["user"]
                 user = User(username, password)
                 tmp[username] = user
-                self.root['user'] = tmp
+                self.root["user"] = tmp
                 # self.root['user'][username] = user
                 transaction.commit()
                 # self.conn.close()
@@ -224,7 +211,7 @@ class loginPage(QWidget):
         self.ui.stackedWidget.setCurrentIndex(2)
 
     def on_addButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(3)
+        self.switchPage(ADD_PAGE)
 
     def on_saveTransactionButton_clicked(self):
         transName = self.ui.transnameLineEdit.text()
@@ -233,22 +220,20 @@ class loginPage(QWidget):
         transDesc = self.ui.transDesc.toPlainText()
 
         if self.ui.income_radio.isChecked():
-            tmp = self.root['user']
+            tmp = self.root["user"]
             user = tmp[self.curUser.getUsername()]
             inc = Income(transName, transAmount, transCat, transDesc)
             user.addTransaction(inc)
             transaction.commit()
-            self.clearScroll()
-            self.update()
+            self.updateScroll()
             # TODO: save Income to a transaction list in database
         elif self.ui.expense_radio.isChecked():
-            tmp = self.root['user']
+            tmp = self.root["user"]
             user = tmp[self.curUser.getUsername()]
             exp = Expense(transName, transAmount, transCat, transDesc)
             user.addTransaction(exp)
             transaction.commit()
-            self.clearScroll()
-            self.update()
+            self.updateScroll()
             # TODO: save Expense to a transaction list in database
         else:
             print("Please select income or expense")
@@ -260,17 +245,19 @@ class loginPage(QWidget):
         goalName = self.ui.goalnameLineEdit.text()
         goalAmount = self.ui.goalamountLineEdit.text()
         goalDesc = self.ui.GoalDesc.toPlainText()
+        tmp = self.root["user"]
+        user = tmp[self.curUser.getUsername()]
         goal = Goal(goalName, goalAmount, goalDesc)
+        user.addGoal(goal)
+        transaction.commit()
         # TODO: save goal to a goal list in database
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
 
-    def clearScroll(self):
+    def updateScroll(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
             self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
-
-    def update(self):
         scroll_widget = self.ui.scrollArea.widget()
         layout = scroll_widget.layout()
         layout.setSpacing(20)  # Set spacing to 0
