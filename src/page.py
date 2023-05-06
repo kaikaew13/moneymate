@@ -126,6 +126,7 @@ class Page(QWidget):
                 print("Username not found")
                 self.ui.label_5.setText("Username not found")
                 self.ui.label_5.setStyleSheet("color: red")
+            self.ui.lineEditPassLogin.setText("")
             # try:
             #     uri = mongodb_uri
             #     # Create a new client and connect to the server
@@ -169,6 +170,9 @@ class Page(QWidget):
                 if username in self.root["user"]:
                     self.ui.label_10.setText("User already exists")
                     self.ui.label_10.setStyleSheet("color: red")
+                    self.ui.lineEditUserRegister.setText("")
+                    self.ui.lineEditUserPassword.setText("")
+                    self.ui.lineEditUserPassword_2.setText("")
                     return
                 tmp = self.root["user"]
                 user = User(username, password)
@@ -206,6 +210,9 @@ class Page(QWidget):
             else:
                 self.ui.label_10.setText("Password does not match")
                 self.ui.label_10.setStyleSheet("color: red")
+        self.ui.lineEditUserRegister.setText("")
+        self.ui.lineEditUserPassword.setText("")
+        self.ui.lineEditUserPassword_2.setText("")
 
     def on_goDashboardButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(2)
