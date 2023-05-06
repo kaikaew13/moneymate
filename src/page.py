@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
-from loginPageModule import Ui_Form
+from pageModule import Ui_Form
 import os
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -31,7 +31,7 @@ load_dotenv()
 mongodb_uri = os.getenv("MONGODB_URI")
 
 
-class loginPage(QWidget):
+class Page(QWidget):
     def __init__(self, root, conn):
         QWidget.__init__(self, None)
         self.curUser: User = None
