@@ -266,18 +266,32 @@ class Page(QWidget):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
             self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
         scroll_widget = self.ui.scrollArea.widget()
+        scroll_widget.setStyleSheet("background-color: rgb(248, 248, 248);")
         layout = scroll_widget.layout()
-        layout.setSpacing(20)  # Set spacing to 0
-        layout.setAlignment(Qt.AlignTop)  # Align to top
+        layout.setSpacing(0)  # Set spacing to 0
+        layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
             for t in self.curUser.getTransactions():
                 button = QPushButton()
+                button.setObjectName("myButton")  # Set object name
+
+                # Apply style using object name
+                button.setStyleSheet("""
+                #myButton {
+                    border: 1px solid black;
+                }
+                #myButton:pressed {
+                    background-color: rgb(192, 192, 192);
+                }
+                """)
+
+
                 button_layout = QHBoxLayout(button)
 
-                left_label = QLabel(t.getName())
-                middle_label = QLabel(str(t.getAmount()))
-                right_label = QLabel(str(t.getDate()))
+                left_label = QLabel(t.getName(), button)  # Set button as parent
+                middle_label = QLabel(str(t.getAmount()), button)  # Set button as parent
+                right_label = QLabel(str(t.getDate()), button)  # Set button as parent
 
                 button_layout.addWidget(left_label)
                 button_layout.addWidget(middle_label)
@@ -285,7 +299,13 @@ class Page(QWidget):
 
                 button.setLayout(button_layout)
                 button.setMinimumHeight(50)  # Set minimum height here
+
+                # Add bottom border to the button
+
+
                 scroll_widget.layout().addWidget(button)
+
+
 
 
 class ButtonWithLabels(QWidget):
