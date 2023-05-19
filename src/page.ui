@@ -3387,19 +3387,6 @@ QPushButton#goTransButton_3:hover {
        <string>Transaction</string>
       </property>
      </widget>
-     <widget class="Line" name="line_3">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>150</y>
-        <width>731</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
      <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
        <rect>
@@ -3447,10 +3434,13 @@ QPushButton#goTransButton_3:hover {
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>190</y>
-        <width>691</width>
-        <height>31</height>
+        <y>180</y>
+        <width>701</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
       </property>
       <widget class="QLabel" name="label_19">
        <property name="geometry">
@@ -3491,6 +3481,32 @@ QPushButton#goTransButton_3:hover {
         <string>Transaction Amount</string>
        </property>
       </widget>
+      <widget class="Line" name="line_6">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>721</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>40</y>
+         <width>741</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
      </widget>
      <widget class="QLabel" name="label_22">
       <property name="geometry">
@@ -3515,7 +3531,6 @@ QPushButton#goTransButton_3:hover {
      <zorder>tabsButton_3</zorder>
      <zorder>goTransButton_3</zorder>
      <zorder>label_18</zorder>
-     <zorder>line_3</zorder>
      <zorder>closeButton_5</zorder>
      <zorder>goAccountButton_3</zorder>
      <zorder>goDashboardButton_3</zorder>

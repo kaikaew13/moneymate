@@ -266,7 +266,7 @@ class Page(QWidget):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
             self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
         scroll_widget = self.ui.scrollArea.widget()
-        scroll_widget.setStyleSheet("background-color: rgb(248, 248, 248);")
+        scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
         layout = scroll_widget.layout()
         layout.setSpacing(0)  # Set spacing to 0
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
