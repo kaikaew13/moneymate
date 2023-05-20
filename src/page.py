@@ -246,7 +246,7 @@ class Page(QWidget):
             print("Please select income or expense")
 
     def on_gotransButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(4)
+        self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
 
     def on_savegoalButton_clicked(self):
         goalName = self.ui.goalnameLineEdit.text()
@@ -277,20 +277,25 @@ class Page(QWidget):
                 button.setObjectName("myButton")  # Set object name
 
                 # Apply style using object name
-                button.setStyleSheet("""
+                button.setStyleSheet(
+                    """
                 #myButton {
                     border: 1px solid black;
                 }
                 #myButton:pressed {
                     background-color: rgb(192, 192, 192);
                 }
-                """)
-
+                """
+                )
 
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(t.getName(), button)  # Set button as parent
-                middle_label = QLabel(str(t.getAmount()), button)  # Set button as parent
+                middle_label = QLabel(
+                    str(t.getAmount()), button
+                )  # Set button as parent
+                textColor = "green" if isinstance(t, Income) else "red"
+                middle_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
                 right_label = QLabel(str(t.getDate()), button)  # Set button as parent
 
                 button_layout.addWidget(left_label)
@@ -302,10 +307,7 @@ class Page(QWidget):
 
                 # Add bottom border to the button
 
-
                 scroll_widget.layout().addWidget(button)
-
-
 
 
 class ButtonWithLabels(QWidget):
