@@ -43,7 +43,7 @@ class Page(QWidget):
         # create a button at stackedwithget index 4
 
         self.ui.setupUi(self)
-        self.updateScroll()
+        # self.updateScroll()
 
         self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_2.clicked.connect(self.on_goDashboardButton_clicked)
@@ -112,8 +112,9 @@ class Page(QWidget):
                 hashedpass = user.getHashedpass()
                 if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
                     self.curUser = user
-                    self.updateScroll()
-                    self.updateDashboard()
+                    self.updateDynamicComponent()
+                    # self.updateScroll()
+                    # self.updateDashboard()
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
@@ -229,8 +230,9 @@ class Page(QWidget):
             inc = Income(transName, transAmount, transCat, transDesc)
             user.addTransaction(inc)
             transaction.commit()
-            self.updateScroll()
-            self.updateDashboard()
+            self.updateDynamicComponent()
+            # self.updateScroll()
+            # self.updateDashboard()
             # TODO: save Income to a transaction list in database
         elif self.ui.expense_radio.isChecked():
             tmp = self.root["user"]
@@ -238,8 +240,9 @@ class Page(QWidget):
             exp = Expense(transName, transAmount, transCat, transDesc)
             user.addTransaction(exp)
             transaction.commit()
-            self.updateScroll()
-            self.updateDashboard()
+            self.updateDynamicComponent()
+            # self.updateScroll()
+            # self.updateDashboard()
             # TODO: save Expense to a transaction list in database
         else:
             print("Please select income or expense")
@@ -262,7 +265,12 @@ class Page(QWidget):
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
 
-    def updateDashboard(self):
+    # calls update on every page
+    def updateDynamicComponent(self):
+        self.updateDashboardPage()
+        self.updateTransactionPage()
+
+    def updateDashboardPage(self):
         self.ui.currentBalanceLabel.setText(
             str("{:.2f}".format(self.curUser.getCurrentBalance()))
         )
@@ -276,7 +284,7 @@ class Page(QWidget):
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
         self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getWeeklySpent())))
 
-    def updateScroll(self):
+    def updateTransactionPage(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
             self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
         scroll_widget = self.ui.scrollArea.widget()
