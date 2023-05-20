@@ -274,7 +274,7 @@ class Page(QWidget):
             else "black"
         )
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
-        self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getCurrentSpent())))
+        self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getWeeklySpent())))
 
     def updateScroll(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):

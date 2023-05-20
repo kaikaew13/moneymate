@@ -1,5 +1,6 @@
 import bcrypt
 import persistent
+from datetime import timedelta, datetime
 
 from classes.Expense import Expense
 
@@ -48,10 +49,13 @@ class User(persistent.Persistent):
                 balance += t.getAmount()
         return balance
 
-    def getCurrentSpent(self):
+    def getWeeklySpent(self):
         spent = 0
+        # get time rn minus 6 days
+        lastweekDate = datetime.now() - timedelta(days=6)
+        print(lastweekDate)
         for t in self.__transactions:
-            if isinstance(t, Expense):
+            if isinstance(t, Expense) and t.getDate() >= lastweekDate:
                 spent += t.getAmount()
         return spent
 
