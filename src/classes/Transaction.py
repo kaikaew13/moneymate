@@ -3,16 +3,15 @@ from datetime import datetime
 import persistent
 
 
-class Transaction (persistent.Persistent):
+class Transaction(persistent.Persistent):
     def __init__(self, amount=0, date=datetime.now()):
-
         self.__amount = amount
         self.__date = datetime.now()
         # generate random uuid
         self.__id = uuid.uuid4()
 
     def getAmount(self):
-        return self.__amount
+        return float(self.__amount)
 
     def setAmount(self, amount):
         self.__amount = amount

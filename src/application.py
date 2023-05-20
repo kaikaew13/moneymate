@@ -5,7 +5,6 @@ from page import Page
 import ZODB.FileStorage
 import ZODB
 
-
 if __name__ == "__main__":
     storage = ZODB.FileStorage.FileStorage("testdata.fs")
     db = ZODB.DB(storage)

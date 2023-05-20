@@ -627,7 +627,7 @@ QPushButton#goSigninButton:pressed {
        <height>771</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_29">
+     <widget class="QLabel" name="currentBalanceLabel">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -693,7 +693,7 @@ QPushButton#goSigninButton:pressed {
        <string>AmountLabel1</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_39">
+     <widget class="QLabel" name="availableBalanceLabel">
       <property name="geometry">
        <rect>
         <x>570</x>
@@ -1635,7 +1635,7 @@ QPushButton#closeButton_3:hover {
        <string>DateLabel8</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_58">
+     <widget class="QLabel" name="spentLabel">
       <property name="geometry">
        <rect>
         <x>820</x>
@@ -2208,11 +2208,11 @@ QPushButton#goTransButton:hover {
      <zorder>label_57</zorder>
      <zorder>label_53</zorder>
      <zorder>label_41</zorder>
-     <zorder>label_29</zorder>
+     <zorder>currentBalanceLabel</zorder>
      <zorder>line_13</zorder>
      <zorder>CatLabel5</zorder>
      <zorder>AmountLabel1</zorder>
-     <zorder>label_39</zorder>
+     <zorder>availableBalanceLabel</zorder>
      <zorder>label_40</zorder>
      <zorder>DesLabel9</zorder>
      <zorder>label_42</zorder>
@@ -2255,7 +2255,7 @@ QPushButton#goTransButton:hover {
      <zorder>label_56</zorder>
      <zorder>DesLabel2</zorder>
      <zorder>DateLabel8</zorder>
-     <zorder>label_58</zorder>
+     <zorder>spentLabel</zorder>
      <zorder>CatLabel10</zorder>
      <zorder>label_59</zorder>
      <zorder>AmountLabel3</zorder>

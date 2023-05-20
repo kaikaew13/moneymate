@@ -43,7 +43,6 @@ class Page(QWidget):
         # create a button at stackedwithget index 4
 
         self.ui.setupUi(self)
-
         self.updateScroll()
 
         self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)
@@ -114,6 +113,7 @@ class Page(QWidget):
                 if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
                     self.curUser = user
                     self.updateScroll()
+                    self.updateDashboard()
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
@@ -214,9 +214,6 @@ class Page(QWidget):
         self.ui.lineEditUserPassword.setText("")
         self.ui.lineEditUserPassword_2.setText("")
 
-    def on_goDashboardButton_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(2)
-
     def on_addButton_clicked(self):
         self.switchPage(ADD_PAGE)
 
@@ -233,6 +230,7 @@ class Page(QWidget):
             user.addTransaction(inc)
             transaction.commit()
             self.updateScroll()
+            self.updateDashboard()
             # TODO: save Income to a transaction list in database
         elif self.ui.expense_radio.isChecked():
             tmp = self.root["user"]
@@ -241,9 +239,11 @@ class Page(QWidget):
             user.addTransaction(exp)
             transaction.commit()
             self.updateScroll()
+            self.updateDashboard()
             # TODO: save Expense to a transaction list in database
         else:
             print("Please select income or expense")
+        self.switchPage(TRANSACTION_PAGE)
 
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
@@ -261,6 +261,20 @@ class Page(QWidget):
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
+
+    def updateDashboard(self):
+        self.ui.currentBalanceLabel.setText(
+            str("{:.2f}".format(self.curUser.getCurrentBalance()))
+        )
+        textColor = (
+            "green"
+            if self.curUser.getCurrentBalance() > 0
+            else "red"
+            if self.curUser.getCurrentBalance() < 0
+            else "black"
+        )
+        self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
+        self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getCurrentSpent())))
 
     def updateScroll(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
