@@ -4,7 +4,7 @@ import persistent
 
 
 class Transaction(persistent.Persistent):
-    def __init__(self, amount=0, date=datetime.now()):
+    def __init__(self, amount=0):
         self.__amount = amount
         self.__date = datetime.now()
         # generate random uuid

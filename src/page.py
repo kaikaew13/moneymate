@@ -61,8 +61,7 @@ class Page(QWidget):
         self.ui.addButton_3.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_4.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_5.clicked.connect(self.on_addButton_clicked)
-        
-        
+
         self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
 
@@ -73,7 +72,6 @@ class Page(QWidget):
         self.ui.goTransButton_5.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_7.clicked.connect(self.on_gotransButton_clicked)
 
-        
         self.ui.goGoalButton.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_2.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_3.clicked.connect(self.on_gogoalButton_clicked)
@@ -98,6 +96,7 @@ class Page(QWidget):
 
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
+
     def on_transaction_clicked(self):
         self.switchPage(TRANSACTIONDETAIL_PAGE)
 
@@ -235,7 +234,6 @@ class Page(QWidget):
     def on_addButton_clicked(self):
         self.switchPage(ADD_PAGE)
 
-
     def on_saveTransactionButton_clicked(self):
         transName = self.ui.transnameLineEdit.text()
         transCat = self.ui.catLineEdit.text()
@@ -278,6 +276,7 @@ class Page(QWidget):
         goal = Goal(goalName, goalAmount, goalDesc)
         user.addGoal(goal)
         transaction.commit()
+        self.updateDynamicComponent()
         # TODO: save goal to a goal list in database
 
     def switchPage(self, page):
@@ -287,8 +286,8 @@ class Page(QWidget):
     def updateDynamicComponent(self):
         self.updateDashboardPage()
         self.updateTransactionPage()
+        self.updateGoalPage()
         self.UpdatelogoutPage()
-
 
     def updateDashboardPage(self):
         self.ui.currentBalanceLabel.setText(
@@ -347,7 +346,51 @@ class Page(QWidget):
                 button.setMinimumHeight(50)  # Set minimum height here
 
                 # Add bottom border to the button
-                button.clicked.connect(self.on_transaction_clicked) 
+                button.clicked.connect(self.on_transaction_clicked)
+                scroll_widget.layout().addWidget(button)
+
+    def updateGoalPage(self):
+        for i in reversed(range(self.ui.scrollArea_3.widget().layout().count())):
+            self.ui.scrollArea_3.widget().layout().itemAt(i).widget().setParent(None)
+        scroll_widget = self.ui.scrollArea_3.widget()
+        scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        layout = scroll_widget.layout()
+        layout.setSpacing(0)  # Set spacing to 0
+        layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
+
+        if self.curUser:
+            for g in self.curUser.getGoals():
+                button = QPushButton()
+                button.setObjectName("myButton")  # Set object name
+
+                button.setStyleSheet(
+                    """
+                #myButton {
+                    border: 1px solid black;
+                }
+                #myButton:pressed {
+                    background-color: rgb(192, 192, 192);
+                }
+                """
+                )
+
+                button_layout = QHBoxLayout(button)
+
+                left_label = QLabel(g.getName(), button)  # Set button as parent
+                middle_label = QLabel(
+                    str(g.getAmount()), button
+                )  # Set button as parent
+                right_label = QLabel(g.getDesc(), button)  # Set button as parent
+
+                button_layout.addWidget(left_label)
+                button_layout.addWidget(middle_label)
+                button_layout.addWidget(right_label)
+
+                button.setLayout(button_layout)
+                button.setMinimumHeight(50)  # Set minimum height here
+
+                # Add bottom border to the button
+                button.clicked.connect(self.on_transaction_clicked)
                 scroll_widget.layout().addWidget(button)
 
     def UpdatelogoutPage(self):
