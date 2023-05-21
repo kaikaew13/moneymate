@@ -16,6 +16,7 @@ class User(persistent.Persistent):
         self.__hashedpass = bcrypt.hashpw(b, User.salt)
         self.__transactions = []
         self.__goals = []
+        self.__budget = 2500
         # start session and assign session id?
         # store user info into database
         print("User created")
@@ -56,6 +57,12 @@ class User(persistent.Persistent):
     def getGoals(self):
         return self.__goals
 
+    def setBudget(self, budget):
+        self.__budget = budget
+
+    def getBudget(self):
+        return self.__budget
+
     def getCurrentBalance(self):
         balance = 0
         for t in self.__transactions:
@@ -73,22 +80,26 @@ class User(persistent.Persistent):
                 transaction.setCategory(category)
                 transaction.setDesc(description)
                 print(transaction.getName())
-                
+
                 self._p_changed = True
                 print("Transaction edited")
                 return True
         return False
 
+    # starts counting from closest Monday
     def getWeeklySpent(self):
         spent = 0
         # get time rn minus 6 days
-        lastweekDate = datetime.now() - timedelta(days=6)
-        print(lastweekDate)
+        monday = datetime.now()
+        for i in range(0, 7):
+            if (monday - timedelta(days=i)).weekday() == 0:
+                monday -= timedelta(days=i)
+                break
         for t in self.__transactions:
-            if isinstance(t, Expense) and t.getDate() >= lastweekDate:
+            print(t.getDate())
+            if isinstance(t, Expense) and t.getDate().date() >= monday.date():
                 spent += t.getAmount()
         return spent
-    
 
 
 # if __name__ == "__main__":

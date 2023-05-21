@@ -387,6 +387,13 @@ class Page(QWidget):
         )
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
         self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getWeeklySpent())))
+        self.ui.budgetLabel.setText(
+            str(
+                "{:.2f}".format(
+                    self.curUser.getBudget() - self.curUser.getWeeklySpent()
+                )
+            )
+        )
 
         for i in reversed(range(self.ui.scrollArea_2.widget().layout().count())):
             self.ui.scrollArea_2.widget().layout().itemAt(i).widget().setParent(None)

@@ -648,7 +648,7 @@ QPushButton#goSigninButton:pressed {
        <string>0</string>
       </property>
      </widget>
-     <widget class="QLabel" name="availableBalanceLabel">
+     <widget class="QLabel" name="budgetLabel">
       <property name="geometry">
        <rect>
         <x>570</x>
@@ -889,7 +889,7 @@ QPushButton#goDashboardButton:pressed {
        <string notr="true">color: rgb(148,148,148);</string>
       </property>
       <property name="text">
-       <string>Goal Total Amount</string>
+       <string>Weekly Budget</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_52">
@@ -990,7 +990,7 @@ QPushButton#closeButton_3:hover {
        <string notr="true">color: rgb(148,148,148);</string>
       </property>
       <property name="text">
-       <string>Spent This Week</string>
+       <string>Weekly Spent</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_55">
@@ -1446,7 +1446,7 @@ QPushButton#addButton:pressed {
      <zorder>label_53</zorder>
      <zorder>label_41</zorder>
      <zorder>currentBalanceLabel</zorder>
-     <zorder>availableBalanceLabel</zorder>
+     <zorder>budgetLabel</zorder>
      <zorder>label_40</zorder>
      <zorder>label_44</zorder>
      <zorder>label_49</zorder>
