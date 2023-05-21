@@ -648,51 +648,6 @@ QPushButton#goSigninButton:pressed {
        <string>0</string>
       </property>
      </widget>
-     <widget class="Line" name="line_13">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>630</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel5">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>530</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel5</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel1">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>370</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel1</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="availableBalanceLabel">
       <property name="geometry">
        <rect>
@@ -814,96 +769,6 @@ QPushButton#goDashboardButton:pressed {
        <string>Dashboard</string>
       </property>
      </widget>
-     <widget class="QLabel" name="DesLabel9">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>690</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel9</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_42">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>330</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(148,148,148);</string>
-      </property>
-      <property name="text">
-       <string>Date</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_43">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>330</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(148,148,148);</string>
-      </property>
-      <property name="text">
-       <string>Category</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel8">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>650</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel8</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel5">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>530</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel5</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_44">
       <property name="geometry">
        <rect>
@@ -926,134 +791,6 @@ QPushButton#goDashboardButton:pressed {
        <string>Current Balance</string>
       </property>
      </widget>
-     <widget class="QLabel" name="DateLabel2">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>410</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel2</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel7">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>610</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel7</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel6">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>570</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel6</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel9">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>690</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel9</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel4">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>490</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel4</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel6">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>570</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel6</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel1">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>370</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel1</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel3">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>450</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel3</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_45">
       <property name="geometry">
        <rect>
@@ -1069,27 +806,6 @@ QPushButton#goDashboardButton:pressed {
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_46">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>330</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(148,148,148);</string>
-      </property>
-      <property name="text">
-       <string>Amount</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_47">
@@ -1114,67 +830,6 @@ QPushButton#goDashboardButton:pressed {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="DateLabel3">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>450</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel3</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel8">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>650</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel8</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel9">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>690</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel9</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_14">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>750</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_48">
       <property name="geometry">
        <rect>
@@ -1197,38 +852,6 @@ QPushButton#goDashboardButton:pressed {
       </property>
       <property name="text">
        <string>Money Mate</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel2">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>410</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel2</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel6">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>570</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel6</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_49">
@@ -1269,69 +892,6 @@ QPushButton#goDashboardButton:pressed {
        <string>Goal Total Amount</string>
       </property>
      </widget>
-     <widget class="QLabel" name="CatLabel4">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>490</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel4</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_15">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>670</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="Line" name="line_16">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>590</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_51">
-      <property name="geometry">
-       <rect>
-        <x>850</x>
-        <y>330</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(148,148,148);</string>
-      </property>
-      <property name="text">
-       <string>Description</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_52">
       <property name="geometry">
        <rect>
@@ -1351,83 +911,6 @@ QPushButton#goDashboardButton:pressed {
       </property>
       <property name="text">
        <string>฿</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel5">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>530</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel5</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_17">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>510</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel4">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>490</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel4</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel1">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>370</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel1</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel10">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>730</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel10</string>
       </property>
      </widget>
      <widget class="QPushButton" name="closeButton_3">
@@ -1488,19 +971,6 @@ QPushButton#closeButton_3:hover {
        <string/>
       </property>
      </widget>
-     <widget class="Line" name="line_18">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>430</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_54">
       <property name="geometry">
        <rect>
@@ -1523,22 +993,6 @@ QPushButton#closeButton_3:hover {
        <string>Spent This Week</string>
       </property>
      </widget>
-     <widget class="QLabel" name="CatLabel6">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>570</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel6</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_55">
       <property name="geometry">
        <rect>
@@ -1553,22 +1007,6 @@ QPushButton#closeButton_3:hover {
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel7">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>610</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel7</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_56">
@@ -1592,22 +1030,6 @@ QPushButton#closeButton_3:hover {
        <string>← User Account</string>
       </property>
      </widget>
-     <widget class="QLabel" name="DesLabel2">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>410</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel2</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_57">
       <property name="geometry">
        <rect>
@@ -1623,22 +1045,6 @@ QPushButton#closeButton_3:hover {
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel8">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>650</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel8</string>
       </property>
      </widget>
      <widget class="QLabel" name="spentLabel">
@@ -1662,22 +1068,6 @@ QPushButton#closeButton_3:hover {
        <string>0</string>
       </property>
      </widget>
-     <widget class="QLabel" name="CatLabel10">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>730</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel10</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_59">
       <property name="geometry">
        <rect>
@@ -1697,54 +1087,6 @@ QPushButton#closeButton_3:hover {
       </property>
       <property name="text">
        <string>฿</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel3">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>450</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel3</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel1">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>370</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel1</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CatLabel2">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>410</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>CatLabel2</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goAccountButton">
@@ -1776,51 +1118,6 @@ QPushButton#goAccountButton:pressed {
       </property>
       <property name="text">
        <string>Account</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_19">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>350</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel9">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>690</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel9</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_60">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>100</y>
-        <width>1021</width>
-        <height>701</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(250,250,250);</string>
-      </property>
-      <property name="text">
-       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_61">
@@ -1897,51 +1194,6 @@ QPushButton#tabsButton:hover {
         <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
-     <widget class="Line" name="line_20">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>550</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel10">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>730</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel10</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="AmountLabel8">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>650</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel8</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_63">
       <property name="geometry">
        <rect>
@@ -1956,83 +1208,6 @@ QPushButton#tabsButton:hover {
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel3">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>450</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel3</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel10">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>730</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel10</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel7">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>610</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel7</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DateLabel7">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>610</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DateLabel7</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_21">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>470</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
      <widget class="QPushButton" name="goTransButton">
@@ -2082,38 +1257,6 @@ QPushButton#goTransButton:pressed {
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="AmountLabel4">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>490</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>AmountLabel4</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="DesLabel5">
-      <property name="geometry">
-       <rect>
-        <x>860</x>
-        <y>530</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0,0,0);</string>
-      </property>
-      <property name="text">
-       <string>DesLabel5</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_65">
       <property name="geometry">
        <rect>
@@ -2134,20 +1277,7 @@ QPushButton#goTransButton:pressed {
        <string notr="true">color: rgb(0,0,0);</string>
       </property>
       <property name="text">
-       <string>Account Transaction:</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line_22">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>390</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <string>Recent Transactions:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_66">
@@ -2161,35 +1291,6 @@ QPushButton#goTransButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/pics/images/home.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="Line" name="line_23">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>710</y>
-        <width>751</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="bg">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>310</y>
-        <width>731</width>
-        <height>451</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255,255,255);</string>
       </property>
       <property name="text">
        <string/>
@@ -2232,86 +1333,134 @@ QPushButton#addButton:pressed {
        <string>Add a Transaction / Goal</string>
       </property>
      </widget>
-     <zorder>label_60</zorder>
+     <widget class="QWidget" name="widget_13" native="true">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>300</y>
+        <width>701</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Transaction Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>10</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Transaction Date</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>10</y>
+         <width>131</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Transaction Amount</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_7">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>721</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_8">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>40</y>
+         <width>741</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>340</y>
+        <width>701</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,240,240)</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>699</width>
+         <height>179</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      </widget>
+     </widget>
      <zorder>label_63</zorder>
      <zorder>goDashboardButton</zorder>
-     <zorder>bg</zorder>
      <zorder>label_45</zorder>
      <zorder>label_64</zorder>
      <zorder>label_57</zorder>
      <zorder>label_53</zorder>
      <zorder>label_41</zorder>
      <zorder>currentBalanceLabel</zorder>
-     <zorder>line_13</zorder>
-     <zorder>CatLabel5</zorder>
-     <zorder>AmountLabel1</zorder>
      <zorder>availableBalanceLabel</zorder>
      <zorder>label_40</zorder>
-     <zorder>DesLabel9</zorder>
-     <zorder>label_42</zorder>
-     <zorder>label_43</zorder>
-     <zorder>DesLabel8</zorder>
-     <zorder>DateLabel5</zorder>
      <zorder>label_44</zorder>
-     <zorder>DateLabel2</zorder>
-     <zorder>CatLabel7</zorder>
-     <zorder>AmountLabel6</zorder>
-     <zorder>AmountLabel9</zorder>
-     <zorder>DesLabel4</zorder>
-     <zorder>DateLabel6</zorder>
-     <zorder>DateLabel1</zorder>
-     <zorder>CatLabel3</zorder>
-     <zorder>label_46</zorder>
-     <zorder>DateLabel3</zorder>
-     <zorder>CatLabel8</zorder>
-     <zorder>CatLabel9</zorder>
-     <zorder>line_14</zorder>
-     <zorder>AmountLabel2</zorder>
-     <zorder>DesLabel6</zorder>
      <zorder>label_49</zorder>
      <zorder>label_50</zorder>
-     <zorder>CatLabel4</zorder>
-     <zorder>line_15</zorder>
-     <zorder>line_16</zorder>
-     <zorder>label_51</zorder>
      <zorder>label_52</zorder>
-     <zorder>AmountLabel5</zorder>
-     <zorder>line_17</zorder>
-     <zorder>DateLabel4</zorder>
-     <zorder>DesLabel1</zorder>
-     <zorder>DateLabel10</zorder>
-     <zorder>line_18</zorder>
      <zorder>label_54</zorder>
-     <zorder>CatLabel6</zorder>
      <zorder>label_55</zorder>
-     <zorder>AmountLabel7</zorder>
      <zorder>label_56</zorder>
-     <zorder>DesLabel2</zorder>
-     <zorder>DateLabel8</zorder>
      <zorder>spentLabel</zorder>
-     <zorder>CatLabel10</zorder>
      <zorder>label_59</zorder>
-     <zorder>AmountLabel3</zorder>
-     <zorder>CatLabel1</zorder>
-     <zorder>CatLabel2</zorder>
-     <zorder>line_19</zorder>
-     <zorder>DateLabel9</zorder>
      <zorder>tabsButton</zorder>
-     <zorder>line_20</zorder>
-     <zorder>AmountLabel10</zorder>
-     <zorder>AmountLabel8</zorder>
-     <zorder>DesLabel3</zorder>
-     <zorder>DesLabel10</zorder>
-     <zorder>DesLabel7</zorder>
-     <zorder>DateLabel7</zorder>
-     <zorder>line_21</zorder>
      <zorder>goTransButton</zorder>
-     <zorder>AmountLabel4</zorder>
-     <zorder>DesLabel5</zorder>
      <zorder>label_65</zorder>
-     <zorder>line_22</zorder>
      <zorder>label_66</zorder>
-     <zorder>line_23</zorder>
      <zorder>goAccountButton</zorder>
      <zorder>goGoalButton</zorder>
      <zorder>closeButton_3</zorder>
@@ -2320,6 +1469,8 @@ QPushButton#addButton:pressed {
      <zorder>label_61</zorder>
      <zorder>label_48</zorder>
      <zorder>addButton</zorder>
+     <zorder>widget_13</zorder>
+     <zorder>scrollArea_2</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addPage">

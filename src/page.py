@@ -93,7 +93,13 @@ class Page(QWidget):
         button = self.sender()
         transaction_id = button.objectName()
         print(transaction_id)
-        self.curUser.editTransaction(transaction_id, self.ui.transnameLineEdit_2.text(), self.ui.transamountLineEdit_2.text(), self.ui.catLineEdit_2.text(), self.ui.transDesc_2.toPlainText())
+        self.curUser.editTransaction(
+            transaction_id,
+            self.ui.transnameLineEdit_2.text(),
+            self.ui.transamountLineEdit_2.text(),
+            self.ui.catLineEdit_2.text(),
+            self.ui.transDesc_2.toPlainText(),
+        )
         self.ui.EditButton.setEnabled(True)
         self.ui.transamountLineEdit_2.setReadOnly(True)
         self.ui.catLineEdit_2.setReadOnly(True)
@@ -107,15 +113,12 @@ class Page(QWidget):
         self.ui.transamountLineEdit_2.setReadOnly(False)
         self.ui.catLineEdit_2.setReadOnly(False)
         self.ui.transnameLineEdit_2.setReadOnly(False)
-        
+
         self.ui.transDesc_2.setReadOnly(False)
         self.ui.EditButton.setEnabled(False)
         self.ui.SaveButton.setEnabled(True)
-        
 
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
-
-
 
     def on_logoutButton_clicked(self):
         self.curUser = None
@@ -155,14 +158,14 @@ class Page(QWidget):
                 pass
 
         # Create a new slot
-        self._delete_trans_slot = lambda _: self.on_deleteTransButton_clicked(transaction_id)
-        
+        self._delete_trans_slot = lambda _: self.on_deleteTransButton_clicked(
+            transaction_id
+        )
 
         # Connect the new slot
         self.ui.DeleteTransButton.clicked.connect(self._delete_trans_slot)
         self.ui.SaveButton.setObjectName(str(transaction_id))
         self.switchPage(TRANSACTIONDETAIL_PAGE)
-
 
     def populateTransactionDetails(self, transaction_obj):
         self.ui.transnameLineEdit_2.setText(str(transaction_obj.getName()))
@@ -384,6 +387,59 @@ class Page(QWidget):
         )
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
         self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getWeeklySpent())))
+
+        for i in reversed(range(self.ui.scrollArea_2.widget().layout().count())):
+            self.ui.scrollArea_2.widget().layout().itemAt(i).widget().setParent(None)
+        scroll_widget = self.ui.scrollArea_2.widget()
+        scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        layout = scroll_widget.layout()
+        layout.setSpacing(0)  # Set spacing to 0
+        layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
+
+        if self.curUser:
+            count = 0
+            for t in (self.curUser.getTransactions())[::-1]:
+                count += 1
+                if count > 3:
+                    break
+                button = QPushButton()
+
+                button.setObjectName(str(t.getID()))  # Set object name
+
+                button.setStyleSheet(
+                    """
+                    #{id} {{
+                        border: 1px solid black;
+                    }}
+                    #{id}:pressed {{
+                        background-color: rgb(192, 192, 192);
+                    }}
+                    """.format(
+                        id=button.objectName()
+                    )
+                )
+                button_layout = QHBoxLayout(button)
+
+                left_label = QLabel(t.getName(), button)  # Set button as parent
+                middle_label = QLabel(
+                    str("{:.2f}".format(t.getAmount())), button
+                )  # Set button as parent
+                textColor = "green" if isinstance(t, Income) else "red"
+                middle_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
+                right_label = QLabel(
+                    str(t.getDate().date()), button
+                )  # Set button as parent
+
+                button_layout.addWidget(left_label)
+                button_layout.addWidget(middle_label)
+                button_layout.addWidget(right_label)
+
+                button.setLayout(button_layout)
+                button.setMinimumHeight(50)  # Set minimum height here
+
+                # Add bottom border to the button
+                button.clicked.connect(self.on_transaction_clicked)
+                scroll_widget.layout().addWidget(button)
 
     def updateTransactionPage(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
