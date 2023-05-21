@@ -216,3 +216,6 @@ pip-log.txt
 .env
 
 .vscode
+testdata.fs
+testdata.fs.index
+testdata.fs.lock
