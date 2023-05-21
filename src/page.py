@@ -35,6 +35,7 @@ mongodb_uri = os.getenv("MONGODB_URI")
 class Page(QWidget):
     def __init__(self, root, conn):
         QWidget.__init__(self, None)
+        self._delete_trans_slot = None  # a place to store the connected function
         self.curUser: User = None
         self.root = root
         self.conn = conn
@@ -101,16 +102,7 @@ class Page(QWidget):
 
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
 
-    def on_deleteTransButton_clicked(self, transaction_id):
-        password = self.ui.PasswordField.text()
-        tmp = self.root["user"]
-        user = tmp[self.curUser.getUsername()]
-        hashedpass = user.getHashedpass()
-        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
-            user.removeTransactionById(transaction_id)
-            transaction.commit()
-            self.updateDynamicComponent()
-            self.switchPage(TRANSACTION_PAGE)
+
 
     def on_logoutButton_clicked(self):
         self.curUser = None
@@ -123,15 +115,39 @@ class Page(QWidget):
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
 
+    def on_deleteTransButton_clicked(self, transaction_id):
+        password = self.ui.PasswordField.text()
+        tmp = self.root["user"]
+        user = tmp[self.curUser.getUsername()]
+        hashedpass = user.getHashedpass()
+        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
+            user.removeTransactionById(transaction_id)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(TRANSACTION_PAGE)
+
     def on_transaction_clicked(self):
         button = self.sender()
         transaction_id = button.objectName()  # Get the objectName of the button
         transaction_obj = self.curUser.getTransactionById(transaction_id)
         self.populateTransactionDetails(transaction_obj)
-        self.ui.DeleteTransButton.clicked.connect(
-            lambda _: self.on_deleteTransButton_clicked(transaction_id)
-        )
+
+        # Disconnect the old slot if it exists
+        if self._delete_trans_slot is not None:
+            try:
+                self.ui.DeleteTransButton.clicked.disconnect(self._delete_trans_slot)
+            except RuntimeError:
+                # Ignore the RuntimeError that occurs when the slot was already disconnected
+                pass
+
+        # Create a new slot
+        self._delete_trans_slot = lambda _: self.on_deleteTransButton_clicked(transaction_id)
+
+        # Connect the new slot
+        self.ui.DeleteTransButton.clicked.connect(self._delete_trans_slot)
+
         self.switchPage(TRANSACTIONDETAIL_PAGE)
+
 
     def populateTransactionDetails(self, transaction_obj):
         self.ui.transnameLineEdit_2.setText(str(transaction_obj.getName()))
