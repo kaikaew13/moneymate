@@ -15,7 +15,7 @@ class User(persistent.Persistent):
         b = password.encode("utf-8")
         self.__hashedpass = bcrypt.hashpw(b, User.salt)
         self.__transactions = []
-        self.__goal = []
+        self.__goals = []
         # start session and assign session id?
         # store user info into database
         print("User created")
@@ -43,8 +43,11 @@ class User(persistent.Persistent):
         self._p_changed = True
 
     def addGoal(self, goal):
-        self.__goal.append(goal)
+        self.__goals.append(goal)
         self._p_changed = True
+
+    def getGoals(self):
+        return self.__goals
 
     def getCurrentBalance(self):
         balance = 0

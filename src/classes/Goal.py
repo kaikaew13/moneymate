@@ -1,14 +1,17 @@
-class Goal:
-    def __init__(self, title, amount, desc):
-        self.__title = title
+import persistent
+
+
+class Goal(persistent.Persistent):
+    def __init__(self, name, amount, desc):
+        self.__name = name
         self.__amount = amount
         self.__desc = desc
 
-    def setTitle(self, title):
-        self.__title = title
+    def setName(self, name):
+        self.__name = name
 
-    def getTitle(self):
-        return self.__title
+    def getName(self):
+        return self.__name
 
     def setAmount(self, amount):
         self.__amount = amount
