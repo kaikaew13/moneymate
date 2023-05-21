@@ -25,6 +25,7 @@ ADD_PAGE = 3
 TRANSACTION_PAGE = 4
 GOAL_PAGE = 5
 USER_PAGE = 6
+TRANSACTIONDETAIL_PAGE = 7
 
 
 load_dotenv()
@@ -84,6 +85,8 @@ class Page(QWidget):
 
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
+    def on_transaction_clicked(self):
+        self.switchPage(TRANSACTIONDETAIL_PAGE)
 
     def on_gogoalButton_clicked(self):
         self.switchPage(GOAL_PAGE)
@@ -331,7 +334,7 @@ class Page(QWidget):
                 button.setMinimumHeight(50)  # Set minimum height here
 
                 # Add bottom border to the button
-
+                button.clicked.connect(self.on_transaction_clicked) 
                 scroll_widget.layout().addWidget(button)
 
     def UpdatelogoutPage(self):
