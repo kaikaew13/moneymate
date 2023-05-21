@@ -1753,11 +1753,11 @@ class Ui_Form(object):
 "    background-color: rgb(61, 54, 180);\n"
 "}\n"
 "")
-        self.lineEdit = QLineEdit(self.widget_11)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setEnabled(True)
-        self.lineEdit.setGeometry(QRect(370, 190, 161, 21))
-        self.lineEdit.setReadOnly(True)
+        self.username_account_field = QLineEdit(self.widget_11)
+        self.username_account_field.setObjectName(u"username_account_field")
+        self.username_account_field.setEnabled(True)
+        self.username_account_field.setGeometry(QRect(370, 190, 161, 21))
+        self.username_account_field.setReadOnly(True)
         self.label_36 = QLabel(self.widget_11)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setGeometry(QRect(270, 190, 91, 16))
@@ -1798,7 +1798,7 @@ class Ui_Form(object):
         self.label_107.raise_()
         self.label_81.raise_()
         self.logoutButton.raise_()
-        self.lineEdit.raise_()
+        self.username_account_field.raise_()
         self.label_36.raise_()
         self.addButton_4.raise_()
         self.stackedWidget.addWidget(self.logoutPage)
@@ -2018,11 +2018,11 @@ class Ui_Form(object):
         self.label_67.setGeometry(QRect(290, 240, 151, 31))
         self.label_67.setFont(font9)
         self.label_67.setStyleSheet(u"color: rgb(0,0,0);")
-        self.addButton_6 = QPushButton(self.widget_15)
-        self.addButton_6.setObjectName(u"addButton_6")
-        self.addButton_6.setGeometry(QRect(290, 380, 111, 71))
-        self.addButton_6.setFont(font8)
-        self.addButton_6.setStyleSheet(u"QPushButton#addButton_5{\n"
+        self.EditButton = QPushButton(self.widget_15)
+        self.EditButton.setObjectName(u"EditButton")
+        self.EditButton.setGeometry(QRect(290, 380, 111, 71))
+        self.EditButton.setFont(font8)
+        self.EditButton.setStyleSheet(u"QPushButton#addButton_5{\n"
 "    border: none;\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(81, 74, 248);\n"
@@ -2037,11 +2037,11 @@ class Ui_Form(object):
 "    background-color: rgb(61, 54, 180);\n"
 "}\n"
 "")
-        self.addButton_7 = QPushButton(self.widget_15)
-        self.addButton_7.setObjectName(u"addButton_7")
-        self.addButton_7.setGeometry(QRect(410, 380, 111, 71))
-        self.addButton_7.setFont(font8)
-        self.addButton_7.setStyleSheet(u"QPushButton#addButton_5{\n"
+        self.SaveButton = QPushButton(self.widget_15)
+        self.SaveButton.setObjectName(u"SaveButton")
+        self.SaveButton.setGeometry(QRect(410, 380, 111, 71))
+        self.SaveButton.setFont(font8)
+        self.SaveButton.setStyleSheet(u"QPushButton#addButton_5{\n"
 "    border: none;\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(81, 74, 248);\n"
@@ -2075,9 +2075,9 @@ class Ui_Form(object):
 "    background-color: rgb(180, 0, 0);\n"
 "}\n"
 "")
-        self.transamountLineEdit_3 = QLineEdit(self.widget_15)
-        self.transamountLineEdit_3.setObjectName(u"transamountLineEdit_3")
-        self.transamountLineEdit_3.setGeometry(QRect(340, 570, 241, 31))
+        self.PasswordField = QLineEdit(self.widget_15)
+        self.PasswordField.setObjectName(u"PasswordField")
+        self.PasswordField.setGeometry(QRect(340, 570, 241, 31))
         self.label_68 = QLabel(self.widget_15)
         self.label_68.setObjectName(u"label_68")
         self.label_68.setGeometry(QRect(340, 550, 141, 16))
@@ -2107,10 +2107,10 @@ class Ui_Form(object):
         self.transnameLineEdit_2.raise_()
         self.label_38.raise_()
         self.label_67.raise_()
-        self.addButton_6.raise_()
-        self.addButton_7.raise_()
+        self.EditButton.raise_()
+        self.SaveButton.raise_()
         self.DeleteTransButton.raise_()
-        self.transamountLineEdit_3.raise_()
+        self.PasswordField.raise_()
         self.label_68.raise_()
         self.stackedWidget.addWidget(self.page)
 
@@ -2333,8 +2333,8 @@ class Ui_Form(object):
         self.label_39.setText(QCoreApplication.translate("Form", u"Transaction Amount", None))
         self.label_38.setText(QCoreApplication.translate("Form", u"Description", None))
         self.label_67.setText(QCoreApplication.translate("Form", u"Category", None))
-        self.addButton_6.setText(QCoreApplication.translate("Form", u"Edit ", None))
-        self.addButton_7.setText(QCoreApplication.translate("Form", u"Save", None))
+        self.EditButton.setText(QCoreApplication.translate("Form", u"Edit ", None))
+        self.SaveButton.setText(QCoreApplication.translate("Form", u"Save", None))
         self.DeleteTransButton.setText(QCoreApplication.translate("Form", u"Remove this Transaction", None))
         self.label_68.setText(QCoreApplication.translate("Form", u"Enter your password:", None))
     # retranslateUi

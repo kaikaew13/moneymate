@@ -4664,7 +4664,7 @@ QPushButton#logoutButton:pressed {
        <string>Logout</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="username_account_field">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -4748,7 +4748,7 @@ QPushButton#addButton_4:pressed {
      <zorder>label_107</zorder>
      <zorder>label_81</zorder>
      <zorder>logoutButton</zorder>
-     <zorder>lineEdit</zorder>
+     <zorder>username_account_field</zorder>
      <zorder>label_36</zorder>
      <zorder>addButton_4</zorder>
     </widget>
@@ -5344,7 +5344,7 @@ QPushButton#addButton_5:pressed {
        <string>Category</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="addButton_6">
+     <widget class="QPushButton" name="EditButton">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -5381,7 +5381,7 @@ QPushButton#addButton_5:pressed {
        <string>Edit </string>
       </property>
      </widget>
-     <widget class="QPushButton" name="addButton_7">
+     <widget class="QPushButton" name="SaveButton">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -5455,7 +5455,7 @@ QPushButton#DeleteTransButton:pressed {
        <string>Remove this Transaction</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="transamountLineEdit_3">
+     <widget class="QLineEdit" name="PasswordField">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -5504,10 +5504,10 @@ QPushButton#DeleteTransButton:pressed {
      <zorder>transnameLineEdit_2</zorder>
      <zorder>label_38</zorder>
      <zorder>label_67</zorder>
-     <zorder>addButton_6</zorder>
-     <zorder>addButton_7</zorder>
+     <zorder>EditButton</zorder>
+     <zorder>SaveButton</zorder>
      <zorder>DeleteTransButton</zorder>
-     <zorder>transamountLineEdit_3</zorder>
+     <zorder>PasswordField</zorder>
      <zorder>label_68</zorder>
     </widget>
    </widget>

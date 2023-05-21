@@ -51,28 +51,41 @@ class Page(QWidget):
         self.ui.goDashboardButton_3.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_4.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_5.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_7.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
         self.ui.RegisterButton.clicked.connect(self.on_registerButton_clicked)
         self.ui.addButton.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_2.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_3.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_4.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_5.clicked.connect(self.on_addButton_clicked)
+        
+        
         self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
+
         self.ui.goTransButton.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_2.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_3.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_4.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_5.clicked.connect(self.on_gotransButton_clicked)
+        self.ui.goTransButton_7.clicked.connect(self.on_gotransButton_clicked)
+
+        
         self.ui.goGoalButton.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_2.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_3.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_4.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_5.clicked.connect(self.on_gogoalButton_clicked)
+        self.ui.goGoalButton_7.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_3.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_4.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_7.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
 
     def on_logoutButton_clicked(self):
@@ -338,7 +351,7 @@ class Page(QWidget):
                 scroll_widget.layout().addWidget(button)
 
     def UpdatelogoutPage(self):
-        self.ui.lineEdit.setText(self.curUser.getUsername())
+        self.ui.username_account_field.setText(self.curUser.getUsername())
 
 
 class ButtonWithLabels(QWidget):
