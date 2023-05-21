@@ -4753,7 +4753,7 @@ QPushButton#addButton_4:pressed {
      <zorder>addButton_4</zorder>
     </widget>
    </widget>
-   <widget class="QWidget" name="page">
+   <widget class="QWidget" name="transactionDetailPage">
     <widget class="QWidget" name="widget_15" native="true">
      <property name="geometry">
       <rect>
