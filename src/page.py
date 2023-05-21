@@ -119,7 +119,6 @@ class Page(QWidget):
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
-                    self.logoutPage_fillin()
                     self.show()
                 else:
                     print("Wrong password")
@@ -219,8 +218,7 @@ class Page(QWidget):
 
     def on_addButton_clicked(self):
         self.switchPage(ADD_PAGE)
-    def logoutPage_fillin(self):
-        self.ui.lineEdit.setText(self.curUser.getUsername())
+
 
     def on_saveTransactionButton_clicked(self):
         transName = self.ui.transnameLineEdit.text()
@@ -273,6 +271,8 @@ class Page(QWidget):
     def updateDynamicComponent(self):
         self.updateDashboardPage()
         self.updateTransactionPage()
+        self.UpdatelogoutPage()
+
 
     def updateDashboardPage(self):
         self.ui.currentBalanceLabel.setText(
@@ -302,7 +302,6 @@ class Page(QWidget):
                 button = QPushButton()
                 button.setObjectName("myButton")  # Set object name
 
-                # Apply style using object name
                 button.setStyleSheet(
                     """
                 #myButton {
@@ -334,6 +333,9 @@ class Page(QWidget):
                 # Add bottom border to the button
 
                 scroll_widget.layout().addWidget(button)
+
+    def UpdatelogoutPage(self):
+        self.ui.lineEdit.setText(self.curUser.getUsername())
 
 
 class ButtonWithLabels(QWidget):
