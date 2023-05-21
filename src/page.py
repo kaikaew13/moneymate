@@ -90,15 +90,28 @@ class Page(QWidget):
         self.ui.SaveButton.clicked.connect(self.on_saveButton_clicked)
 
     def on_saveButton_clicked(self):
-        pass
+        button = self.sender()
+        transaction_id = button.objectName()
+        print(transaction_id)
+        self.curUser.editTransaction(transaction_id, self.ui.transnameLineEdit_2.text(), self.ui.transamountLineEdit_2.text(), self.ui.catLineEdit_2.text(), self.ui.transDesc_2.toPlainText())
+        self.ui.EditButton.setEnabled(True)
+        self.ui.transamountLineEdit_2.setReadOnly(True)
+        self.ui.catLineEdit_2.setReadOnly(True)
+        self.ui.transnameLineEdit_2.setReadOnly(True)
+        self.ui.transDesc_2.setReadOnly(True)
+        self.ui.SaveButton.setEnabled(False)
+        self.updateDynamicComponent()
+        self.switchPage(TRANSACTION_PAGE)
 
     def on_editButton_clicked(self):
         self.ui.transamountLineEdit_2.setReadOnly(False)
         self.ui.catLineEdit_2.setReadOnly(False)
         self.ui.transnameLineEdit_2.setReadOnly(False)
-        self.ui.saveTransButton.setEnabled(True)
+        
         self.ui.transDesc_2.setReadOnly(False)
         self.ui.EditButton.setEnabled(False)
+        self.ui.SaveButton.setEnabled(True)
+        
 
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
 
@@ -131,6 +144,7 @@ class Page(QWidget):
         transaction_id = button.objectName()  # Get the objectName of the button
         transaction_obj = self.curUser.getTransactionById(transaction_id)
         self.populateTransactionDetails(transaction_obj)
+        self.ui.SaveButton.setEnabled(False)
 
         # Disconnect the old slot if it exists
         if self._delete_trans_slot is not None:
@@ -142,10 +156,11 @@ class Page(QWidget):
 
         # Create a new slot
         self._delete_trans_slot = lambda _: self.on_deleteTransButton_clicked(transaction_id)
+        
 
         # Connect the new slot
         self.ui.DeleteTransButton.clicked.connect(self._delete_trans_slot)
-
+        self.ui.SaveButton.setObjectName(str(transaction_id))
         self.switchPage(TRANSACTIONDETAIL_PAGE)
 
 

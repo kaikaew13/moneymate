@@ -16,6 +16,7 @@ class Income(Transaction, persistent.Persistent):
     def getCategory(self):
         return self.__category
 
+
     def getName(self):
         return self.__name
 

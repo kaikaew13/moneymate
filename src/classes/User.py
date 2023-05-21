@@ -65,6 +65,20 @@ class User(persistent.Persistent):
                 balance += t.getAmount()
         return balance
 
+    def editTransaction(self, transaction_id, name, amount, category, description):
+        for transaction in self.__transactions:
+            if str(transaction.getID()) == transaction_id:
+                transaction.setName(name)
+                transaction.setAmount(float(amount))
+                transaction.setCategory(category)
+                transaction.setDesc(description)
+                print(transaction.getName())
+                
+                self._p_changed = True
+                print("Transaction edited")
+                return True
+        return False
+
     def getWeeklySpent(self):
         spent = 0
         # get time rn minus 6 days
@@ -74,6 +88,7 @@ class User(persistent.Persistent):
             if isinstance(t, Expense) and t.getDate() >= lastweekDate:
                 spent += t.getAmount()
         return spent
+    
 
 
 # if __name__ == "__main__":
