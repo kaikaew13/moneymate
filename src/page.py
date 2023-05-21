@@ -79,6 +79,7 @@ class Page(QWidget):
         self.switchPage(LOGIN_PAGE)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
+
         self.show()
 
     def on_goaccountButton_clicked(self):
@@ -118,6 +119,7 @@ class Page(QWidget):
                     self.switchPage(DASHBOARD_PAGE)
                     self.setWindowFlags(Qt.Window)
                     self.setAttribute(Qt.WA_OpaquePaintEvent)
+                    self.logoutPage_fillin()
                     self.show()
                 else:
                     print("Wrong password")
@@ -217,6 +219,8 @@ class Page(QWidget):
 
     def on_addButton_clicked(self):
         self.switchPage(ADD_PAGE)
+    def logoutPage_fillin(self):
+        self.ui.lineEdit.setText(self.curUser.getUsername())
 
     def on_saveTransactionButton_clicked(self):
         transName = self.ui.transnameLineEdit.text()
