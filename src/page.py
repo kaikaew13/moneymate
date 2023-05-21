@@ -90,6 +90,7 @@ class Page(QWidget):
 
     def on_saveButton_clicked(self):
         pass
+
     def on_editButton_clicked(self):
         self.ui.transamountLineEdit_2.setReadOnly(False)
         self.ui.catLineEdit_2.setReadOnly(False)
@@ -97,8 +98,6 @@ class Page(QWidget):
         self.ui.saveTransButton.setEnabled(True)
         self.ui.transDesc_2.setReadOnly(False)
         self.ui.EditButton.setEnabled(False)
-
-        
 
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
 
@@ -303,10 +302,6 @@ class Page(QWidget):
         else:
             print("Please select income or expense")
         self.switchPage(TRANSACTION_PAGE)
-        self.ui.transnameLineEdit.setText("")
-        self.ui.catLineEdit.setText("")
-        self.ui.transamountLineEdit.setText("")
-        self.ui.transDesc.setText("")
 
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
@@ -317,18 +312,26 @@ class Page(QWidget):
         goalDesc = self.ui.GoalDesc.toPlainText()
         tmp = self.root["user"]
         user = tmp[self.curUser.getUsername()]
-        goal = Goal(goalName, goalAmount, goalDesc)
+        goal = Goal(goalName, float(goalAmount), goalDesc)
         user.addGoal(goal)
         transaction.commit()
         self.updateDynamicComponent()
         self.switchPage(GOAL_PAGE)
-        self.ui.goalnameLineEdit.setText("")
-        self.ui.goalamountLineEdit.setText("")
-        self.ui.GoalDesc.setText("")
         # TODO: save goal to a goal list in database (Done)
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
+        self.clearLineEdits()
+
+    def clearLineEdits(self):
+        self.ui.PasswordField.setText("")
+        self.ui.transnameLineEdit.setText("")
+        self.ui.catLineEdit.setText("")
+        self.ui.transamountLineEdit.setText("")
+        self.ui.transDesc.setText("")
+        self.ui.goalnameLineEdit.setText("")
+        self.ui.goalamountLineEdit.setText("")
+        self.ui.GoalDesc.setText("")
 
     # calls update on every page
     def updateDynamicComponent(self):
@@ -361,11 +364,10 @@ class Page(QWidget):
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
-            for t in self.curUser.getTransactions():
+            for t in (self.curUser.getTransactions())[::-1]:
                 button = QPushButton()
 
                 button.setObjectName(str(t.getID()))  # Set object name
-
 
                 button.setStyleSheet(
                     """
@@ -375,17 +377,21 @@ class Page(QWidget):
                     #{id}:pressed {{
                         background-color: rgb(192, 192, 192);
                     }}
-                    """.format(id=button.objectName())
+                    """.format(
+                        id=button.objectName()
+                    )
                 )
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(t.getName(), button)  # Set button as parent
                 middle_label = QLabel(
-                    str(t.getAmount()), button
+                    str("{:.2f}".format(t.getAmount())), button
                 )  # Set button as parent
                 textColor = "green" if isinstance(t, Income) else "red"
                 middle_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
-                right_label = QLabel(str(t.getDate()), button)  # Set button as parent
+                right_label = QLabel(
+                    str(t.getDate().date()), button
+                )  # Set button as parent
 
                 button_layout.addWidget(left_label)
                 button_layout.addWidget(middle_label)
@@ -408,7 +414,7 @@ class Page(QWidget):
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
-            for g in self.curUser.getGoals():
+            for g in (self.curUser.getGoals())[::-1]:
                 button = QPushButton()
                 button.setObjectName("myButton")  # Set object name
 
@@ -427,9 +433,10 @@ class Page(QWidget):
 
                 left_label = QLabel(g.getName(), button)  # Set button as parent
                 middle_label = QLabel(
-                    str(g.getAmount()), button
+                    str("{:.2f}".format(g.getAmount())), button
                 )  # Set button as parent
-                right_label = QLabel(g.getDesc(), button)  # Set button as parent
+                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({round(g.getProgress() / g.getAmount() * 100)}%)'
+                right_label = QLabel(progressStr, button)  # Set button as parent
 
                 button_layout.addWidget(left_label)
                 button_layout.addWidget(middle_label)
@@ -439,7 +446,7 @@ class Page(QWidget):
                 button.setMinimumHeight(50)  # Set minimum height here
 
                 # Add bottom border to the button
-                button.clicked.connect(self.on_transaction_clicked)
+                # button.clicked.connect(self.on_transaction_clicked)
                 scroll_widget.layout().addWidget(button)
 
     def UpdatelogoutPage(self):

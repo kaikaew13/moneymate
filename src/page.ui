@@ -4087,7 +4087,7 @@ QPushButton#goTransButton_4:pressed {
         </rect>
        </property>
        <property name="text">
-        <string>Goal Description</string>
+        <string>Progress</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_35">
@@ -5464,6 +5464,9 @@ QPushButton#DeleteTransButton:pressed {
         <height>31</height>
        </rect>
       </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
      </widget>
      <widget class="QLabel" name="label_68">
       <property name="geometry">
@@ -5626,22 +5629,6 @@ QPushButton#DeleteTransButton:pressed {
     <hint type="destinationlabel">
      <x>1024</x>
      <y>47</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>closeButton_9</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>988</x>
-     <y>48</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>874</x>
-     <y>-9</y>
     </hint>
    </hints>
   </connection>

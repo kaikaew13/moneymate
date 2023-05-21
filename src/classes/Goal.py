@@ -6,6 +6,7 @@ class Goal(persistent.Persistent):
         self.__name = name
         self.__amount = amount
         self.__desc = desc
+        self.__progress = 0
 
     def setName(self, name):
         self.__name = name
@@ -25,8 +26,14 @@ class Goal(persistent.Persistent):
     def getDesc(self):
         return self.__desc
 
+    def setProgress(self, progress):
+        self.__progress = progress
 
-if __name__ == "__main__":
-    goal = Goal("test", 1000, "test")
-    print(goal.getTitle())
-    print(goal.getAmount())
+    def getProgress(self):
+        return self.__progress
+
+
+# if __name__ == "__main__":
+#     goal = Goal("test", 1000, "test")
+#     print(goal.getTitle())
+#     print(goal.getAmount())
