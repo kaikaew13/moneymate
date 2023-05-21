@@ -99,7 +99,19 @@ class Page(QWidget):
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
     def on_transaction_clicked(self):
-        self.switchPage(TRANSACTIONDETAIL_PAGE)
+        button = self.sender()  
+        transaction_id = button.objectName()  # Get the objectName of the button
+        transaction_obj = self.curUser.getTransactionById(transaction_id)
+        self.populateTransactionDetails(transaction_obj)
+        self.switchPage(TRANSACTIONDETAIL_PAGE) 
+
+    def populateTransactionDetails(self, transaction_obj):
+        self.ui.transnameLineEdit_2.setText(str(transaction_obj.getName()))
+        self.ui.transamountLineEdit_2.setText(str(transaction_obj.getAmount()))
+        self.ui.catLineEdit_2.setText(str(transaction_obj.getCategory()))
+        self.ui.transDesc_2.setText(str(transaction_obj.getDesc()))
+
+
 
     def on_gogoalButton_clicked(self):
         self.switchPage(GOAL_PAGE)
@@ -316,7 +328,7 @@ class Page(QWidget):
         if self.curUser:
             for t in self.curUser.getTransactions():
                 button = QPushButton()
-                button.setObjectName("myButton")  # Set object name
+                button.setObjectName(str(t.getID()))   # Set object name
 
                 button.setStyleSheet(
                     """

@@ -20,6 +20,12 @@ class User(persistent.Persistent):
         # store user info into database
         print("User created")
 
+    def getTransactionById(self, transaction_id):
+        for transaction in self.__transactions:
+            if str(transaction.getID()) == transaction_id:
+                return transaction
+        return None
+
     def getUsername(self):
         return self.__username
 
