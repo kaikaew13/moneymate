@@ -5629,5 +5629,21 @@ QPushButton#DeleteTransButton:pressed {
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>closeButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>988</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>874</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

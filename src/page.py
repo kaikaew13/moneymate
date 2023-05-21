@@ -85,6 +85,20 @@ class Page(QWidget):
         self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_7.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
+        self.ui.EditButton.clicked.connect(self.on_editButton_clicked)
+        self.ui.SaveButton.clicked.connect(self.on_saveButton_clicked)
+
+    def on_saveButton_clicked(self):
+        pass
+    def on_editButton_clicked(self):
+        self.ui.transamountLineEdit_2.setReadOnly(False)
+        self.ui.catLineEdit_2.setReadOnly(False)
+        self.ui.transnameLineEdit_2.setReadOnly(False)
+        self.ui.saveTransButton.setEnabled(True)
+        self.ui.transDesc_2.setReadOnly(False)
+        self.ui.EditButton.setEnabled(False)
+
+        
 
     def on_logoutButton_clicked(self):
         self.curUser = None
@@ -336,18 +350,16 @@ class Page(QWidget):
             for t in self.curUser.getTransactions():
                 button = QPushButton()
                 button.setObjectName(str(t.getID()))   # Set object name
-
                 button.setStyleSheet(
                     """
-                #myButton {
-                    border: 1px solid black;
-                }
-                #myButton:pressed {
-                    background-color: rgb(192, 192, 192);
-                }
-                """
+                    #{id} {{
+                        border: 1px solid black;
+                    }}
+                    #{id}:pressed {{
+                        background-color: rgb(192, 192, 192);
+                    }}
+                    """.format(id=button.objectName())
                 )
-
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(t.getName(), button)  # Set button as parent

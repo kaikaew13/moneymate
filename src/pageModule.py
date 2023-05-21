@@ -2122,6 +2122,7 @@ class Ui_Form(object):
         self.closeButton_5.clicked.connect(Form.close)
         self.closeButton_6.clicked.connect(Form.close)
         self.closeButton_7.clicked.connect(Form.close)
+        self.closeButton_9.clicked.connect(Form.close)
 
         self.stackedWidget.setCurrentIndex(0)
 
