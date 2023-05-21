@@ -89,12 +89,15 @@ class Page(QWidget):
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
 
     def on_deleteTransButton_clicked(self, transaction_id):
+        password = self.ui.PasswordField.text()
         tmp = self.root["user"]
         user = tmp[self.curUser.getUsername()]
-        user.removeTransactionById(transaction_id)
-        transaction.commit()
-        self.updateDynamicComponent()
-        self.switchPage(TRANSACTION_PAGE)
+        hashedpass = user.getHashedpass()
+        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
+            user.removeTransactionById(transaction_id)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(TRANSACTION_PAGE)
 
     def on_logoutButton_clicked(self):
         self.curUser = None
