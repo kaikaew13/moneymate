@@ -271,10 +271,14 @@ class Page(QWidget):
             self.updateDynamicComponent()
             # self.updateScroll()
             # self.updateDashboard()
-            # TODO: save Expense to a transaction list in database
+            # TODO: save Expense to a transaction list in database (Done)
         else:
             print("Please select income or expense")
         self.switchPage(TRANSACTION_PAGE)
+        self.ui.transnameLineEdit.setText("")
+        self.ui.catLineEdit.setText("")
+        self.ui.transamountLineEdit.setText("")
+        self.ui.transDesc.setText("")
 
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
@@ -289,7 +293,11 @@ class Page(QWidget):
         user.addGoal(goal)
         transaction.commit()
         self.updateDynamicComponent()
-        # TODO: save goal to a goal list in database
+        self.switchPage(GOAL_PAGE)
+        self.ui.goalnameLineEdit.setText("")
+        self.ui.goalamountLineEdit.setText("")
+        self.ui.GoalDesc.setText("")
+        # TODO: save goal to a goal list in database (Done)
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
