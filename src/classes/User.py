@@ -26,6 +26,13 @@ class User(persistent.Persistent):
                 return transaction
         return None
 
+    def removeTransactionById(self, transaction_id):
+        for transaction in self.__transactions:
+            if str(transaction.getID()) == transaction_id:
+                self.__transactions.remove(transaction)
+                self._p_changed = True
+                return
+
     def getUsername(self):
         return self.__username
 

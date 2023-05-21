@@ -100,6 +100,19 @@ class Page(QWidget):
 
         
 
+        # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
+
+    def on_deleteTransButton_clicked(self, transaction_id):
+        password = self.ui.PasswordField.text()
+        tmp = self.root["user"]
+        user = tmp[self.curUser.getUsername()]
+        hashedpass = user.getHashedpass()
+        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
+            user.removeTransactionById(transaction_id)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(TRANSACTION_PAGE)
+
     def on_logoutButton_clicked(self):
         self.curUser = None
         self.switchPage(LOGIN_PAGE)
@@ -112,19 +125,20 @@ class Page(QWidget):
         self.switchPage(USER_PAGE)
 
     def on_transaction_clicked(self):
-        button = self.sender()  
+        button = self.sender()
         transaction_id = button.objectName()  # Get the objectName of the button
         transaction_obj = self.curUser.getTransactionById(transaction_id)
         self.populateTransactionDetails(transaction_obj)
-        self.switchPage(TRANSACTIONDETAIL_PAGE) 
+        self.ui.DeleteTransButton.clicked.connect(
+            lambda _: self.on_deleteTransButton_clicked(transaction_id)
+        )
+        self.switchPage(TRANSACTIONDETAIL_PAGE)
 
     def populateTransactionDetails(self, transaction_obj):
         self.ui.transnameLineEdit_2.setText(str(transaction_obj.getName()))
         self.ui.transamountLineEdit_2.setText(str(transaction_obj.getAmount()))
         self.ui.catLineEdit_2.setText(str(transaction_obj.getCategory()))
         self.ui.transDesc_2.setText(str(transaction_obj.getDesc()))
-
-
 
     def on_gogoalButton_clicked(self):
         self.switchPage(GOAL_PAGE)
@@ -349,7 +363,10 @@ class Page(QWidget):
         if self.curUser:
             for t in self.curUser.getTransactions():
                 button = QPushButton()
-                button.setObjectName(str(t.getID()))   # Set object name
+
+                button.setObjectName(str(t.getID()))  # Set object name
+
+
                 button.setStyleSheet(
                     """
                     #{id} {{
