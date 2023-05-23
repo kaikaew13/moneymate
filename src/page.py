@@ -1,11 +1,7 @@
-import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from pageModule import Ui_Form
 import os
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
-import json
 from dotenv import load_dotenv
 import bcrypt
 import transaction
@@ -99,6 +95,35 @@ class Page(QWidget):
         self.ui.EditButton.clicked.connect(self.on_editButton_clicked)
         self.ui.SaveButton.clicked.connect(self.on_saveButton_clicked)
 
+        self.ui.EditButton_2.clicked.connect(self.on_editGoalDetail_clicked)
+        self.ui.SaveButton_2.clicked.connect(self.on_saveGoalDetail_clicked)
+
+    def on_editGoalDetail_clicked(self):
+        self.ui.GoalamountLineEdit_3.setReadOnly(False)
+        self.ui.GoalnameLineEdit_3.setReadOnly(False)
+        self.ui.GoalDesc_3.setReadOnly(False)
+        self.ui.EditButton_2.setEnabled(False)
+        self.ui.SaveButton_2.setEnabled(True)
+
+    def on_saveGoalDetail_clicked(self):
+        button = self.sender()
+        goal_id = button.objectName()
+        print("goal id = " + goal_id)
+        self.curUser.editGoal(
+            goal_id,
+            self.ui.GoalnameLineEdit_3.text(),
+            self.ui.GoalamountLineEdit_3.text(),
+            self.ui.GoalDesc_3.toPlainText(),
+        )
+        self.ui.EditButton_2.setEnabled(True)
+        self.ui.GoalnameLineEdit_3.setReadOnly(True)
+        self.ui.GoalamountLineEdit_3.setReadOnly(True)
+        self.ui.GoalDesc_3.setReadOnly(True)
+        self.ui.SaveButton_2.setEnabled(False)
+        transaction.commit()
+        self.updateDynamicComponent()
+        self.switchPage(GOAL_PAGE)
+
     def on_editBudgetButton_clicked(self):
         t = self.ui.editBudgetButton.text()
         if t == "Edit":
@@ -112,7 +137,7 @@ class Page(QWidget):
     def on_saveButton_clicked(self):
         button = self.sender()
         transaction_id = button.objectName()
-        print(transaction_id)
+        print("t id = " + transaction_id)
         self.curUser.editTransaction(
             transaction_id,
             self.ui.transnameLineEdit_2.text(),
@@ -126,6 +151,7 @@ class Page(QWidget):
         self.ui.transnameLineEdit_2.setReadOnly(True)
         self.ui.transDesc_2.setReadOnly(True)
         self.ui.SaveButton.setEnabled(False)
+        transaction.commit()
         self.updateDynamicComponent()
         self.switchPage(TRANSACTION_PAGE)
 
@@ -163,13 +189,13 @@ class Page(QWidget):
             self.switchPage(TRANSACTION_PAGE)
     
     def on_goal_clicked(self):
+        self.ui.SaveButton_2.setEnabled(False)
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
         goal_obj = self.curUser.getGoalById(goal_id)
         self.populate_goal_details(goal_obj)
+        self.ui.SaveButton_2.setObjectName(str(goal_id))
         self.switchPage(GOALDETAIL_PAGE)
-        print(goal_id)
-        print(goal_obj)
     
     def populate_goal_details(self,goal_obj):
         self.ui.GoalnameLineEdit_3.setText(goal_obj.getName())
@@ -569,6 +595,7 @@ class Page(QWidget):
         if self.curUser:
             for g in (self.curUser.getGoals())[::-1]:
                 button = QPushButton()
+
                 button.setObjectName(str(g.getID()))  # Set object name
 
                 button.setStyleSheet(

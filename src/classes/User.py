@@ -85,6 +85,16 @@ class User(persistent.Persistent):
                 print("Transaction edited")
                 return True
         return False
+    
+    def editGoal(self, goal_id, name, amount, description):
+        for goal in self.__goals:
+            if str(goal.getID()) == goal_id:
+                goal.setName(name)
+                goal.setAmount(float(amount))
+                goal.setDesc(description)
+                self._p_changed = True
+                return True
+        return False
 
     # starts counting from closest Monday
     def getWeeklySpent(self):
