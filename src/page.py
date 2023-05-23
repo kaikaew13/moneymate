@@ -33,6 +33,7 @@ class Page(QWidget):
     def __init__(self, root, conn):
         QWidget.__init__(self, None)
         self._delete_trans_slot = None  # a place to store the connected function
+        self._delete_goals_slot = None
         self.curUser: User = None
         self.root = root
         self.conn = conn
@@ -177,6 +178,17 @@ class Page(QWidget):
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
 
+    def on_deleteGoalsButton_clicked(self, goal_id):
+        password = self.ui.PasswordField_2.text()
+        tmp = self.root['user']
+        user = tmp[self.curUser.getUsername()]
+        hashedpass= user.getHashedpass()
+        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
+            user.removeGoalById(goal_id)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(GOAL_PAGE)
+
     def on_deleteTransButton_clicked(self, transaction_id):
         password = self.ui.PasswordField.text()
         tmp = self.root["user"]
@@ -189,11 +201,26 @@ class Page(QWidget):
             self.switchPage(TRANSACTION_PAGE)
     
     def on_goal_clicked(self):
+        self.ui.EditButton_2.setEnabled(True)
         self.ui.SaveButton_2.setEnabled(False)
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
         goal_obj = self.curUser.getGoalById(goal_id)
         self.populate_goal_details(goal_obj)
+
+        if self._delete_goals_slot is not None:
+            try:
+                self.ui.DeleteTransButton.clicked.disconnect(self._delete_goals_slot)
+            except RuntimeError:
+                # Ignore the RuntimeError that occurs when the slot was already disconnected
+                pass
+
+        # Create a new slot
+        self._delete_goals_slot = lambda _: self.on_deleteGoalsButton_clicked(
+            goal_id
+        )
+
+        self.ui.DeleteGoalButton.clicked.connect(self._delete_goals_slot)
         self.ui.SaveButton_2.setObjectName(str(goal_id))
         self.switchPage(GOALDETAIL_PAGE)
     
@@ -208,6 +235,7 @@ class Page(QWidget):
         transaction_id = button.objectName()  # Get the objectName of the button
         transaction_obj = self.curUser.getTransactionById(transaction_id)
         self.populateTransactionDetails(transaction_obj)
+        self.ui.EditButton.setEnabled(True)
         self.ui.SaveButton.setEnabled(False)
 
         # Disconnect the old slot if it exists
@@ -427,6 +455,7 @@ class Page(QWidget):
         self.ui.goalnameLineEdit.setText("")
         self.ui.goalamountLineEdit.setText("")
         self.ui.GoalDesc.setText("")
+        self.ui.PasswordField_2.setText("")
 
     # calls update on every page
     def updateDynamicComponent(self):

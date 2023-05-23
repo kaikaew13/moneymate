@@ -33,6 +33,13 @@ class User(persistent.Persistent):
                 self.__transactions.remove(transaction)
                 self._p_changed = True
                 return
+            
+    def removeGoalById(self, goal_id):
+        for goal in self.__goals:
+            if str(goal.getID()) == goal_id:
+                self.__goals.remove(goal)
+                self._p_changed = True
+                return
 
     def getUsername(self):
         return self.__username
