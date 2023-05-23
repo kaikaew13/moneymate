@@ -1261,7 +1261,7 @@ QPushButton#goTransButton:pressed {
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>270</y>
+        <y>260</y>
         <width>201</width>
         <height>21</height>
        </rect>
@@ -1337,8 +1337,8 @@ QPushButton#addButton:pressed {
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>300</y>
-        <width>701</width>
+        <y>290</y>
+        <width>721</width>
         <height>41</height>
        </rect>
       </property>
@@ -1361,7 +1361,7 @@ QPushButton#addButton:pressed {
       <widget class="QLabel" name="label_25">
        <property name="geometry">
         <rect>
-         <x>460</x>
+         <x>480</x>
          <y>10</y>
          <width>111</width>
          <height>16</height>
@@ -1415,8 +1415,8 @@ QPushButton#addButton:pressed {
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>340</y>
-        <width>701</width>
+        <y>330</y>
+        <width>721</width>
         <height>181</height>
        </rect>
       </property>
@@ -1431,12 +1431,46 @@ QPushButton#addButton:pressed {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>699</width>
+         <width>719</width>
          <height>179</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2"/>
       </widget>
+     </widget>
+     <widget class="QLabel" name="label_69">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>530</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Goals</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>560</y>
+        <width>721</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout"/>
      </widget>
      <zorder>label_63</zorder>
      <zorder>goDashboardButton</zorder>
@@ -1471,6 +1505,8 @@ QPushButton#addButton:pressed {
      <zorder>addButton</zorder>
      <zorder>widget_13</zorder>
      <zorder>scrollArea_2</zorder>
+     <zorder>label_69</zorder>
+     <zorder>horizontalLayoutWidget</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addPage">

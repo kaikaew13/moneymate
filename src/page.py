@@ -448,6 +448,30 @@ class Page(QWidget):
                 button.clicked.connect(self.on_transaction_clicked)
                 scroll_widget.layout().addWidget(button)
 
+            # for goals display on dashboard
+            count = 0
+            for i in reversed(range(self.ui.horizontalLayout.layout().count())):
+                self.ui.horizontalLayout.layout().itemAt(i).widget().setParent(None)
+
+            layout = self.ui.horizontalLayout.layout()
+            layout.setSpacing(25)  # Set spacing to 0
+            layout.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+            for g in self.curUser.getGoals():
+                count += 1
+                if count > 3:
+                    break
+                button = QPushButton()
+                button_layout = QVBoxLayout(button)
+                top_label = QLabel(g.getName(), button)
+                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({round(g.getProgress() / g.getAmount() * 100)}%)'
+                bottom_label = QLabel(progressStr, button)
+                button_layout.addWidget(top_label)
+                button_layout.addWidget(bottom_label)
+                button.setLayout(button_layout)
+                button.setMinimumHeight(180)
+                button.setMinimumWidth(220)
+                self.ui.horizontalLayout.layout().addWidget(button)
+
     def updateTransactionPage(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):
             self.ui.scrollArea.widget().layout().itemAt(i).widget().setParent(None)
