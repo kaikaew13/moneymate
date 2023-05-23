@@ -1485,12 +1485,12 @@ class Ui_Form(object):
         self.widget_12.setSizePolicy(sizePolicy2)
         self.logoutButton = QPushButton(self.widget_11)
         self.logoutButton.setObjectName(u"logoutButton")
-        self.logoutButton.setGeometry(QRect(370, 220, 131, 21))
+        self.logoutButton.setGeometry(QRect(370, 250, 131, 21))
         self.logoutButton.setStyleSheet(u"QPushButton#logoutButton {\n"
 "    border: none;\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(81, 74, 248);\n"
-"    color: rgb(0, 0, 0);\n"
+"    color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
 "QPushButton#logoutButton:hover {\n"
@@ -1528,6 +1528,32 @@ class Ui_Form(object):
 "    background-color: rgb(61, 54, 180);\n"
 "}\n"
 "")
+        self.bugetField = QLineEdit(self.widget_11)
+        self.bugetField.setObjectName(u"bugetField")
+        self.bugetField.setEnabled(True)
+        self.bugetField.setGeometry(QRect(370, 220, 161, 21))
+        self.bugetField.setReadOnly(True)
+        self.label_42 = QLabel(self.widget_11)
+        self.label_42.setObjectName(u"label_42")
+        self.label_42.setGeometry(QRect(270, 220, 91, 16))
+        self.editBudgetButton = QPushButton(self.widget_11)
+        self.editBudgetButton.setObjectName(u"editBudgetButton")
+        self.editBudgetButton.setGeometry(QRect(550, 220, 111, 21))
+        self.editBudgetButton.setStyleSheet(u"QPushButton#logoutButton {\n"
+"    border: none;\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(81, 74, 248);\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QPushButton#logoutButton:hover {\n"
+"    background-color: rgb(81, 74, 200);\n"
+"}\n"
+"\n"
+"QPushButton#logoutButton:pressed {\n"
+"    background-color: rgb(61, 54, 180);\n"
+"}\n"
+"")
         self.widget_12.raise_()
         self.label_86.raise_()
         self.label_103.raise_()
@@ -1549,6 +1575,9 @@ class Ui_Form(object):
         self.username_account_field.raise_()
         self.label_36.raise_()
         self.addButton_4.raise_()
+        self.bugetField.raise_()
+        self.label_42.raise_()
+        self.editBudgetButton.raise_()
         self.stackedWidget.addWidget(self.logoutPage)
         self.transactionDetailPage = QWidget()
         self.transactionDetailPage.setObjectName(u"transactionDetailPage")
@@ -2018,8 +2047,11 @@ class Ui_Form(object):
         self.label_107.setText("")
         self.label_28.setText(QCoreApplication.translate("Form", u"User", None))
         self.logoutButton.setText(QCoreApplication.translate("Form", u"Logout", None))
-        self.label_36.setText(QCoreApplication.translate("Form", u"Your usename:", None))
+        self.label_36.setText(QCoreApplication.translate("Form", u"Username", None))
         self.addButton_4.setText(QCoreApplication.translate("Form", u"Add a Transaction / Goal", None))
+        self.bugetField.setText("")
+        self.label_42.setText(QCoreApplication.translate("Form", u"Weekly budget", None))
+        self.editBudgetButton.setText(QCoreApplication.translate("Form", u"Edit", None))
         self.goGoalButton_7.setText(QCoreApplication.translate("Form", u"Goal", None))
         self.goDashboardButton_7.setText(QCoreApplication.translate("Form", u"Dashboard", None))
         self.label_115.setText("")

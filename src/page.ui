@@ -3825,7 +3825,7 @@ QPushButton#goTransButton_5:pressed {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>220</y>
+        <y>250</y>
         <width>131</width>
         <height>21</height>
        </rect>
@@ -3835,7 +3835,7 @@ QPushButton#goTransButton_5:pressed {
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 QPushButton#logoutButton:hover {
@@ -3877,7 +3877,7 @@ QPushButton#logoutButton:pressed {
        </rect>
       </property>
       <property name="text">
-       <string>Your usename:</string>
+       <string>Username</string>
       </property>
      </widget>
      <widget class="QPushButton" name="addButton_4">
@@ -3917,6 +3917,68 @@ QPushButton#addButton_4:pressed {
        <string>Add a Transaction / Goal</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="bugetField">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>220</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>220</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Weekly budget</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="editBudgetButton">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>220</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#logoutButton {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(81, 74, 248);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#logoutButton:hover {
+    background-color: rgb(81, 74, 200);
+}
+
+QPushButton#logoutButton:pressed {
+    background-color: rgb(61, 54, 180);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+     </widget>
      <zorder>widget_12</zorder>
      <zorder>label_86</zorder>
      <zorder>label_103</zorder>
@@ -3938,6 +4000,9 @@ QPushButton#addButton_4:pressed {
      <zorder>username_account_field</zorder>
      <zorder>label_36</zorder>
      <zorder>addButton_4</zorder>
+     <zorder>bugetField</zorder>
+     <zorder>label_42</zorder>
+     <zorder>editBudgetButton</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="transactionDetailPage">

@@ -86,8 +86,19 @@ class Page(QWidget):
         self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_7.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
+        self.ui.editBudgetButton.clicked.connect(self.on_editBudgetButton_clicked)
         self.ui.EditButton.clicked.connect(self.on_editButton_clicked)
         self.ui.SaveButton.clicked.connect(self.on_saveButton_clicked)
+
+    def on_editBudgetButton_clicked(self):
+        t = self.ui.editBudgetButton.text()
+        if t == "Edit":
+            self.ui.bugetField.setReadOnly(False)
+            self.ui.editBudgetButton.setText("Save")
+        else:
+            self.curUser.setBudget(float(self.ui.bugetField.text()))
+            transaction.commit()
+            self.updateDynamicComponent()
 
     def on_saveButton_clicked(self):
         button = self.sender()
@@ -569,6 +580,9 @@ class Page(QWidget):
 
     def UpdatelogoutPage(self):
         self.ui.username_account_field.setText(self.curUser.getUsername())
+        self.ui.bugetField.setText(str('{:.2f}'.format(self.curUser.getBudget())))
+        self.ui.bugetField.setReadOnly(True)
+        self.ui.editBudgetButton.setText("Edit")
 
 
 class ButtonWithLabels(QWidget):
