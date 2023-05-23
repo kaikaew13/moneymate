@@ -166,9 +166,16 @@ class Page(QWidget):
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
         goal_obj = self.curUser.getGoalById(goal_id)
+        self.populate_goal_details(goal_obj)
         self.switchPage(GOALDETAIL_PAGE)
         print(goal_id)
         print(goal_obj)
+    
+    def populate_goal_details(self,goal_obj):
+        self.ui.GoalnameLineEdit_3.setText(goal_obj.getName())
+        self.ui.GoalamountLineEdit_3.setText(str(goal_obj.getAmount()))
+        self.ui.GoalDesc_3.setText(goal_obj.getDesc())
+
 
     def on_transaction_clicked(self):
         button = self.sender()
