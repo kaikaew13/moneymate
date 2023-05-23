@@ -100,6 +100,11 @@ class User(persistent.Persistent):
             if isinstance(t, Expense) and t.getDate().date() >= monday.date():
                 spent += t.getAmount()
         return spent
+    def getGoalById(self, goal_id):
+        for goal in self.__goals:
+            if str(goal.getID()) == goal_id:
+                return goal
+        return None
 
 
 # if __name__ == "__main__":

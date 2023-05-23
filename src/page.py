@@ -26,6 +26,7 @@ TRANSACTION_PAGE = 4
 GOAL_PAGE = 5
 USER_PAGE = 6
 TRANSACTIONDETAIL_PAGE = 7
+GOALDETAIL_PAGE = 8
 
 
 load_dotenv()
@@ -152,6 +153,14 @@ class Page(QWidget):
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(TRANSACTION_PAGE)
+    
+    def on_goal_clicked(self):
+        button = self.sender()
+        goal_id = button.objectName()  # Get the objectName of the button
+        goal_obj = self.curUser.getGoalById(goal_id)
+        self.switchPage(GOALDETAIL_PAGE)
+        print(goal_id)
+        print(goal_obj)
 
     def on_transaction_clicked(self):
         button = self.sender()
@@ -545,17 +554,19 @@ class Page(QWidget):
         if self.curUser:
             for g in (self.curUser.getGoals())[::-1]:
                 button = QPushButton()
-                button.setObjectName("myButton")  # Set object name
+                button.setObjectName(str(g.getID()))  # Set object name
 
                 button.setStyleSheet(
                     """
-                #myButton {
-                    border: 1px solid black;
-                }
-                #myButton:pressed {
-                    background-color: rgb(192, 192, 192);
-                }
-                """
+                    #{id} {{
+                        border: 1px solid black;
+                    }}
+                    #{id}:pressed {{
+                        background-color: rgb(192, 192, 192);
+                    }}
+                    """.format(
+                        id=button.objectName()
+                    )
                 )
 
                 button_layout = QHBoxLayout(button)
@@ -576,6 +587,7 @@ class Page(QWidget):
 
                 # Add bottom border to the button
                 # button.clicked.connect(self.on_transaction_clicked)
+                button.clicked.connect(self.on_goal_clicked)
                 scroll_widget.layout().addWidget(button)
 
     def UpdatelogoutPage(self):

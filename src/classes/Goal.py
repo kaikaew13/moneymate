@@ -1,4 +1,5 @@
 import persistent
+import uuid
 
 
 class Goal(persistent.Persistent):
@@ -7,6 +8,7 @@ class Goal(persistent.Persistent):
         self.__amount = amount
         self.__desc = desc
         self.__progress = 0
+        self.__id = uuid.uuid4()
 
     def setName(self, name):
         self.__name = name
@@ -31,6 +33,8 @@ class Goal(persistent.Persistent):
 
     def getProgress(self):
         return self.__progress
+    def getID(self):
+        return self.__id
 
 
 # if __name__ == "__main__":
