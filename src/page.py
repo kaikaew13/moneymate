@@ -582,6 +582,20 @@ class Page(QWidget):
                 if count > 3:
                     break
                 button = QPushButton()
+                button.setObjectName(str(g.getID()))  # Set object name
+
+                button.setStyleSheet(
+                    """
+                    #{id} {{
+                        border: 1px solid black;
+                    }}
+                    #{id}:pressed {{
+                        background-color: rgb(255, 255, 255);
+                    }}
+                    """.format(
+                        id=button.objectName()
+                    )
+                )
                 button_layout = QVBoxLayout(button)
                 top_label = QLabel(g.getName(), button)
                 progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({round(g.getProgress() / g.getAmount() * 100)}%)'
@@ -591,6 +605,7 @@ class Page(QWidget):
                 button.setLayout(button_layout)
                 button.setMinimumHeight(180)
                 button.setMinimumWidth(220)
+                button.clicked.connect(self.on_goal_clicked)
                 self.ui.horizontalLayout.layout().addWidget(button)
 
     def updateTransactionPage(self):
