@@ -99,6 +99,9 @@ class Page(QWidget):
         self.ui.EditButton_2.clicked.connect(self.on_editGoalDetail_clicked)
         self.ui.SaveButton_2.clicked.connect(self.on_saveGoalDetail_clicked)
 
+        self.ui.FundGoalButton.clicked.connect(self.on_fundButton_clicked)
+        self.ui.deFundGoalButton.clicked.connect(self.on_defundButton_clicked)
+
     def on_editGoalDetail_clicked(self):
         self.ui.GoalamountLineEdit_3.setReadOnly(False)
         self.ui.GoalnameLineEdit_3.setReadOnly(False)
@@ -124,6 +127,25 @@ class Page(QWidget):
         transaction.commit()
         self.updateDynamicComponent()
         self.switchPage(GOAL_PAGE)
+
+    def on_fundButton_clicked(self):
+        button = self.sender()
+        goal_id = button.objectName()
+        print("gid = " + goal_id)
+        if self.ui.GoalFund_4.text() != "":
+            self.curUser.addFund(goal_id, float(self.ui.GoalFund_4.text()))
+            transaction.commit()
+            self.updateDynamicComponent(optional_id=goal_id)
+            self.switchPage(GOALDETAIL_PAGE)
+
+    def on_defundButton_clicked(self):
+        button = self.sender()
+        goal_id = button.objectName()
+        if self.ui.GoalDefund_5.text() != "":
+            self.curUser.defund(goal_id, float(self.ui.GoalDefund_5.text()))
+            transaction.commit()
+            self.updateDynamicComponent(optional_id=goal_id)
+            self.switchPage(GOALDETAIL_PAGE)
 
     def on_editBudgetButton_clicked(self):
         t = self.ui.editBudgetButton.text()
@@ -206,6 +228,10 @@ class Page(QWidget):
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
         goal_obj = self.curUser.getGoalById(goal_id)
+        self.ui.GoalBalanceLabel_2.setText(str(goal_obj.getProgress()))
+        self.ui.GoalBalanceLabel_4.setText(str(goal_obj.getAmount() - goal_obj.getProgress()))
+        self.ui.GoalBalanceLabel_5.setText(str(goal_obj.getAmount()))
+        self.ui.progressBar.setValue(round(goal_obj.getProgress() / goal_obj.getAmount() * 100))
         self.populate_goal_details(goal_obj)
 
         if self._delete_goals_slot is not None:
@@ -222,6 +248,8 @@ class Page(QWidget):
 
         self.ui.DeleteGoalButton.clicked.connect(self._delete_goals_slot)
         self.ui.SaveButton_2.setObjectName(str(goal_id))
+        self.ui.FundGoalButton.setObjectName(str(goal_id))
+        self.ui.deFundGoalButton.setObjectName(str(goal_id))
         self.switchPage(GOALDETAIL_PAGE)
     
     def populate_goal_details(self,goal_obj):
@@ -456,13 +484,16 @@ class Page(QWidget):
         self.ui.goalamountLineEdit.setText("")
         self.ui.GoalDesc.setText("")
         self.ui.PasswordField_2.setText("")
+        self.ui.GoalFund_4.setText("")
+        self.ui.GoalDefund_5.setText("")
 
     # calls update on every page
-    def updateDynamicComponent(self):
+    def updateDynamicComponent(self, optional_id = None):
         self.updateDashboardPage()
         self.updateTransactionPage()
         self.updateGoalPage()
         self.UpdatelogoutPage()
+        self.updateGoalDetailPage(optional_id)
 
     def updateDashboardPage(self):
         self.ui.currentBalanceLabel.setText(
@@ -660,6 +691,14 @@ class Page(QWidget):
                 # button.clicked.connect(self.on_transaction_clicked)
                 button.clicked.connect(self.on_goal_clicked)
                 scroll_widget.layout().addWidget(button)
+
+    def updateGoalDetailPage(self, goal_id):
+        if goal_id:
+            goal_obj = self.curUser.getGoalById(goal_id)
+            self.ui.GoalBalanceLabel_2.setText(str(goal_obj.getProgress()))
+            self.ui.GoalBalanceLabel_4.setText(str(goal_obj.getAmount() - goal_obj.getProgress()))
+            self.ui.GoalBalanceLabel_5.setText(str(goal_obj.getAmount()))
+            self.ui.progressBar.setValue(round(goal_obj.getProgress() / goal_obj.getAmount() * 100))
 
     def UpdatelogoutPage(self):
         self.ui.username_account_field.setText(self.curUser.getUsername())

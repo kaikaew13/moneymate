@@ -103,6 +103,22 @@ class User(persistent.Persistent):
                 return True
         return False
 
+    def addFund(self, goal_id, fund):
+        for goal in self.__goals:
+            if str(goal.getID()) == goal_id:
+                goal.setProgress(goal.getProgress() + fund)
+                self._p_changed = True
+                return True
+        return False
+    
+    def defund(self, goal_id, defund):
+        for goal in self.__goals:
+            if str(goal.getID()) == goal_id:
+                goal.setProgress(goal.getProgress() - defund)
+                self._p_changed = True
+                return True
+        return False
+
     # starts counting from closest Monday
     def getWeeklySpent(self):
         spent = 0
