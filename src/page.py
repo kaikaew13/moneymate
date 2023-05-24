@@ -53,7 +53,6 @@ class Page(QWidget):
         self.ui.goDashboardButton_7.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_8.clicked.connect(self.on_goDashboardButton_clicked)
 
-
         self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
         self.ui.loginButton.clicked.connect(self.on_loginButton_clicked)
@@ -82,7 +81,7 @@ class Page(QWidget):
         self.ui.goGoalButton_4.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_5.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_7.clicked.connect(self.on_gogoalButton_clicked)
-        self.ui.goGoalButton_8.clicked.connect(self.on_gogoalButton_clicked)    
+        self.ui.goGoalButton_8.clicked.connect(self.on_gogoalButton_clicked)
 
         self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
@@ -176,7 +175,7 @@ class Page(QWidget):
         self.ui.SaveButton.setEnabled(False)
         transaction.commit()
         self.updateDynamicComponent()
-        self.switchPage(TRANSACTION_PAGE)
+        # self.switchPage(TRANSACTION_PAGE)
 
     def on_editButton_clicked(self):
         self.ui.transamountLineEdit_2.setReadOnly(False)
@@ -202,9 +201,9 @@ class Page(QWidget):
 
     def on_deleteGoalsButton_clicked(self, goal_id):
         password = self.ui.PasswordField_2.text()
-        tmp = self.root['user']
+        tmp = self.root["user"]
         user = tmp[self.curUser.getUsername()]
-        hashedpass= user.getHashedpass()
+        hashedpass = user.getHashedpass()
         if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
             user.removeGoalById(goal_id)
             transaction.commit()
@@ -221,17 +220,21 @@ class Page(QWidget):
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(TRANSACTION_PAGE)
-    
+
     def on_goal_clicked(self):
         self.ui.EditButton_2.setEnabled(True)
         self.ui.SaveButton_2.setEnabled(False)
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
         goal_obj = self.curUser.getGoalById(goal_id)
-        self.ui.GoalBalanceLabel_2.setText(str(goal_obj.getProgress()))
-        self.ui.GoalBalanceLabel_4.setText(str(goal_obj.getAmount() - goal_obj.getProgress()))
-        self.ui.GoalBalanceLabel_5.setText(str(goal_obj.getAmount()))
-        self.ui.progressBar.setValue(round(goal_obj.getProgress() / goal_obj.getAmount() * 100))
+        self.ui.GoalBalanceLabel_2.setText(str("{:.2f}".format(goal_obj.getProgress())))
+        self.ui.GoalBalanceLabel_4.setText(
+            str("{:.2f}".format(goal_obj.getAmount() - goal_obj.getProgress()))
+        )
+        self.ui.GoalBalanceLabel_5.setText(str("{:.2f}".format(goal_obj.getAmount())))
+        self.ui.progressBar.setValue(
+            round(goal_obj.getProgress() / goal_obj.getAmount() * 100)
+        )
         self.populate_goal_details(goal_obj)
 
         if self._delete_goals_slot is not None:
@@ -242,21 +245,18 @@ class Page(QWidget):
                 pass
 
         # Create a new slot
-        self._delete_goals_slot = lambda _: self.on_deleteGoalsButton_clicked(
-            goal_id
-        )
+        self._delete_goals_slot = lambda _: self.on_deleteGoalsButton_clicked(goal_id)
 
         self.ui.DeleteGoalButton.clicked.connect(self._delete_goals_slot)
         self.ui.SaveButton_2.setObjectName(str(goal_id))
         self.ui.FundGoalButton.setObjectName(str(goal_id))
         self.ui.deFundGoalButton.setObjectName(str(goal_id))
         self.switchPage(GOALDETAIL_PAGE)
-    
-    def populate_goal_details(self,goal_obj):
-        self.ui.GoalnameLineEdit_3.setText(goal_obj.getName())
-        self.ui.GoalamountLineEdit_3.setText(str(goal_obj.getAmount()))
-        self.ui.GoalDesc_3.setText(goal_obj.getDesc())
 
+    def populate_goal_details(self, goal_obj):
+        self.ui.GoalnameLineEdit_3.setText(goal_obj.getName())
+        self.ui.GoalamountLineEdit_3.setText(str("{:.2f}".format(goal_obj.getAmount())))
+        self.ui.GoalDesc_3.setText(goal_obj.getDesc())
 
     def on_transaction_clicked(self):
         button = self.sender()
@@ -286,7 +286,9 @@ class Page(QWidget):
 
     def populateTransactionDetails(self, transaction_obj):
         self.ui.transnameLineEdit_2.setText(str(transaction_obj.getName()))
-        self.ui.transamountLineEdit_2.setText(str(transaction_obj.getAmount()))
+        self.ui.transamountLineEdit_2.setText(
+            str("{:.2f}".format(transaction_obj.getAmount()))
+        )
         self.ui.catLineEdit_2.setText(str(transaction_obj.getCategory()))
         self.ui.transDesc_2.setText(str(transaction_obj.getDesc()))
 
@@ -488,7 +490,7 @@ class Page(QWidget):
         self.ui.GoalDefund_5.setText("")
 
     # calls update on every page
-    def updateDynamicComponent(self, optional_id = None):
+    def updateDynamicComponent(self, optional_id=None):
         self.updateDashboardPage()
         self.updateTransactionPage()
         self.updateGoalPage()
@@ -710,14 +712,22 @@ class Page(QWidget):
     def updateGoalDetailPage(self, goal_id):
         if goal_id:
             goal_obj = self.curUser.getGoalById(goal_id)
-            self.ui.GoalBalanceLabel_2.setText(str(goal_obj.getProgress()))
-            self.ui.GoalBalanceLabel_4.setText(str(goal_obj.getAmount() - goal_obj.getProgress()))
-            self.ui.GoalBalanceLabel_5.setText(str(goal_obj.getAmount()))
-            self.ui.progressBar.setValue(round(goal_obj.getProgress() / goal_obj.getAmount() * 100))
+            self.ui.GoalBalanceLabel_2.setText(
+                str("{:.2f}".format(goal_obj.getProgress()))
+            )
+            self.ui.GoalBalanceLabel_4.setText(
+                str("{:.2f}".format(goal_obj.getAmount() - goal_obj.getProgress()))
+            )
+            self.ui.GoalBalanceLabel_5.setText(
+                str("{:.2f}".format(goal_obj.getAmount()))
+            )
+            self.ui.progressBar.setValue(
+                round(goal_obj.getProgress() / goal_obj.getAmount() * 100)
+            )
 
     def UpdatelogoutPage(self):
         self.ui.username_account_field.setText(self.curUser.getUsername())
-        self.ui.bugetField.setText(str('{:.2f}'.format(self.curUser.getBudget())))
+        self.ui.bugetField.setText(str("{:.2f}".format(self.curUser.getBudget())))
         self.ui.bugetField.setReadOnly(True)
         self.ui.editBudgetButton.setText("Edit")
 
