@@ -14,6 +14,7 @@ from classes.Goal import Goal
 from classes.Expense import Expense
 from classes.Income import Income
 from classes.billReminder import BillReminder
+from classes.Notification import Notification
 
 LOGIN_PAGE = 0
 REGISTER_PAGE = 1
@@ -40,6 +41,7 @@ class Page(QWidget):
         self._delete_goals_slot = None
         self._delete_bills_slot = None
         self.curUser: User = None
+        self.notification: Notification = None
         self.root = root
         self.conn = conn
         self.ui = Ui_Form()
@@ -137,6 +139,38 @@ class Page(QWidget):
 
         self.ui.FundGoalButton.clicked.connect(self.on_fundButton_clicked)
         self.ui.deFundGoalButton.clicked.connect(self.on_defundButton_clicked)
+
+        self.ui.notiButton.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_2.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_3.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_4.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_5.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_6.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_7.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_8.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_9.clicked.connect(self.on_notiButton_clicked)
+        self.ui.notiButton_10.clicked.connect(self.on_notiButton_clicked)
+
+    def on_notiButton_clicked(self):
+        msgBox = QMessageBox()
+        msgBox.setBaseSize(QSize(500, 300))
+        msgBox.setWindowTitle("Notification")
+        bills = self.notification.getBills()
+        goals = self.notification.getGoals()
+        messageStr = ""
+        if len(bills) > 0:
+            messageStr += "bills that are almost due:\n"
+            for b in bills:
+                messageStr += f" - Bill Name: {b.getName()}\n\tAmount: {'{:.2f}'.format(b.getAmount())} Pay Before: {b.getDueDate().date()}\n"
+        messageStr += "\n"
+        if len(goals) > 0:
+            messageStr += "goals that almost reach the target:\n"
+            for g in goals:
+                messageStr += f" - Goal Name: {g.getName()}\n\tProgress: {'{:.2f}'.format(g.getProgress())}/{'{:.2f}'.format(g.getAmount())} Percentage: {g.getPercentage()}%"
+        msgBox.setText(messageStr)
+        msgBox.exec()
+        self.notification.setRead(True)
+        self.updateDynamicComponent()
 
     def on_addBillsButton_clicked(self):
         self.switchPage(ADDBILL_PAGE)
@@ -320,9 +354,7 @@ class Page(QWidget):
             str("{:.2f}".format(goal_obj.getAmount() - goal_obj.getProgress()))
         )
         self.ui.GoalBalanceLabel_5.setText(str("{:.2f}".format(goal_obj.getAmount())))
-        self.ui.progressBar.setValue(
-            round(goal_obj.getProgress() / goal_obj.getAmount() * 100)
-        )
+        self.ui.progressBar.setValue(goal_obj.getPercentage())
         self.populate_goal_details(goal_obj)
 
         if self._delete_goals_slot is not None:
@@ -447,6 +479,9 @@ class Page(QWidget):
                 hashedpass = user.getHashedpass()
                 if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
                     self.curUser = user
+                    bills = self.curUser.getSummary().getAlmostDueBills()
+                    goals = self.curUser.getSummary().getAlmostDoneGoals()
+                    self.notification = Notification(goals, bills)
                     self.updateDynamicComponent()
                     # self.updateScroll()
                     # self.updateDashboard()
@@ -639,6 +674,31 @@ class Page(QWidget):
         self.updateGoalPage()
         self.UpdatelogoutPage()
         self.updateGoalDetailPage(optional_id)
+        self.updateNotification()
+
+    def updateNotification(self):
+        if self.notification.getRead():
+            self.ui.notiButton.hide()
+            self.ui.notiButton_2.hide()
+            self.ui.notiButton_3.hide()
+            self.ui.notiButton_4.hide()
+            self.ui.notiButton_5.hide()
+            self.ui.notiButton_6.hide()
+            self.ui.notiButton_7.hide()
+            self.ui.notiButton_8.hide()
+            self.ui.notiButton_9.hide()
+            self.ui.notiButton_10.hide()
+        else:
+            self.ui.notiButton.show()
+            self.ui.notiButton_2.show()
+            self.ui.notiButton_3.show()
+            self.ui.notiButton_4.show()
+            self.ui.notiButton_5.show()
+            self.ui.notiButton_6.show()
+            self.ui.notiButton_7.show()
+            self.ui.notiButton_8.show()
+            self.ui.notiButton_9.show()
+            self.ui.notiButton_10.show()
 
     def updateDashboardPage(self):
         summary = self.curUser.getSummary()
@@ -740,7 +800,7 @@ class Page(QWidget):
                 )
                 button_layout = QVBoxLayout(button)
                 top_label = QLabel(g.getName(), button)
-                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({round(g.getProgress() / g.getAmount() * 100)}%)'
+                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({g.getPercentage()}%)'
                 bottom_label = QLabel(progressStr, button)
                 button_layout.addWidget(top_label)
                 button_layout.addWidget(bottom_label)

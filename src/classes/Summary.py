@@ -54,6 +54,21 @@ class Summary(persistent.Persistent):
                 self._p_changed = True
                 return
 
+    def getAlmostDueBills(self):
+        tmr = datetime.now() + timedelta(1)
+        almostDueBills = []
+        for bill in self.__bills:
+            if bill.getDueDate().date() <= tmr.date():
+                almostDueBills.append(bill)
+        return almostDueBills
+
+    def getAlmostDoneGoals(self):
+        almostDoneGoals = []
+        for goal in self.__goals:
+            if goal.getPercentage() >= 90:
+                almostDoneGoals.append(goal)
+        return almostDoneGoals
+
     def getTransactions(self):
         return self.__transactions
 

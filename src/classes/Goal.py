@@ -34,6 +34,9 @@ class Goal(persistent.Persistent):
     def getProgress(self):
         return self.__progress
 
+    def getPercentage(self):
+        return round(self.__progress / self.__amount * 100)
+
     def getID(self):
         return self.__id
 
