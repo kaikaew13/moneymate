@@ -4611,7 +4611,7 @@ QPushButton#goTransButton_5:pressed {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>310</y>
+        <y>340</y>
         <width>131</width>
         <height>21</height>
        </rect>
@@ -4732,7 +4732,7 @@ QPushButton#addButton_4:pressed {
        </rect>
       </property>
       <property name="text">
-       <string>Weekly budget</string>
+       <string>Weekly Budget</string>
       </property>
      </widget>
      <widget class="QPushButton" name="editBudgetButton">
@@ -4778,7 +4778,7 @@ QPushButton#editBudgetButton:pressed {
        <string>Total Income</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="bugetField_2">
+     <widget class="QLineEdit" name="ttincome">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -4810,7 +4810,7 @@ QPushButton#editBudgetButton:pressed {
        <string>Total Expense</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="bugetField_3">
+     <widget class="QLineEdit" name="ttexpense">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -4863,6 +4863,38 @@ QPushButton#goBillsButton_5:pressed {
        <string>Bills</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="ttBalance">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>310</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_255">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>310</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Balance</string>
+      </property>
+     </widget>
      <zorder>widget_12</zorder>
      <zorder>label_86</zorder>
      <zorder>label_103</zorder>
@@ -4888,10 +4920,12 @@ QPushButton#goBillsButton_5:pressed {
      <zorder>label_42</zorder>
      <zorder>editBudgetButton</zorder>
      <zorder>label_134</zorder>
-     <zorder>bugetField_2</zorder>
+     <zorder>ttincome</zorder>
      <zorder>label_135</zorder>
-     <zorder>bugetField_3</zorder>
+     <zorder>ttexpense</zorder>
      <zorder>goBillsButton_5</zorder>
+     <zorder>ttBalance</zorder>
+     <zorder>label_255</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="transactionDetailPage">
