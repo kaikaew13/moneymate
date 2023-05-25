@@ -33,6 +33,7 @@ class Goal(persistent.Persistent):
 
     def getProgress(self):
         return self.__progress
+
     def getID(self):
         return self.__id
 

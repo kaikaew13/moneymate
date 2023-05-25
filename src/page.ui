@@ -1488,6 +1488,37 @@ QPushButton#addButton:pressed {
        <string/>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>label_108</zorder>
      <zorder>label_63</zorder>
      <zorder>goDashboardButton</zorder>
@@ -1524,6 +1555,7 @@ QPushButton#addButton:pressed {
      <zorder>scrollArea_2</zorder>
      <zorder>label_69</zorder>
      <zorder>horizontalLayoutWidget</zorder>
+     <zorder>goBillsButton</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addPage">
@@ -2231,6 +2263,37 @@ QPushButton#goTransButton_2:pressed {
        </rect>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton_2">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>label_83</zorder>
      <zorder>label_88</zorder>
      <zorder>tabsButton_2</zorder>
@@ -2267,6 +2330,651 @@ QPushButton#goTransButton_2:pressed {
      <zorder>label_17</zorder>
      <zorder>transDesc</zorder>
      <zorder>GoalDesc</zorder>
+     <zorder>goBillsButton_2</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="BillsPage">
+    <widget class="QWidget" name="widget_6" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1021</width>
+       <height>771</height>
+      </rect>
+     </property>
+     <widget class="QPushButton" name="goGoalButton_12">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>280</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goGoalButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goGoalButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goGoalButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Goals</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goDashboardButton_12">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>100</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goDashboardButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goDashboardButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+
+QPushButton#goDashboardButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Dashboard</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_184">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/user.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_185">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Money Mate</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="closeButton_14">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>30</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#closeButton_5 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#closeButton_5:hover {
+    border: 2px dashed grey; /* set the border to a solid color when hovering */
+    border-radius: 50%; /* set the border radius to create a circle */
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/x-button.png</normaloff>:/pics/images/x-button.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_186">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1071</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81,74,248);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goAccountButton_12">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>160</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goAccountButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goAccountButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goAccountButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Account</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_187">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>1021</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250,250,250);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_188">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/goal.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_189">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/trans.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabsButton_12">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#tabsButton_3 {
+    border: none;
+    background-color: rgb(81,74,248);
+   qproperty-iconSize: 40px;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#tabsButton_3:hover {
+    background-color: rgb(81,74,170);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_190">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>251</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goTransButton_12">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>220</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goTransButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goTransButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goTransButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Transactions</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_191">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/pics/images/home.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_192">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>120</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Bills Reminder</string>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_8">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>220</y>
+        <width>701</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,240,240)</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>699</width>
+         <height>509</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8"/>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_22" native="true">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>180</y>
+        <width>701</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <widget class="QLabel" name="label_193">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bill Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_194">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>10</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Due Date</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_195">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>10</y>
+         <width>131</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bill Amount</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_26">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>721</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_27">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>40</y>
+         <width>741</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_196">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>180</y>
+        <width>701</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,240,240)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addButton_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>680</y>
+        <width>231</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#addButton_2{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(81, 74, 248);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#addButton_2:hover {
+    background-color: rgb(81, 74, 200);
+}
+
+QPushButton#addButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Add a Transaction / Goal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goBillsButton_12">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_28">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>150</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addBillsButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>620</y>
+        <width>231</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#addButton_2{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(81, 74, 248);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#addButton_2:hover {
+    background-color: rgb(81, 74, 200);
+}
+
+QPushButton#addButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Add Bills</string>
+      </property>
+     </widget>
+     <zorder>label_190</zorder>
+     <zorder>label_186</zorder>
+     <zorder>label_187</zorder>
+     <zorder>tabsButton_12</zorder>
+     <zorder>goTransButton_12</zorder>
+     <zorder>label_192</zorder>
+     <zorder>scrollArea_8</zorder>
+     <zorder>addButton_11</zorder>
+     <zorder>goBillsButton_12</zorder>
+     <zorder>line_28</zorder>
+     <zorder>label_189</zorder>
+     <zorder>goDashboardButton_12</zorder>
+     <zorder>goGoalButton_12</zorder>
+     <zorder>label_185</zorder>
+     <zorder>closeButton_14</zorder>
+     <zorder>goAccountButton_12</zorder>
+     <zorder>label_184</zorder>
+     <zorder>label_188</zorder>
+     <zorder>label_191</zorder>
+     <zorder>label_196</zorder>
+     <zorder>widget_22</zorder>
+     <zorder>addBillsButton</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="TransactionPage">
@@ -2677,22 +3385,6 @@ QPushButton#goTransButton_3:pressed {
        <layout class="QVBoxLayout" name="verticalLayout"/>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>410</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
      <widget class="QWidget" name="widget_7" native="true">
       <property name="geometry">
        <rect>
@@ -2824,6 +3516,50 @@ QPushButton#addButton_2:pressed {
        <string>Add a Transaction / Goal</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton_3">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_3 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_3:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_9">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>150</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
      <zorder>label_92</zorder>
      <zorder>label_22</zorder>
      <zorder>label_96</zorder>
@@ -2841,9 +3577,10 @@ QPushButton#addButton_2:pressed {
      <zorder>label_95</zorder>
      <zorder>label_97</zorder>
      <zorder>scrollArea</zorder>
-     <zorder>widget_6</zorder>
      <zorder>widget_7</zorder>
      <zorder>addButton_2</zorder>
+     <zorder>goBillsButton_3</zorder>
+     <zorder>line_9</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalPage">
@@ -3398,6 +4135,37 @@ QPushButton#addButton_3:pressed {
        <string>Add a Transaction / Goal</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton_4">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_4 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_4:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_4:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>label_85</zorder>
      <zorder>label_98</zorder>
      <zorder>tabsButton_4</zorder>
@@ -3418,6 +4186,7 @@ QPushButton#addButton_3:pressed {
      <zorder>widget_10</zorder>
      <zorder>scrollArea_3</zorder>
      <zorder>addButton_3</zorder>
+     <zorder>goBillsButton_4</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="accountPage">
@@ -3842,7 +4611,7 @@ QPushButton#goTransButton_5:pressed {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>250</y>
+        <y>310</y>
         <width>131</width>
         <height>21</height>
        </rect>
@@ -3996,6 +4765,104 @@ QPushButton#editBudgetButton:pressed {
        <string>Edit</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_134">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>250</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Income</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bugetField_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>250</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_135">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>280</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Total Expense</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bugetField_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>280</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goBillsButton_5">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_5 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_5:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_5:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>widget_12</zorder>
      <zorder>label_86</zorder>
      <zorder>label_103</zorder>
@@ -4020,6 +4887,11 @@ QPushButton#editBudgetButton:pressed {
      <zorder>bugetField</zorder>
      <zorder>label_42</zorder>
      <zorder>editBudgetButton</zorder>
+     <zorder>label_134</zorder>
+     <zorder>bugetField_2</zorder>
+     <zorder>label_135</zorder>
+     <zorder>bugetField_3</zorder>
+     <zorder>goBillsButton_5</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="transactionDetailPage">
@@ -4750,6 +5622,37 @@ QPushButton#DeleteTransButton:pressed {
        <string>Enter your password:</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton_6">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_6 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_6:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_6:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>label_118</zorder>
      <zorder>label_37</zorder>
      <zorder>line_24</zorder>
@@ -4781,6 +5684,7 @@ QPushButton#DeleteTransButton:pressed {
      <zorder>DeleteTransButton</zorder>
      <zorder>PasswordField</zorder>
      <zorder>label_68</zorder>
+     <zorder>goBillsButton_6</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalDetailPage">
@@ -6007,6 +6911,37 @@ QPushButton#addButton_5:pressed {
        <string>Defund</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="goBillsButton_7">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_7 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_7:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_7:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
      <zorder>label_126</zorder>
      <zorder>label_74</zorder>
      <zorder>label_125</zorder>
@@ -6060,6 +6995,566 @@ QPushButton#addButton_5:pressed {
      <zorder>GoalDefund_5</zorder>
      <zorder>FundGoalButton</zorder>
      <zorder>deFundGoalButton</zorder>
+     <zorder>goBillsButton_7</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page">
+    <widget class="QWidget" name="widget_23" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1021</width>
+       <height>771</height>
+      </rect>
+     </property>
+     <widget class="QPushButton" name="goGoalButton_14">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>280</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goGoalButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goGoalButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goGoalButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Goals</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goDashboardButton_14">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>100</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goDashboardButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goDashboardButton_2:hover {
+ 
+   background-color: rgb(81,74,200);
+}
+
+QPushButton#goDashboardButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Dashboard</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_214">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/user.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_215">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Money Mate</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="closeButton_16">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>30</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#closeButton_4 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#closeButton_4:hover {
+    border: 2px dashed grey; /* set the border to a solid color when hovering */
+    border-radius: 50%; /* set the border radius to create a circle */
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/x-button.png</normaloff>:/pics/images/x-button.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_216">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1071</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81,74,248);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goAccountButton_14">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>160</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goAccountButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goAccountButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goAccountButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Account</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_217">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>1021</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250,250,250);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_218">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/goal.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_219">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/trans.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabsButton_14">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#tabsButton_2 {
+    border: none;
+    background-color: rgb(81,74,248);
+   qproperty-iconSize: 40px;
+    border-radius: 10px; /* set the initial border radius */
+}
+
+QPushButton#tabsButton_2:hover {
+    background-color: rgb(81,74,170);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resources/img.qrc">
+        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_220">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>251</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goTransButton_14">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>220</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goTransButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goTransButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goTransButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Transactions</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_221">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/pics/images/home.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_226">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>120</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>New Bill</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_32">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>150</y>
+        <width>731</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="billsnameLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>200</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="billsamountLineedit">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>280</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_227">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>170</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Bill Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_228">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>250</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Bill Amount</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_229">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>160</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveBillsButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>340</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="BillsDesc">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>200</y>
+        <width>431</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goBillsButton_14">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>340</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#goBillsButton_2 {
+    border: none;
+    border-radius: 10px; /* set the initial border radius */
+	color: rgb(0,0,0);
+}
+QPushButton#goBillsButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_2:pressed {
+    background-color: rgb(61, 54, 180);
+}</string>
+      </property>
+      <property name="text">
+       <string>Bills</string>
+      </property>
+     </widget>
+     <zorder>label_216</zorder>
+     <zorder>label_217</zorder>
+     <zorder>tabsButton_14</zorder>
+     <zorder>label_220</zorder>
+     <zorder>label_226</zorder>
+     <zorder>line_32</zorder>
+     <zorder>billsnameLineEdit</zorder>
+     <zorder>billsamountLineedit</zorder>
+     <zorder>label_227</zorder>
+     <zorder>label_228</zorder>
+     <zorder>label_229</zorder>
+     <zorder>saveBillsButton</zorder>
+     <zorder>BillsDesc</zorder>
+     <zorder>goBillsButton_14</zorder>
+     <zorder>goAccountButton_14</zorder>
+     <zorder>goDashboardButton_14</zorder>
+     <zorder>goGoalButton_14</zorder>
+     <zorder>goTransButton_14</zorder>
+     <zorder>label_214</zorder>
+     <zorder>label_215</zorder>
+     <zorder>label_218</zorder>
+     <zorder>label_219</zorder>
+     <zorder>label_221</zorder>
+     <zorder>closeButton_16</zorder>
     </widget>
    </widget>
   </widget>

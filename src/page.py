@@ -7,22 +7,25 @@ import bcrypt
 import transaction
 import ZODB.FileStorage
 import ZODB
+from datetime import datetime
 
 from classes.User import User
 from classes.Goal import Goal
 from classes.Expense import Expense
 from classes.Income import Income
-
+from classes.billReminder import BillReminder
 
 LOGIN_PAGE = 0
 REGISTER_PAGE = 1
 DASHBOARD_PAGE = 2
 ADD_PAGE = 3
-TRANSACTION_PAGE = 4
-GOAL_PAGE = 5
-USER_PAGE = 6
-TRANSACTIONDETAIL_PAGE = 7
-GOALDETAIL_PAGE = 8
+BILLS_PAGE = 4
+TRANSACTION_PAGE = 5
+GOAL_PAGE = 6
+USER_PAGE = 7
+TRANSACTIONDETAIL_PAGE = 8
+GOALDETAIL_PAGE = 9
+ADDBILL_PAGE = 10
 
 
 load_dotenv()
@@ -52,6 +55,8 @@ class Page(QWidget):
         self.ui.goDashboardButton_5.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_7.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_8.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_12.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_14.clicked.connect(self.on_goDashboardButton_clicked)
 
         self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
@@ -63,6 +68,7 @@ class Page(QWidget):
         self.ui.addButton_4.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_5.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_6.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_11.clicked.connect(self.on_addButton_clicked)
 
         self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
@@ -74,6 +80,8 @@ class Page(QWidget):
         self.ui.goTransButton_5.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_7.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_8.clicked.connect(self.on_gotransButton_clicked)
+        self.ui.goTransButton_12.clicked.connect(self.on_gotransButton_clicked)
+        self.ui.goTransButton_14.clicked.connect(self.on_gotransButton_clicked)
 
         self.ui.goGoalButton.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_2.clicked.connect(self.on_gogoalButton_clicked)
@@ -82,6 +90,8 @@ class Page(QWidget):
         self.ui.goGoalButton_5.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_7.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_8.clicked.connect(self.on_gogoalButton_clicked)
+        self.ui.goGoalButton_12.clicked.connect(self.on_gogoalButton_clicked)
+        self.ui.goGoalButton_14.clicked.connect(self.on_gogoalButton_clicked)
 
         self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
@@ -90,16 +100,37 @@ class Page(QWidget):
         self.ui.goAccountButton_5.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_7.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_8.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_12.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_14.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
         self.ui.editBudgetButton.clicked.connect(self.on_editBudgetButton_clicked)
         self.ui.EditButton.clicked.connect(self.on_editButton_clicked)
         self.ui.SaveButton.clicked.connect(self.on_saveButton_clicked)
+
+        self.ui.goBillsButton.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_2.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_3.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_4.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_5.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_6.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_7.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_12.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_14.clicked.connect(self.on_goBillsButton_clicked)
+
+        self.ui.addBillsButton.clicked.connect(self.on_addBillsButton_clicked)
+        self.ui.saveBillsButton.clicked.connect(self.on_saveNewBill)
 
         self.ui.EditButton_2.clicked.connect(self.on_editGoalDetail_clicked)
         self.ui.SaveButton_2.clicked.connect(self.on_saveGoalDetail_clicked)
 
         self.ui.FundGoalButton.clicked.connect(self.on_fundButton_clicked)
         self.ui.deFundGoalButton.clicked.connect(self.on_defundButton_clicked)
+
+    def on_addBillsButton_clicked(self):
+        self.switchPage(ADDBILL_PAGE)
+
+    def on_goBillsButton_clicked(self):
+        self.switchPage(BILLS_PAGE)
 
     def on_editGoalDetail_clicked(self):
         self.ui.GoalamountLineEdit_3.setReadOnly(False)
@@ -463,6 +494,18 @@ class Page(QWidget):
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
 
+    def on_saveNewBill(self):
+        billName = self.ui.billsnameLineEdit.text()
+        billAmount = self.ui.billsamountLineedit.text()
+        billDesc = self.ui.BillsDesc.toPlainText()
+        tmp = self.root["user"]
+        user = tmp[self.curUser.getUsername()]
+        bill = BillReminder(billName, float(billAmount), datetime.now(), billDesc)
+        user.getSummary().addBill(bill)
+        transaction.commit()
+        self.updateDynamicComponent()
+        self.switchPage(BILLS_PAGE)
+
     def on_savegoalButton_clicked(self):
         goalName = self.ui.goalnameLineEdit.text()
         goalAmount = self.ui.goalamountLineEdit.text()
@@ -497,6 +540,7 @@ class Page(QWidget):
     def updateDynamicComponent(self, optional_id=None):
         self.updateDashboardPage()
         self.updateTransactionPage()
+        self.udpateBillsPage()
         self.updateGoalPage()
         self.UpdatelogoutPage()
         self.updateGoalDetailPage(optional_id)
@@ -610,6 +654,56 @@ class Page(QWidget):
                 button.setMinimumWidth(220)
                 button.clicked.connect(self.on_goal_clicked)
                 self.ui.horizontalLayout.layout().addWidget(button)
+
+    def udpateBillsPage(self):
+        for i in reversed(range(self.ui.scrollArea_8.widget().layout().count())):
+            self.ui.scrollArea_8.widget().layout().itemAt(i).widget().setParent(None)
+        scroll_widget = self.ui.scrollArea_8.widget()
+        scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        layout = scroll_widget.layout()
+        layout.setSpacing(0)  # Set spacing to 0
+        layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
+
+        if self.curUser:
+            summary = self.curUser.getSummary()
+            print(summary.getBills())
+            for b in (summary.getBills())[::-1]:
+                button = QPushButton()
+
+                button.setObjectName(str(b.getID()))  # Set object name
+
+                button.setStyleSheet(
+                    """
+                    #{id} {{
+                        border: 1px solid black;
+                    }}
+                    #{id}:pressed {{
+                        background-color: rgb(192, 192, 192);
+                    }}
+                    """.format(
+                        id=button.objectName()
+                    )
+                )
+                button_layout = QHBoxLayout(button)
+
+                left_label = QLabel(b.getName(), button)  # Set button as parent
+                middle_label = QLabel(
+                    str("{:.2f}".format(b.getAmount())), button
+                )  # Set button as parent
+                right_label = QLabel(
+                    str(b.getDueDate().date()), button
+                )  # Set button as parent
+
+                button_layout.addWidget(left_label)
+                button_layout.addWidget(middle_label)
+                button_layout.addWidget(right_label)
+
+                button.setLayout(button_layout)
+                button.setMinimumHeight(50)  # Set minimum height here
+
+                # Add bottom border to the button
+                button.clicked.connect(self.on_transaction_clicked)
+                scroll_widget.layout().addWidget(button)
 
     def updateTransactionPage(self):
         for i in reversed(range(self.ui.scrollArea.widget().layout().count())):

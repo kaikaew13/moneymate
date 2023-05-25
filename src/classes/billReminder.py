@@ -1,14 +1,19 @@
-class BillReminder:
+import persistent
+import uuid
+
+
+class BillReminder(persistent.Persistent):
     def __init__(self, name, amount, duedate, desc=""):
         self.__name = name
         self.__amount = amount
         self.__duedate = duedate
         self.__desc = desc
+        self.__id = uuid.uuid4()
 
-    def setTitle(self, name):
+    def setName(self, name):
         self.__name = name
 
-    def getTitle(self):
+    def getName(self):
         return self.__name
 
     def setAmount(self, amount):
@@ -28,3 +33,6 @@ class BillReminder:
 
     def getDesc(self):
         return self.__desc
+
+    def getID(self):
+        return self.__id
