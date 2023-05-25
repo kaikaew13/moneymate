@@ -59,6 +59,7 @@ class Page(QWidget):
         self.ui.goDashboardButton_8.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_12.clicked.connect(self.on_goDashboardButton_clicked)
         self.ui.goDashboardButton_14.clicked.connect(self.on_goDashboardButton_clicked)
+        self.ui.goDashboardButton_16.clicked.connect(self.on_goDashboardButton_clicked)
 
         self.ui.GoRegisterButton.clicked.connect(self.on_goregisterButton_clicked)
         self.ui.goSigninButton.clicked.connect(self.on_gosigninButton_clicked)
@@ -71,6 +72,7 @@ class Page(QWidget):
         self.ui.addButton_5.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_6.clicked.connect(self.on_addButton_clicked)
         self.ui.addButton_11.clicked.connect(self.on_addButton_clicked)
+        self.ui.addButton_13.clicked.connect(self.on_addButton_clicked)
 
         self.ui.saveTransButton.clicked.connect(self.on_saveTransactionButton_clicked)
         self.ui.saveGoalButton.clicked.connect(self.on_savegoalButton_clicked)
@@ -84,6 +86,7 @@ class Page(QWidget):
         self.ui.goTransButton_8.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_12.clicked.connect(self.on_gotransButton_clicked)
         self.ui.goTransButton_14.clicked.connect(self.on_gotransButton_clicked)
+        self.ui.goTransButton_16.clicked.connect(self.on_gotransButton_clicked)
 
         self.ui.goGoalButton.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_2.clicked.connect(self.on_gogoalButton_clicked)
@@ -94,6 +97,7 @@ class Page(QWidget):
         self.ui.goGoalButton_8.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_12.clicked.connect(self.on_gogoalButton_clicked)
         self.ui.goGoalButton_14.clicked.connect(self.on_gogoalButton_clicked)
+        self.ui.goGoalButton_16.clicked.connect(self.on_gogoalButton_clicked)
 
         self.ui.goAccountButton.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_2.clicked.connect(self.on_goaccountButton_clicked)
@@ -104,6 +108,8 @@ class Page(QWidget):
         self.ui.goAccountButton_8.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_12.clicked.connect(self.on_goaccountButton_clicked)
         self.ui.goAccountButton_14.clicked.connect(self.on_goaccountButton_clicked)
+        self.ui.goAccountButton_16.clicked.connect(self.on_goaccountButton_clicked)
+
         self.ui.logoutButton.clicked.connect(self.on_logoutButton_clicked)
         self.ui.editBudgetButton.clicked.connect(self.on_editBudgetButton_clicked)
         self.ui.EditButton.clicked.connect(self.on_editButton_clicked)
@@ -118,6 +124,7 @@ class Page(QWidget):
         self.ui.goBillsButton_7.clicked.connect(self.on_goBillsButton_clicked)
         self.ui.goBillsButton_12.clicked.connect(self.on_goBillsButton_clicked)
         self.ui.goBillsButton_14.clicked.connect(self.on_goBillsButton_clicked)
+        self.ui.goBillsButton_16.clicked.connect(self.on_goBillsButton_clicked)
 
         self.ui.addBillsButton.clicked.connect(self.on_addBillsButton_clicked)
         self.ui.saveBillsButton.clicked.connect(self.on_saveNewBill)
@@ -266,6 +273,17 @@ class Page(QWidget):
     def on_goaccountButton_clicked(self):
         self.switchPage(USER_PAGE)
 
+    def on_deleteBillsButton_clicked(self, bill_id):
+        password = self.ui.PasswordField_4.text()
+        tmp = self.root["user"]
+        user = tmp[self.curUser.getUsername()]
+        hashedpass = user.getHashedpass()
+        if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
+            user.getSummary().removeBillById(bill_id)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(BILLS_PAGE)
+
     def on_deleteGoalsButton_clicked(self, goal_id):
         password = self.ui.PasswordField_2.text()
         tmp = self.root["user"]
@@ -289,6 +307,9 @@ class Page(QWidget):
             self.switchPage(TRANSACTION_PAGE)
 
     def on_goal_clicked(self):
+        self.ui.GoalnameLineEdit_3.setReadOnly(True)
+        self.ui.GoalamountLineEdit_3.setReadOnly(True)
+        self.ui.GoalDesc_3.setReadOnly(True)
         self.ui.EditButton_2.setEnabled(True)
         self.ui.SaveButton_2.setEnabled(False)
         button = self.sender()
@@ -330,6 +351,10 @@ class Page(QWidget):
         bill_id = button.objectName()
         bill_obj = self.curUser.getSummary().getBillById(bill_id)
         self.populate_bill_details(bill_obj)
+        self.ui.billsnameLineEdit_5.setReadOnly(True)
+        self.ui.billsamountLineEdit_5.setReadOnly(True)
+        self.ui.billsDesc_5.setReadOnly(True)
+        self.ui.calendarWidget.setEnabled(False)
         self.ui.EditButton_4.setEnabled(True)
         self.ui.SaveButton_4.setEnabled(False)
 
@@ -340,6 +365,8 @@ class Page(QWidget):
             except RuntimeError:
                 # Ignore the RuntimeError that occurs when the slot was already disconnected
                 pass
+        self._delete_bills_slot = lambda _: self.on_deleteBillsButton_clicked(bill_id)
+
         self.ui.deleteBillsButton.clicked.connect(self._delete_bills_slot)
         self.ui.SaveButton_4.setObjectName(str(bill_id))
         self.ui.calendarWidget.setEnabled(False)
@@ -361,6 +388,10 @@ class Page(QWidget):
         self.populateTransactionDetails(transaction_obj)
         self.ui.EditButton.setEnabled(True)
         self.ui.SaveButton.setEnabled(False)
+        self.ui.transamountLineEdit_2.setReadOnly(True)
+        self.ui.catLineEdit_2.setReadOnly(True)
+        self.ui.transnameLineEdit_2.setReadOnly(True)
+        self.ui.transDesc_2.setReadOnly(True)
 
         # Disconnect the old slot if it exists
         if self._delete_trans_slot is not None:
@@ -596,6 +627,7 @@ class Page(QWidget):
         self.ui.goalamountLineEdit.setText("")
         self.ui.GoalDesc.setText("")
         self.ui.PasswordField_2.setText("")
+        self.ui.PasswordField_4.setText("")
         self.ui.GoalFund_4.setText("")
         self.ui.GoalDefund_5.setText("")
 

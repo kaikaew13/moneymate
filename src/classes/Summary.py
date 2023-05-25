@@ -47,6 +47,13 @@ class Summary(persistent.Persistent):
                 self._p_changed = True
                 return
 
+    def removeBillById(self, bill_id):
+        for bill in self.__bills:
+            if str(bill.getID()) == bill_id:
+                self.__bills.remove(bill)
+                self._p_changed = True
+                return
+
     def getTransactions(self):
         return self.__transactions
 
