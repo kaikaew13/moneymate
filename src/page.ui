@@ -2358,15 +2358,15 @@ QPushButton#goBillsButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goGoalButton_3 {
+       <string notr="true">QPushButton#goGoalButton_12 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goGoalButton_3:hover {
+QPushButton#goGoalButton_12:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goGoalButton_3:pressed {
+QPushButton#goGoalButton_12:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -2389,16 +2389,16 @@ QPushButton#goGoalButton_3:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goDashboardButton_3 {
+       <string notr="true">QPushButton#goDashboardButton_12 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goDashboardButton_3:hover {
+QPushButton#goDashboardButton_12:hover {
     background-color: rgb(81,74,200);
 }
 
-QPushButton#goDashboardButton_3:pressed {
+QPushButton#goDashboardButton_12:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -2474,12 +2474,12 @@ QPushButton#goDashboardButton_3:pressed {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#closeButton_5 {
+       <string notr="true">QPushButton#closeButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#closeButton_5:hover {
+QPushButton#closeButton_14:hover {
     border: 2px dashed grey; /* set the border to a solid color when hovering */
     border-radius: 50%; /* set the border radius to create a circle */
 }
@@ -2524,15 +2524,15 @@ QPushButton#closeButton_5:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goAccountButton_3 {
+       <string notr="true">QPushButton#goAccountButton_12 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goAccountButton_3:hover {
+QPushButton#goAccountButton_12:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goAccountButton_3:pressed {
+QPushButton#goAccountButton_12:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -2610,14 +2610,14 @@ QPushButton#goAccountButton_3:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_3 {
+       <string notr="true">QPushButton#tabsButton_12 {
     border: none;
     background-color: rgb(81,74,248);
    qproperty-iconSize: 40px;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#tabsButton_3:hover {
+QPushButton#tabsButton_12:hover {
     background-color: rgb(81,74,170);
 }
 </string>
@@ -2661,15 +2661,15 @@ QPushButton#tabsButton_3:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goTransButton_3 {
+       <string notr="true">QPushButton#goTransButton_12 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goTransButton_3:hover {
+QPushButton#goTransButton_12:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goTransButton_3:pressed {
+QPushButton#goTransButton_12:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -2852,18 +2852,18 @@ QPushButton#goTransButton_3:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_2{
+       <string notr="true">QPushButton#addButton_11{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_2:hover {
+QPushButton#addButton_11:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_2:pressed {
+QPushButton#addButton_11:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -2887,15 +2887,15 @@ QPushButton#addButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_3 {
+       <string notr="true">QPushButton#goBillsButton_12 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goBillsButton_3:hover {
+QPushButton#goBillsButton_12:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_3:pressed {
+QPushButton#goBillsButton_12:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -2920,7 +2920,7 @@ QPushButton#goBillsButton_3:pressed {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>620</y>
+        <y>610</y>
         <width>231</width>
         <height>61</height>
        </rect>
@@ -2933,18 +2933,18 @@ QPushButton#goBillsButton_3:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_2{
+       <string notr="true">QPushButton#addBillsButton{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_2:hover {
+QPushButton#addBillsButton:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_2:pressed {
+QPushButton#addBillsButton:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -5502,18 +5502,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#EditButton{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#EditButton:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#EditButton:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -5539,18 +5539,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#SaveButton{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#SaveButton:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#SaveButton:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -6245,18 +6245,18 @@ QPushButton#addButton_6:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#EditButton_2{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#EditButton_2:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#EditButton_2:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -6282,18 +6282,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#SaveButton_2{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#SaveButton_2:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#SaveButton_2:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -6319,18 +6319,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#DeleteTransButton_2 {
+       <string notr="true">QPushButton#DeleteGoalButton {
     border: none;
     border-radius: 10px;
     background-color: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#DeleteTransButton_2:hover {
+QPushButton#DeleteGoalButton:hover {
     background-color: rgb(200, 0, 0);
 }
 
-QPushButton#DeleteTransButton_2:pressed {
+QPushButton#DeleteGoalButton:pressed {
     background-color: rgb(180, 0, 0);
 }
 </string>
@@ -6838,18 +6838,18 @@ QProgressBar::chunk::subcontrol:vertical {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#FundGoalButton{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#FundGoalButton:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#FundGoalButton:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -6875,18 +6875,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#deFundGoalButton{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#deFundGoalButton:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#deFundGoalButton:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -7006,15 +7006,15 @@ QPushButton#goBillsButton_7:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goGoalButton_2 {
+       <string notr="true">QPushButton#goGoalButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goGoalButton_2:hover {
+QPushButton#goGoalButton_14:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goGoalButton_2:pressed {
+QPushButton#goGoalButton_14:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -7037,17 +7037,17 @@ QPushButton#goGoalButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goDashboardButton_2 {
+       <string notr="true">QPushButton#goDashboardButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goDashboardButton_2:hover {
+QPushButton#goDashboardButton_14:hover {
  
    background-color: rgb(81,74,200);
 }
 
-QPushButton#goDashboardButton_2:pressed {
+QPushButton#goDashboardButton_14:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -7124,12 +7124,12 @@ QPushButton#goDashboardButton_2:pressed {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#closeButton_4 {
+       <string notr="true">QPushButton#closeButton_16 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#closeButton_4:hover {
+QPushButton#closeButton_16:hover {
     border: 2px dashed grey; /* set the border to a solid color when hovering */
     border-radius: 50%; /* set the border radius to create a circle */
 }
@@ -7174,15 +7174,15 @@ QPushButton#closeButton_4:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goAccountButton_2 {
+       <string notr="true">QPushButton#goAccountButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goAccountButton_2:hover {
+QPushButton#goAccountButton_14:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goAccountButton_2:pressed {
+QPushButton#goAccountButton_14:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -7260,14 +7260,14 @@ QPushButton#goAccountButton_2:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_2 {
+       <string notr="true">QPushButton#tabsButton_14 {
     border: none;
     background-color: rgb(81,74,248);
    qproperty-iconSize: 40px;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#tabsButton_2:hover {
+QPushButton#tabsButton_14:hover {
     background-color: rgb(81,74,170);
 }
 </string>
@@ -7311,15 +7311,15 @@ QPushButton#tabsButton_2:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goTransButton_2 {
+       <string notr="true">QPushButton#goTransButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goTransButton_2:hover {
+QPushButton#goTransButton_14:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goTransButton_2:pressed {
+QPushButton#goTransButton_14:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -7469,6 +7469,23 @@ QPushButton#goTransButton_2:pressed {
         <height>32</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#saveBillsButton{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(81, 74, 248);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#saveBillsButton:hover {
+    background-color: rgb(81, 74, 200);
+}
+
+QPushButton#saveBillsButton:pressed {
+    background-color: rgb(61, 54, 180);
+}
+</string>
+      </property>
       <property name="text">
        <string>Save</string>
       </property>
@@ -7498,15 +7515,15 @@ QPushButton#goTransButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#goBillsButton_14 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goBillsButton_2:hover {
+QPushButton#goBillsButton_14:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#goBillsButton_14:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -7598,15 +7615,15 @@ QPushButton#goBillsButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goGoalButton_7 {
+       <string notr="true">QPushButton#goGoalButton_16 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goGoalButton_7:hover {
+QPushButton#goGoalButton_16:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goGoalButton_7:pressed {
+QPushButton#goGoalButton_16:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -7629,17 +7646,17 @@ QPushButton#goGoalButton_7:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goDashboardButton_7 {
+       <string notr="true">QPushButton#goDashboardButton_16 {
     border: none;
     border-radius: 10px;
     color: rgb(0, 0, 0);
 }
 
-QPushButton#goDashboardButton_7:hover {
+QPushButton#goDashboardButton_16:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#goDashboardButton_7:pressed {
+QPushButton#goDashboardButton_16:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -7716,12 +7733,12 @@ QPushButton#goDashboardButton_7:pressed {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#closeButton_9 {
+       <string notr="true">QPushButton#closeButton_18 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#closeButton_9:hover {
+QPushButton#closeButton_18:hover {
     border: 2px dashed grey; /* set the border to a solid color when hovering */
     border-radius: 50%; /* set the border radius to create a circle */
 }
@@ -7766,17 +7783,17 @@ QPushButton#closeButton_9:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goAccountButton_7 {
+       <string notr="true">QPushButton#goAccountButton_16 {
     border: none;
     border-radius: 10px;
     color: rgb(0, 0, 0);
 }
 
-QPushButton#goAccountButton_7:hover {
+QPushButton#goAccountButton_16:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#goAccountButton_7:pressed {
+QPushButton#goAccountButton_16:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -7855,14 +7872,14 @@ QPushButton#goAccountButton_7:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_7 {
+       <string notr="true">QPushButton#tabsButton_16 {
     border: none;
     background-color: rgb(81,74,248);
    qproperty-iconSize: 40px;
     border-radius: 10px; /* set the initial border radius */
 }
 
-QPushButton#tabsButton_7:hover {
+QPushButton#tabsButton_16:hover {
     background-color: rgb(81,74,170);
 }
 </string>
@@ -7906,17 +7923,17 @@ QPushButton#tabsButton_7:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goTransButton_7 {
+       <string notr="true">QPushButton#goTransButton_16 {
     border: none;
     border-radius: 10px;
     color: rgb(0, 0, 0);
 }
 
-QPushButton#goTransButton_7:hover {
+QPushButton#goTransButton_16:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#goTransButton_7:pressed {
+QPushButton#goTransButton_16:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -7992,18 +8009,18 @@ QPushButton#goTransButton_7:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#addButton_13{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#addButton_13:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#addButton_13:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -8152,18 +8169,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#EditButton_4{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#EditButton_4:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#EditButton_4:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -8189,18 +8206,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#addButton_5{
+       <string notr="true">QPushButton#SaveButton_4{
     border: none;
     border-radius: 10px;
     background-color: rgb(81, 74, 248);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#addButton_5:hover {
+QPushButton#SaveButton_4:hover {
     background-color: rgb(81, 74, 200);
 }
 
-QPushButton#addButton_5:pressed {
+QPushButton#SaveButton_4:pressed {
     background-color: rgb(61, 54, 180);
 }
 </string>
@@ -8226,18 +8243,18 @@ QPushButton#addButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#DeleteTransButton {
+       <string notr="true">QPushButton#deleteBillsButton {
     border: none;
     border-radius: 10px;
     background-color: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
 }
 
-QPushButton#DeleteTransButton:hover {
+QPushButton#deleteBillsButton:hover {
     background-color: rgb(200, 0, 0);
 }
 
-QPushButton#DeleteTransButton:pressed {
+QPushButton#deleteBillsButton:pressed {
     background-color: rgb(180, 0, 0);
 }
 </string>
@@ -8287,15 +8304,15 @@ QPushButton#DeleteTransButton:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_6 {
+       <string notr="true">QPushButton#goBillsButton_16 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
 }
-QPushButton#goBillsButton_6:hover {
+QPushButton#goBillsButton_16:hover {
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_6:pressed {
+QPushButton#goBillsButton_16:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
@@ -8494,6 +8511,54 @@ QPushButton#goBillsButton_6:pressed {
     <hint type="destinationlabel">
      <x>716</x>
      <y>-6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>988</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>898</x>
+     <y>-7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton_16</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>986</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>835</x>
+     <y>-5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>983</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>791</x>
+     <y>-16</y>
     </hint>
    </hints>
   </connection>
