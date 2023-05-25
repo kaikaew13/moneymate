@@ -26,6 +26,7 @@ USER_PAGE = 7
 TRANSACTIONDETAIL_PAGE = 8
 GOALDETAIL_PAGE = 9
 ADDBILL_PAGE = 10
+BILLDETAIL_PAGE = 11
 
 
 load_dotenv()
@@ -37,6 +38,7 @@ class Page(QWidget):
         QWidget.__init__(self, None)
         self._delete_trans_slot = None  # a place to store the connected function
         self._delete_goals_slot = None
+        self._delete_bills_slot = None
         self.curUser: User = None
         self.root = root
         self.conn = conn
@@ -123,6 +125,9 @@ class Page(QWidget):
         self.ui.EditButton_2.clicked.connect(self.on_editGoalDetail_clicked)
         self.ui.SaveButton_2.clicked.connect(self.on_saveGoalDetail_clicked)
 
+        self.ui.EditButton_4.clicked.connect(self.on_editBillDetail_clicked)
+        self.ui.SaveButton_4.clicked.connect(self.on_saveBillDetail_clicked)
+
         self.ui.FundGoalButton.clicked.connect(self.on_fundButton_clicked)
         self.ui.deFundGoalButton.clicked.connect(self.on_defundButton_clicked)
 
@@ -130,6 +135,36 @@ class Page(QWidget):
         self.switchPage(ADDBILL_PAGE)
 
     def on_goBillsButton_clicked(self):
+        self.switchPage(BILLS_PAGE)
+
+    def on_editBillDetail_clicked(self):
+        self.ui.billsnameLineEdit_5.setReadOnly(False)
+        self.ui.billsamountLineEdit_5.setReadOnly(False)
+        self.ui.billsDesc_5.setReadOnly(False)
+        self.ui.calendarWidget.setEnabled(True)
+        self.ui.EditButton_4.setEnabled(False)
+        self.ui.SaveButton_4.setEnabled(True)
+
+    def on_saveBillDetail_clicked(self):
+        button = self.sender()
+        bill_id = button.objectName()
+        summary = self.curUser.getSummary()
+        d = self.ui.calendarWidget.selectedDate()
+        summary.editBill(
+            bill_id,
+            self.ui.billsnameLineEdit_5.text(),
+            self.ui.billsamountLineEdit_5.text(),
+            datetime(d.year(), d.month(), d.day()),
+            self.ui.billsDesc_5.toPlainText(),
+        )
+        self.ui.EditButton_4.setEnabled(True)
+        self.ui.SaveButton_4.setEnabled(False)
+        self.ui.billsnameLineEdit_5.setReadOnly(True)
+        self.ui.billsamountLineEdit_5.setReadOnly(True)
+        self.ui.billsDesc_5.setReadOnly(True)
+        self.ui.calendarWidget.setEnabled(False)
+        transaction.commit()
+        self.updateDynamicComponent()
         self.switchPage(BILLS_PAGE)
 
     def on_editGoalDetail_clicked(self):
@@ -142,7 +177,6 @@ class Page(QWidget):
     def on_saveGoalDetail_clicked(self):
         button = self.sender()
         goal_id = button.objectName()
-        print("goal id = " + goal_id)
         summary = self.curUser.getSummary()
         summary.editGoal(
             goal_id,
@@ -162,7 +196,6 @@ class Page(QWidget):
     def on_fundButton_clicked(self):
         button = self.sender()
         goal_id = button.objectName()
-        print("gid = " + goal_id)
         if self.ui.GoalFund_4.text() != "":
             self.curUser.getSummary().addFund(goal_id, float(self.ui.GoalFund_4.text()))
             transaction.commit()
@@ -193,7 +226,6 @@ class Page(QWidget):
     def on_saveButton_clicked(self):
         button = self.sender()
         transaction_id = button.objectName()
-        print("t id = " + transaction_id)
         summary = self.curUser.getSummary()
         summary.editTransaction(
             transaction_id,
@@ -292,6 +324,35 @@ class Page(QWidget):
         self.ui.GoalnameLineEdit_3.setText(goal_obj.getName())
         self.ui.GoalamountLineEdit_3.setText(str("{:.2f}".format(goal_obj.getAmount())))
         self.ui.GoalDesc_3.setText(goal_obj.getDesc())
+
+    def on_bill_clicked(self):
+        button = self.sender()
+        bill_id = button.objectName()
+        bill_obj = self.curUser.getSummary().getBillById(bill_id)
+        self.populate_bill_details(bill_obj)
+        self.ui.EditButton_4.setEnabled(True)
+        self.ui.SaveButton_4.setEnabled(False)
+
+        # Disconnect the old slot if it exists
+        if self._delete_bills_slot is not None:
+            try:
+                self.ui.deleteBillsButton.clicked.disconnect(self._delete_bills_slot)
+            except RuntimeError:
+                # Ignore the RuntimeError that occurs when the slot was already disconnected
+                pass
+        self.ui.deleteBillsButton.clicked.connect(self._delete_bills_slot)
+        self.ui.SaveButton_4.setObjectName(str(bill_id))
+        self.ui.calendarWidget.setEnabled(False)
+        self.switchPage(BILLDETAIL_PAGE)
+
+    def populate_bill_details(self, bill_obj):
+        self.ui.billsnameLineEdit_5.setText(bill_obj.getName())
+        self.ui.billsamountLineEdit_5.setText(
+            str("{:.2f}".format(bill_obj.getAmount()))
+        )
+        self.ui.billsDesc_5.setText(bill_obj.getDesc())
+        d: datetime = bill_obj.getDueDate()
+        self.ui.calendarWidget.setSelectedDate(QDate(d.year, d.month, d.day))
 
     def on_transaction_clicked(self):
         button = self.sender()
@@ -497,10 +558,12 @@ class Page(QWidget):
     def on_saveNewBill(self):
         billName = self.ui.billsnameLineEdit.text()
         billAmount = self.ui.billsamountLineedit.text()
+        d = self.ui.calendarWidget_2.selectedDate()
+        duedate = datetime(d.year(), d.month(), d.day())
         billDesc = self.ui.BillsDesc.toPlainText()
         tmp = self.root["user"]
         user = tmp[self.curUser.getUsername()]
-        bill = BillReminder(billName, float(billAmount), datetime.now(), billDesc)
+        bill = BillReminder(billName, float(billAmount), duedate, billDesc)
         user.getSummary().addBill(bill)
         transaction.commit()
         self.updateDynamicComponent()
@@ -666,7 +729,6 @@ class Page(QWidget):
 
         if self.curUser:
             summary = self.curUser.getSummary()
-            print(summary.getBills())
             for b in (summary.getBills())[::-1]:
                 button = QPushButton()
 
@@ -702,7 +764,7 @@ class Page(QWidget):
                 button.setMinimumHeight(50)  # Set minimum height here
 
                 # Add bottom border to the button
-                button.clicked.connect(self.on_transaction_clicked)
+                button.clicked.connect(self.on_bill_clicked)
                 scroll_widget.layout().addWidget(button)
 
     def updateTransactionPage(self):

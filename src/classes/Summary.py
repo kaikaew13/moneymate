@@ -98,6 +98,12 @@ class Summary(persistent.Persistent):
                 return goal
         return None
 
+    def getBillById(self, bill_id):
+        for bill in self.__bills:
+            if str(bill.getID()) == bill_id:
+                return bill
+        return None
+
     def editTransaction(self, transaction_id, name, amount, category, description):
         for transaction in self.__transactions:
             if str(transaction.getID()) == transaction_id:
@@ -118,6 +124,17 @@ class Summary(persistent.Persistent):
                 goal.setName(name)
                 goal.setAmount(float(amount))
                 goal.setDesc(description)
+                self._p_changed = True
+                return True
+        return False
+
+    def editBill(self, bill_id, name, amount, date, description):
+        for bill in self.__bills:
+            if str(bill.getID()) == bill_id:
+                bill.setName(name)
+                bill.setAmount(float(amount))
+                bill.setDueDate(date)
+                bill.setDesc(description)
                 self._p_changed = True
                 return True
         return False
