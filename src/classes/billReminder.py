@@ -1,15 +1,15 @@
 class BillReminder:
-    def __init__(self, title, amount, duedate, desc=''):
-        self.__title = title
+    def __init__(self, name, amount, duedate, desc=""):
+        self.__name = name
         self.__amount = amount
         self.__duedate = duedate
         self.__desc = desc
 
-    def setTitle(self, title):
-        self.__title = title
+    def setTitle(self, name):
+        self.__name = name
 
     def getTitle(self):
-        return self.__title
+        return self.__name
 
     def setAmount(self, amount):
         self.__amount = amount

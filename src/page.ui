@@ -697,7 +697,7 @@ QPushButton#goGoalButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_40">
@@ -1564,7 +1564,7 @@ QPushButton#goGoalButton_2:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_2">
@@ -2307,7 +2307,7 @@ QPushButton#goGoalButton_3:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_3">
@@ -2884,7 +2884,7 @@ QPushButton#goGoalButton_4:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_4">
@@ -3420,7 +3420,7 @@ QPushButton#addButton_3:pressed {
      <zorder>addButton_3</zorder>
     </widget>
    </widget>
-   <widget class="QWidget" name="logoutPage">
+   <widget class="QWidget" name="accountPage">
     <widget class="QWidget" name="widget_11" native="true">
      <property name="geometry">
       <rect>
@@ -3458,7 +3458,7 @@ QPushButton#goGoalButton_5:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_5">
@@ -4060,7 +4060,7 @@ QPushButton#goGoalButton_7:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_7">
@@ -4821,7 +4821,7 @@ QPushButton#goGoalButton_8:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>Goal</string>
+       <string>Goals</string>
       </property>
      </widget>
      <widget class="QPushButton" name="goDashboardButton_8">

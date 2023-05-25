@@ -112,7 +112,8 @@ class Page(QWidget):
         button = self.sender()
         goal_id = button.objectName()
         print("goal id = " + goal_id)
-        self.curUser.editGoal(
+        summary = self.curUser.getSummary()
+        summary.editGoal(
             goal_id,
             self.ui.GoalnameLineEdit_3.text(),
             self.ui.GoalamountLineEdit_3.text(),
@@ -132,7 +133,7 @@ class Page(QWidget):
         goal_id = button.objectName()
         print("gid = " + goal_id)
         if self.ui.GoalFund_4.text() != "":
-            self.curUser.addFund(goal_id, float(self.ui.GoalFund_4.text()))
+            self.curUser.getSummary().addFund(goal_id, float(self.ui.GoalFund_4.text()))
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
@@ -141,7 +142,9 @@ class Page(QWidget):
         button = self.sender()
         goal_id = button.objectName()
         if self.ui.GoalDefund_5.text() != "":
-            self.curUser.defund(goal_id, float(self.ui.GoalDefund_5.text()))
+            self.curUser.getSummary().defund(
+                goal_id, float(self.ui.GoalDefund_5.text())
+            )
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
@@ -152,7 +155,7 @@ class Page(QWidget):
             self.ui.bugetField.setReadOnly(False)
             self.ui.editBudgetButton.setText("Save")
         else:
-            self.curUser.setBudget(float(self.ui.bugetField.text()))
+            self.curUser.getSummary().setBudget(float(self.ui.bugetField.text()))
             transaction.commit()
             self.updateDynamicComponent()
 
@@ -160,7 +163,8 @@ class Page(QWidget):
         button = self.sender()
         transaction_id = button.objectName()
         print("t id = " + transaction_id)
-        self.curUser.editTransaction(
+        summary = self.curUser.getSummary()
+        summary.editTransaction(
             transaction_id,
             self.ui.transnameLineEdit_2.text(),
             self.ui.transamountLineEdit_2.text(),
@@ -205,7 +209,7 @@ class Page(QWidget):
         user = tmp[self.curUser.getUsername()]
         hashedpass = user.getHashedpass()
         if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
-            user.removeGoalById(goal_id)
+            user.getSummary().removeGoalById(goal_id)
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(GOAL_PAGE)
@@ -216,7 +220,7 @@ class Page(QWidget):
         user = tmp[self.curUser.getUsername()]
         hashedpass = user.getHashedpass()
         if bcrypt.checkpw(password.encode("utf-8"), hashedpass):
-            user.removeTransactionById(transaction_id)
+            user.getSummary().removeTransactionById(transaction_id)
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(TRANSACTION_PAGE)
@@ -226,7 +230,7 @@ class Page(QWidget):
         self.ui.SaveButton_2.setEnabled(False)
         button = self.sender()
         goal_id = button.objectName()  # Get the objectName of the button
-        goal_obj = self.curUser.getGoalById(goal_id)
+        goal_obj = self.curUser.getSummary().getGoalById(goal_id)
         self.ui.GoalBalanceLabel_2.setText(str("{:.2f}".format(goal_obj.getProgress())))
         self.ui.GoalBalanceLabel_4.setText(
             str("{:.2f}".format(goal_obj.getAmount() - goal_obj.getProgress()))
@@ -261,7 +265,7 @@ class Page(QWidget):
     def on_transaction_clicked(self):
         button = self.sender()
         transaction_id = button.objectName()  # Get the objectName of the button
-        transaction_obj = self.curUser.getTransactionById(transaction_id)
+        transaction_obj = self.curUser.getSummary().getTransactionById(transaction_id)
         self.populateTransactionDetails(transaction_obj)
         self.ui.EditButton.setEnabled(True)
         self.ui.SaveButton.setEnabled(False)
@@ -436,7 +440,7 @@ class Page(QWidget):
             tmp = self.root["user"]
             user = tmp[self.curUser.getUsername()]
             inc = Income(transName, transAmount, transCat, transDesc)
-            user.addTransaction(inc)
+            user.getSummary().addTransaction(inc)
             transaction.commit()
             self.updateDynamicComponent()
             # self.updateScroll()
@@ -446,7 +450,7 @@ class Page(QWidget):
             tmp = self.root["user"]
             user = tmp[self.curUser.getUsername()]
             exp = Expense(transName, transAmount, transCat, transDesc)
-            user.addTransaction(exp)
+            user.getSummary().addTransaction(exp)
             transaction.commit()
             self.updateDynamicComponent()
             # self.updateScroll()
@@ -466,7 +470,7 @@ class Page(QWidget):
         tmp = self.root["user"]
         user = tmp[self.curUser.getUsername()]
         goal = Goal(goalName, float(goalAmount), goalDesc)
-        user.addGoal(goal)
+        user.getSummary().addGoal(goal)
         transaction.commit()
         self.updateDynamicComponent()
         self.switchPage(GOAL_PAGE)
@@ -498,24 +502,21 @@ class Page(QWidget):
         self.updateGoalDetailPage(optional_id)
 
     def updateDashboardPage(self):
+        summary = self.curUser.getSummary()
         self.ui.currentBalanceLabel.setText(
-            str("{:.2f}".format(self.curUser.getCurrentBalance()))
+            str("{:.2f}".format(summary.getCurrentBalance()))
         )
         textColor = (
             "green"
-            if self.curUser.getCurrentBalance() > 0
+            if summary.getCurrentBalance() > 0
             else "red"
-            if self.curUser.getCurrentBalance() < 0
+            if summary.getCurrentBalance() < 0
             else "black"
         )
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
-        self.ui.spentLabel.setText(str("{:.2f}".format(self.curUser.getWeeklySpent())))
+        self.ui.spentLabel.setText(str("{:.2f}".format(summary.getWeeklySpent())))
         self.ui.budgetLabel.setText(
-            str(
-                "{:.2f}".format(
-                    self.curUser.getBudget() - self.curUser.getWeeklySpent()
-                )
-            )
+            str("{:.2f}".format(summary.getBudget() - summary.getWeeklySpent()))
         )
 
         for i in reversed(range(self.ui.scrollArea_2.widget().layout().count())):
@@ -528,7 +529,7 @@ class Page(QWidget):
 
         if self.curUser:
             count = 0
-            for t in (self.curUser.getTransactions())[::-1]:
+            for t in (summary.getTransactions())[::-1]:
                 count += 1
                 if count > 3:
                     break
@@ -579,7 +580,7 @@ class Page(QWidget):
             layout = self.ui.horizontalLayout.layout()
             layout.setSpacing(25)  # Set spacing to 0
             layout.setAlignment(Qt.AlignmentFlag.AlignHCenter)
-            for g in self.curUser.getGoals():
+            for g in summary.getGoals():
                 count += 1
                 if count > 3:
                     break
@@ -620,7 +621,8 @@ class Page(QWidget):
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
-            for t in (self.curUser.getTransactions())[::-1]:
+            summary = self.curUser.getSummary()
+            for t in (summary.getTransactions())[::-1]:
                 button = QPushButton()
 
                 button.setObjectName(str(t.getID()))  # Set object name
@@ -670,7 +672,8 @@ class Page(QWidget):
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
-            for g in (self.curUser.getGoals())[::-1]:
+            summary = self.curUser.getSummary()
+            for g in (summary.getGoals())[::-1]:
                 button = QPushButton()
 
                 button.setObjectName(str(g.getID()))  # Set object name
@@ -710,8 +713,9 @@ class Page(QWidget):
                 scroll_widget.layout().addWidget(button)
 
     def updateGoalDetailPage(self, goal_id):
+        summary = self.curUser.getSummary()
         if goal_id:
-            goal_obj = self.curUser.getGoalById(goal_id)
+            goal_obj = summary.getGoalById(goal_id)
             self.ui.GoalBalanceLabel_2.setText(
                 str("{:.2f}".format(goal_obj.getProgress()))
             )
@@ -727,28 +731,30 @@ class Page(QWidget):
 
     def UpdatelogoutPage(self):
         self.ui.username_account_field.setText(self.curUser.getUsername())
-        self.ui.bugetField.setText(str("{:.2f}".format(self.curUser.getBudget())))
+        self.ui.bugetField.setText(
+            str("{:.2f}".format(self.curUser.getSummary().getBudget()))
+        )
         self.ui.bugetField.setReadOnly(True)
         self.ui.editBudgetButton.setText("Edit")
 
 
-class ButtonWithLabels(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        layout = QVBoxLayout(self)
-        self.label1 = QLabel(self)
-        self.label2 = QLabel(self)
-        self.button = QPushButton("Button with Labels", self)
-        layout.addWidget(self.label1)
-        layout.addWidget(self.label2)
-        layout.addWidget(self.button)
-        self.setLayout(layout)
+# class ButtonWithLabels(QWidget):
+#     def __init__(self, parent=None):
+#         super().__init__(parent)
+#         layout = QVBoxLayout(self)
+#         self.label1 = QLabel(self)
+#         self.label2 = QLabel(self)
+#         self.button = QPushButton("Button with Labels", self)
+#         layout.addWidget(self.label1)
+#         layout.addWidget(self.label2)
+#         layout.addWidget(self.button)
+#         self.setLayout(layout)
 
-    def setLabel1(self, text):
-        self.label1.setText(text)
+#     def setLabel1(self, text):
+#         self.label1.setText(text)
 
-    def setLabel2(self, text):
-        self.label2.setText(text)
+#     def setLabel2(self, text):
+#         self.label2.setText(text)
 
 
 # if __name__ == "__main__":
