@@ -924,6 +924,15 @@ class Page(QWidget):
         )
         self.ui.bugetField.setReadOnly(True)
         self.ui.editBudgetButton.setText("Edit")
+        self.ui.ttincome.setText(
+            str("{:.2f}".format(self.curUser.getSummary().calculateIncome()))
+        )
+        self.ui.ttexpense.setText(
+            str("{:.2f}".format(self.curUser.getSummary().calculateExpense()))
+        )
+        self.ui.ttBalance.setText(
+            str("{:.2f}".format(self.curUser.getSummary().getCurrentBalance()))
+        )
 
 
 # class ButtonWithLabels(QWidget):
