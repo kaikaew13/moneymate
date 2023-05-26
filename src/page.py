@@ -151,6 +151,12 @@ class Page(QWidget):
         self.ui.notiButton_9.clicked.connect(self.on_notiButton_clicked)
         self.ui.notiButton_10.clicked.connect(self.on_notiButton_clicked)
 
+        today = datetime.now()
+        self.ui.calendarWidget.setMinimumDate(QDate(today.year, today.month, today.day))
+        self.ui.calendarWidget_2.setMinimumDate(
+            QDate(today.year, today.month, today.day)
+        )
+
     def on_notiButton_clicked(self):
         msgBox = QMessageBox()
         msgBox.setBaseSize(QSize(500, 300))
