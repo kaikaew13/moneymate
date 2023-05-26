@@ -3611,7 +3611,7 @@ class Ui_Form(object):
         self.closeButton_16.clicked.connect(Form.close)
         self.closeButton_14.clicked.connect(Form.close)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Form)
