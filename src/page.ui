@@ -1538,6 +1538,22 @@ QPushButton#notiButton:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_108</zorder>
      <zorder>label_63</zorder>
      <zorder>goDashboardButton</zorder>
@@ -1576,6 +1592,7 @@ QPushButton#notiButton:pressed {
      <zorder>goBillsButton</zorder>
      <zorder>notiButton</zorder>
      <zorder>label_29</zorder>
+     <zorder>bellicon</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addPage">
@@ -2333,6 +2350,22 @@ QPushButton#notiButton_2:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_83</zorder>
      <zorder>label_88</zorder>
      <zorder>label_91</zorder>
@@ -2371,6 +2404,7 @@ QPushButton#notiButton_2:pressed {
      <zorder>goBillsButton_2</zorder>
      <zorder>notiButton_2</zorder>
      <zorder>label_30</zorder>
+     <zorder>bellicon_2</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="BillsPage">
@@ -3011,6 +3045,22 @@ QPushButton#notiButton_3:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_186</zorder>
      <zorder>label_187</zorder>
      <zorder>label_192</zorder>
@@ -3034,6 +3084,7 @@ QPushButton#notiButton_3:pressed {
      <zorder>label_191</zorder>
      <zorder>notiButton_3</zorder>
      <zorder>label_31</zorder>
+     <zorder>bellicon_3</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="TransactionPage">
@@ -3637,6 +3688,22 @@ QPushButton#notiButton_4:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_92</zorder>
      <zorder>label_22</zorder>
      <zorder>label_96</zorder>
@@ -3659,6 +3726,7 @@ QPushButton#notiButton_4:pressed {
      <zorder>line_9</zorder>
      <zorder>notiButton_4</zorder>
      <zorder>label_32</zorder>
+     <zorder>bellicon_4</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalPage">
@@ -4262,6 +4330,22 @@ QPushButton#notiButton_5:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_85</zorder>
      <zorder>label_98</zorder>
      <zorder>label_23</zorder>
@@ -4284,6 +4368,7 @@ QPushButton#notiButton_5:pressed {
      <zorder>goBillsButton_4</zorder>
      <zorder>notiButton_5</zorder>
      <zorder>label_136</zorder>
+     <zorder>bellicon_5</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="accountPage">
@@ -5010,6 +5095,22 @@ QPushButton#notiButton_6:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>widget_12</zorder>
      <zorder>label_86</zorder>
      <zorder>label_103</zorder>
@@ -5042,6 +5143,7 @@ QPushButton#notiButton_6:pressed {
      <zorder>label_255</zorder>
      <zorder>notiButton_6</zorder>
      <zorder>label_137</zorder>
+     <zorder>bellicon_6</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="transactionDetailPage">
@@ -5821,6 +5923,22 @@ QPushButton#goBillsButton_7:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_118</zorder>
      <zorder>label_37</zorder>
      <zorder>line_24</zorder>
@@ -5854,6 +5972,7 @@ QPushButton#goBillsButton_7:pressed {
      <zorder>goBillsButton_6</zorder>
      <zorder>notiButton_7</zorder>
      <zorder>label_138</zorder>
+     <zorder>bellicon_7</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalDetailPage">
@@ -7113,6 +7232,22 @@ QPushButton#goBillsButton_8:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_126</zorder>
      <zorder>label_74</zorder>
      <zorder>label_125</zorder>
@@ -7167,6 +7302,7 @@ QPushButton#goBillsButton_8:pressed {
      <zorder>goBillsButton_7</zorder>
      <zorder>notiButton_8</zorder>
      <zorder>label_139</zorder>
+     <zorder>bellicon_8</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addBillPage">
@@ -7768,6 +7904,22 @@ QPushButton#notiButton_9:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_216</zorder>
      <zorder>label_217</zorder>
      <zorder>label_220</zorder>
@@ -7795,6 +7947,7 @@ QPushButton#notiButton_9:pressed {
      <zorder>calendarWidget_2</zorder>
      <zorder>notiButton_9</zorder>
      <zorder>label_140</zorder>
+     <zorder>bellicon_9</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="billDetailPage">
@@ -8555,6 +8708,22 @@ QPushButton#notiButton_10:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="bellicon_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
+      </property>
+     </widget>
      <zorder>label_242</zorder>
      <zorder>label_243</zorder>
      <zorder>label_246</zorder>
@@ -8587,6 +8756,7 @@ QPushButton#notiButton_10:pressed {
      <zorder>calendarWidget</zorder>
      <zorder>notiButton_10</zorder>
      <zorder>label_141</zorder>
+     <zorder>bellicon_10</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="page"/>

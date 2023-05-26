@@ -255,12 +255,14 @@ class Page(QWidget):
                 self.showPopUp(
                     "Error", "The fund added exceeds target please try again"
                 )
+                self.ui.GoalFund_4.setText("")
                 return
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
             return
         self.showPopUp("Error", "Please enter positive number")
+        self.ui.GoalFund_4.setText("")
 
     def showPopUp(self, title, msg):
         msgBox = QMessageBox()
@@ -291,12 +293,14 @@ class Page(QWidget):
                 self.showPopUp(
                     "Error", "The current fund is less than amount defunding"
                 )
+                self.ui.GoalDefund_5.setText("")
                 return
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
             return
         self.showPopUp("Error", "Please enter positive number")
+        self.ui.GoalDefund_5.setText("")
 
     def on_editBudgetButton_clicked(self):
         t = self.ui.editBudgetButton.text()
@@ -670,6 +674,7 @@ class Page(QWidget):
             self.switchPage(TRANSACTION_PAGE)
             return
         self.showPopUp("Error", "Please enter positive number")
+        self.ui.transamountLineEdit.setText("")
 
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
@@ -690,6 +695,7 @@ class Page(QWidget):
             self.switchPage(BILLS_PAGE)
             return
         self.showPopUp("Error", "Please enter positive number")
+        self.ui.billsamountLineedit.setText("")
 
     def on_savegoalButton_clicked(self):
         goalName = self.ui.goalnameLineEdit.text()
@@ -706,6 +712,7 @@ class Page(QWidget):
             return
             # TODO: save goal to a goal list in database (Done)
         self.showPopUp("Error", "Please enter positive number")
+        self.ui.goalamountLineEdit.setText("")
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
@@ -737,6 +744,16 @@ class Page(QWidget):
 
     def updateNotification(self):
         if self.notification.getRead():
+            self.ui.bellicon.hide()
+            self.ui.bellicon_2.hide()
+            self.ui.bellicon_3.hide()
+            self.ui.bellicon_4.hide()
+            self.ui.bellicon_5.hide()
+            self.ui.bellicon_6.hide()
+            self.ui.bellicon_7.hide()
+            self.ui.bellicon_8.hide()
+            self.ui.bellicon_9.hide()
+            self.ui.bellicon_10.hide()
             self.ui.notiButton.hide()
             self.ui.notiButton_2.hide()
             self.ui.notiButton_3.hide()
@@ -748,6 +765,16 @@ class Page(QWidget):
             self.ui.notiButton_9.hide()
             self.ui.notiButton_10.hide()
         else:
+            self.ui.bellicon.show()
+            self.ui.bellicon_2.show()
+            self.ui.bellicon_3.show()
+            self.ui.bellicon_4.show()
+            self.ui.bellicon_5.show()
+            self.ui.bellicon_6.show()
+            self.ui.bellicon_7.show()
+            self.ui.bellicon_8.show()
+            self.ui.bellicon_9.show()
+            self.ui.bellicon_10.show()
             self.ui.notiButton.show()
             self.ui.notiButton_2.show()
             self.ui.notiButton_3.show()
@@ -772,10 +799,12 @@ class Page(QWidget):
             else "black"
         )
         self.ui.currentBalanceLabel.setStyleSheet(f"color: {textColor};")
-        self.ui.spentLabel.setText(str("{:.2f}".format(summary.getWeeklySpent())))
-        self.ui.budgetLabel.setText(
-            str("{:.2f}".format(summary.getBudget() - summary.getWeeklySpent()))
-        )
+        weeklySpent = summary.getWeeklySpent()
+        budget = summary.getBudget()
+        self.ui.spentLabel.setText(str("{:.2f}".format(weeklySpent)))
+        self.ui.budgetLabel.setText(str("{:.2f}".format(budget - weeklySpent)))
+        textColor = "red" if budget - weeklySpent < 0 else "black"
+        self.ui.budgetLabel.setStyleSheet(f"color: {textColor};")
 
         for i in reversed(range(self.ui.scrollArea_2.widget().layout().count())):
             self.ui.scrollArea_2.widget().layout().itemAt(i).widget().setParent(None)
