@@ -158,9 +158,6 @@ class Page(QWidget):
         )
 
     def on_notiButton_clicked(self):
-        msgBox = QMessageBox()
-        msgBox.setBaseSize(QSize(500, 300))
-        msgBox.setWindowTitle("Notification")
         bills = self.notification.getBills()
         goals = self.notification.getGoals()
         messageStr = ""
@@ -173,8 +170,7 @@ class Page(QWidget):
             messageStr += "goals that almost reach the target:\n"
             for g in goals:
                 messageStr += f" - Goal Name: {g.getName()}\n\tProgress: {'{:.2f}'.format(g.getProgress())}/{'{:.2f}'.format(g.getAmount())} Percentage: {g.getPercentage()}%"
-        msgBox.setText(messageStr)
-        msgBox.exec()
+        self.showPopUp("Notification", messageStr)
         self.notification.setRead(True)
         self.updateDynamicComponent()
 
@@ -193,26 +189,29 @@ class Page(QWidget):
         self.ui.SaveButton_4.setEnabled(True)
 
     def on_saveBillDetail_clicked(self):
-        button = self.sender()
-        bill_id = button.objectName()
-        summary = self.curUser.getSummary()
-        d = self.ui.calendarWidget.selectedDate()
-        summary.editBill(
-            bill_id,
-            self.ui.billsnameLineEdit_5.text(),
-            self.ui.billsamountLineEdit_5.text(),
-            datetime(d.year(), d.month(), d.day()),
-            self.ui.billsDesc_5.toPlainText(),
-        )
-        self.ui.EditButton_4.setEnabled(True)
-        self.ui.SaveButton_4.setEnabled(False)
-        self.ui.billsnameLineEdit_5.setReadOnly(True)
-        self.ui.billsamountLineEdit_5.setReadOnly(True)
-        self.ui.billsDesc_5.setReadOnly(True)
-        self.ui.calendarWidget.setEnabled(False)
-        transaction.commit()
-        self.updateDynamicComponent()
-        self.switchPage(BILLS_PAGE)
+        if self.isFloat(self.ui.billsamountLineEdit_5.text()):
+            button = self.sender()
+            bill_id = button.objectName()
+            summary = self.curUser.getSummary()
+            d = self.ui.calendarWidget.selectedDate()
+            summary.editBill(
+                bill_id,
+                self.ui.billsnameLineEdit_5.text(),
+                self.ui.billsamountLineEdit_5.text(),
+                datetime(d.year(), d.month(), d.day()),
+                self.ui.billsDesc_5.toPlainText(),
+            )
+            self.ui.EditButton_4.setEnabled(True)
+            self.ui.SaveButton_4.setEnabled(False)
+            self.ui.billsnameLineEdit_5.setReadOnly(True)
+            self.ui.billsamountLineEdit_5.setReadOnly(True)
+            self.ui.billsDesc_5.setReadOnly(True)
+            self.ui.calendarWidget.setEnabled(False)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(BILLS_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
 
     def on_editGoalDetail_clicked(self):
         self.ui.GoalamountLineEdit_3.setReadOnly(False)
@@ -222,43 +221,67 @@ class Page(QWidget):
         self.ui.SaveButton_2.setEnabled(True)
 
     def on_saveGoalDetail_clicked(self):
-        button = self.sender()
-        goal_id = button.objectName()
-        summary = self.curUser.getSummary()
-        summary.editGoal(
-            goal_id,
-            self.ui.GoalnameLineEdit_3.text(),
-            self.ui.GoalamountLineEdit_3.text(),
-            self.ui.GoalDesc_3.toPlainText(),
-        )
-        self.ui.EditButton_2.setEnabled(True)
-        self.ui.GoalnameLineEdit_3.setReadOnly(True)
-        self.ui.GoalamountLineEdit_3.setReadOnly(True)
-        self.ui.GoalDesc_3.setReadOnly(True)
-        self.ui.SaveButton_2.setEnabled(False)
-        transaction.commit()
-        self.updateDynamicComponent()
-        self.switchPage(GOAL_PAGE)
+        if self.isFloat(self.ui.GoalamountLineEdit_3.text()):
+            button = self.sender()
+            goal_id = button.objectName()
+            summary = self.curUser.getSummary()
+            summary.editGoal(
+                goal_id,
+                self.ui.GoalnameLineEdit_3.text(),
+                self.ui.GoalamountLineEdit_3.text(),
+                self.ui.GoalDesc_3.toPlainText(),
+            )
+            self.ui.EditButton_2.setEnabled(True)
+            self.ui.GoalnameLineEdit_3.setReadOnly(True)
+            self.ui.GoalamountLineEdit_3.setReadOnly(True)
+            self.ui.GoalDesc_3.setReadOnly(True)
+            self.ui.SaveButton_2.setEnabled(False)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(GOAL_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
 
     def on_fundButton_clicked(self):
         button = self.sender()
         goal_id = button.objectName()
-        if self.ui.GoalFund_4.text() != "":
-            self.curUser.getSummary().addFund(goal_id, float(self.ui.GoalFund_4.text()))
+        if self.isFloat(self.ui.GoalFund_4.text()):
+            f = float(self.ui.GoalFund_4.text())
+            self.curUser.getSummary().addFund(goal_id, f)
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
+
+    def showPopUp(self, title, msg):
+        msgBox = QMessageBox()
+        msgBox.setBaseSize(QSize(500, 300))
+        msgBox.setWindowTitle(title)
+        msgBox.setText(msg)
+        msgBox.exec()
+
+    def isFloat(self, numberStr):
+        if numberStr != "":
+            try:
+                f = float(numberStr)
+                if f < 0:
+                    return False
+            except:
+                return False
+        return True
 
     def on_defundButton_clicked(self):
         button = self.sender()
         goal_id = button.objectName()
-        if self.ui.GoalDefund_5.text() != "":
-            self.curUser.getSummary().defund(
-                goal_id, float(self.ui.GoalDefund_5.text())
-            )
+        if self.isFloat(self.ui.GoalDefund_5.text()):
+            f = float(self.ui.GoalDefund_5.text())
+            self.curUser.getSummary().defund(goal_id, f)
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
 
     def on_editBudgetButton_clicked(self):
         t = self.ui.editBudgetButton.text()
@@ -271,24 +294,27 @@ class Page(QWidget):
             self.updateDynamicComponent()
 
     def on_saveButton_clicked(self):
-        button = self.sender()
-        transaction_id = button.objectName()
-        summary = self.curUser.getSummary()
-        summary.editTransaction(
-            transaction_id,
-            self.ui.transnameLineEdit_2.text(),
-            self.ui.transamountLineEdit_2.text(),
-            self.ui.catLineEdit_2.text(),
-            self.ui.transDesc_2.toPlainText(),
-        )
-        self.ui.EditButton.setEnabled(True)
-        self.ui.transamountLineEdit_2.setReadOnly(True)
-        self.ui.catLineEdit_2.setReadOnly(True)
-        self.ui.transnameLineEdit_2.setReadOnly(True)
-        self.ui.transDesc_2.setReadOnly(True)
-        self.ui.SaveButton.setEnabled(False)
-        transaction.commit()
-        self.updateDynamicComponent()
+        if self.isFloat(self.ui.transamountLineEdit_2.text()):
+            button = self.sender()
+            transaction_id = button.objectName()
+            summary = self.curUser.getSummary()
+            summary.editTransaction(
+                transaction_id,
+                self.ui.transnameLineEdit_2.text(),
+                self.ui.transamountLineEdit_2.text(),
+                self.ui.catLineEdit_2.text(),
+                self.ui.transDesc_2.toPlainText(),
+            )
+            self.ui.EditButton.setEnabled(True)
+            self.ui.transamountLineEdit_2.setReadOnly(True)
+            self.ui.catLineEdit_2.setReadOnly(True)
+            self.ui.transnameLineEdit_2.setReadOnly(True)
+            self.ui.transDesc_2.setReadOnly(True)
+            self.ui.SaveButton.setEnabled(False)
+            transaction.commit()
+            self.updateDynamicComponent()
+            return
+        self.showPopUp("Error", "Please enter positive number")
         # self.switchPage(TRANSACTION_PAGE)
 
     def on_editButton_clicked(self):
@@ -595,64 +621,73 @@ class Page(QWidget):
         self.switchPage(ADD_PAGE)
 
     def on_saveTransactionButton_clicked(self):
-        transName = self.ui.transnameLineEdit.text()
-        transCat = self.ui.catLineEdit.text()
-        transAmount = self.ui.transamountLineEdit.text()
-        transDesc = self.ui.transDesc.toPlainText()
+        if self.isFloat(self.ui.transamountLineEdit.text()):
+            transName = self.ui.transnameLineEdit.text()
+            transCat = self.ui.catLineEdit.text()
+            transAmount = self.ui.transamountLineEdit.text()
+            transDesc = self.ui.transDesc.toPlainText()
 
-        if self.ui.income_radio.isChecked():
-            tmp = self.root["user"]
-            user = tmp[self.curUser.getUsername()]
-            inc = Income(transName, transAmount, transCat, transDesc)
-            user.getSummary().addTransaction(inc)
-            transaction.commit()
-            self.updateDynamicComponent()
-            # self.updateScroll()
-            # self.updateDashboard()
-            # TODO: save Income to a transaction list in database
-        elif self.ui.expense_radio.isChecked():
-            tmp = self.root["user"]
-            user = tmp[self.curUser.getUsername()]
-            exp = Expense(transName, transAmount, transCat, transDesc)
-            user.getSummary().addTransaction(exp)
-            transaction.commit()
-            self.updateDynamicComponent()
-            # self.updateScroll()
-            # self.updateDashboard()
-            # TODO: save Expense to a transaction list in database (Done)
-        else:
-            print("Please select income or expense")
-        self.switchPage(TRANSACTION_PAGE)
+            if self.ui.income_radio.isChecked():
+                tmp = self.root["user"]
+                user = tmp[self.curUser.getUsername()]
+                inc = Income(transName, transAmount, transCat, transDesc)
+                user.getSummary().addTransaction(inc)
+                transaction.commit()
+                self.updateDynamicComponent()
+                # self.updateScroll()
+                # self.updateDashboard()
+                # TODO: save Income to a transaction list in database
+            elif self.ui.expense_radio.isChecked():
+                tmp = self.root["user"]
+                user = tmp[self.curUser.getUsername()]
+                exp = Expense(transName, transAmount, transCat, transDesc)
+                user.getSummary().addTransaction(exp)
+                transaction.commit()
+                self.updateDynamicComponent()
+                # self.updateScroll()
+                # self.updateDashboard()
+                # TODO: save Expense to a transaction list in database (Done)
+            else:
+                print("Please select income or expense")
+            self.switchPage(TRANSACTION_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
 
     def on_gotransButton_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(TRANSACTION_PAGE)
 
     def on_saveNewBill(self):
-        billName = self.ui.billsnameLineEdit.text()
-        billAmount = self.ui.billsamountLineedit.text()
-        d = self.ui.calendarWidget_2.selectedDate()
-        duedate = datetime(d.year(), d.month(), d.day())
-        billDesc = self.ui.BillsDesc.toPlainText()
-        tmp = self.root["user"]
-        user = tmp[self.curUser.getUsername()]
-        bill = BillReminder(billName, float(billAmount), duedate, billDesc)
-        user.getSummary().addBill(bill)
-        transaction.commit()
-        self.updateDynamicComponent()
-        self.switchPage(BILLS_PAGE)
+        if self.isFloat(self.ui.billsamountLineedit.text()):
+            billName = self.ui.billsnameLineEdit.text()
+            billAmount = self.ui.billsamountLineedit.text()
+            d = self.ui.calendarWidget_2.selectedDate()
+            duedate = datetime(d.year(), d.month(), d.day())
+            billDesc = self.ui.BillsDesc.toPlainText()
+            tmp = self.root["user"]
+            user = tmp[self.curUser.getUsername()]
+            bill = BillReminder(billName, float(billAmount), duedate, billDesc)
+            user.getSummary().addBill(bill)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(BILLS_PAGE)
+            return
+        self.showPopUp("Error", "Please enter positive number")
 
     def on_savegoalButton_clicked(self):
         goalName = self.ui.goalnameLineEdit.text()
         goalAmount = self.ui.goalamountLineEdit.text()
-        goalDesc = self.ui.GoalDesc.toPlainText()
-        tmp = self.root["user"]
-        user = tmp[self.curUser.getUsername()]
-        goal = Goal(goalName, float(goalAmount), goalDesc)
-        user.getSummary().addGoal(goal)
-        transaction.commit()
-        self.updateDynamicComponent()
-        self.switchPage(GOAL_PAGE)
-        # TODO: save goal to a goal list in database (Done)
+        if self.isFloat(goalAmount):
+            goalDesc = self.ui.GoalDesc.toPlainText()
+            tmp = self.root["user"]
+            user = tmp[self.curUser.getUsername()]
+            goal = Goal(goalName, float(goalAmount), goalDesc)
+            user.getSummary().addGoal(goal)
+            transaction.commit()
+            self.updateDynamicComponent()
+            self.switchPage(GOAL_PAGE)
+            return
+            # TODO: save goal to a goal list in database (Done)
+        self.showPopUp("Error", "Please enter positive number")
 
     def switchPage(self, page):
         self.ui.stackedWidget.setCurrentIndex(page)
