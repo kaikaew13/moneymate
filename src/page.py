@@ -291,9 +291,12 @@ class Page(QWidget):
             self.ui.bugetField.setReadOnly(False)
             self.ui.editBudgetButton.setText("Save")
         else:
-            self.curUser.getSummary().setBudget(float(self.ui.bugetField.text()))
-            transaction.commit()
-            self.updateDynamicComponent()
+            if self.isFloat(self.ui.bugetField.text()):
+                self.curUser.getSummary().setBudget(float(self.ui.bugetField.text()))
+                transaction.commit()
+                self.updateDynamicComponent()
+                return
+            self.showPopUp("Error", "Please enter positive number")
 
     def on_saveButton_clicked(self):
         if self.isFloat(self.ui.transamountLineEdit_2.text()):
