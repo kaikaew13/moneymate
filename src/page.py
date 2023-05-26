@@ -47,9 +47,11 @@ class Page(QWidget):
         self.ui = Ui_Form()
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
+
         # create a button at stackedwithget index 4
 
         self.ui.setupUi(self)
+
         # self.updateScroll()
 
         self.ui.goDashboardButton.clicked.connect(self.on_goDashboardButton_clicked)

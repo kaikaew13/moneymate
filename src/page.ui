@@ -29,7 +29,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="loginPage">
     <widget class="QWidget" name="widget" native="true">
@@ -1565,7 +1565,7 @@ QPushButton#notiButton:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_108</zorder>
@@ -2391,7 +2391,7 @@ QPushButton#notiButton_2:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_83</zorder>
@@ -3100,7 +3100,7 @@ QPushButton#notiButton_3:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_186</zorder>
@@ -3757,7 +3757,7 @@ QPushButton#notiButton_4:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_92</zorder>
@@ -4413,7 +4413,7 @@ QPushButton#notiButton_5:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_85</zorder>
@@ -5192,7 +5192,7 @@ QPushButton#notiButton_6:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>widget_12</zorder>
@@ -6034,7 +6034,7 @@ QPushButton#goBillsButton_7:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_118</zorder>
@@ -7357,7 +7357,7 @@ QPushButton#goBillsButton_8:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_126</zorder>
@@ -8043,7 +8043,7 @@ QPushButton#notiButton_9:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_216</zorder>
@@ -8861,7 +8861,7 @@ QPushButton#notiButton_10:pressed {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
+       <pixmap resource="../resources/img.qrc">:/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_242</zorder>
