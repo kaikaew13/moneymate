@@ -736,7 +736,7 @@ class Page(QWidget):
     def updateDynamicComponent(self, optional_id=None):
         self.updateDashboardPage()
         self.updateTransactionPage()
-        self.udpateBillsPage()
+        self.updateBillsPage()
         self.updateGoalPage()
         self.UpdatelogoutPage()
         self.updateGoalDetailPage(optional_id)
@@ -908,7 +908,7 @@ class Page(QWidget):
                 button.clicked.connect(self.on_goal_clicked)
                 self.ui.horizontalLayout.layout().addWidget(button)
 
-    def udpateBillsPage(self):
+    def updateBillsPage(self):
         for i in reversed(range(self.ui.scrollArea_8.widget().layout().count())):
             self.ui.scrollArea_8.widget().layout().itemAt(i).widget().setParent(None)
         scroll_widget = self.ui.scrollArea_8.widget()
@@ -942,9 +942,14 @@ class Page(QWidget):
                 middle_label = QLabel(
                     str("{:.2f}".format(b.getAmount())), button
                 )  # Set button as parent
-                right_label = QLabel(
-                    str(b.getDueDate().date()), button
-                )  # Set button as parent
+
+                tmpStr = str(b.getDueDate().date())
+                textColor = "black"
+                if b.getDueDate().date() < datetime.now().date():
+                    tmpStr += " (Overdued)"
+                    textColor = "red"
+                right_label = QLabel(tmpStr, button)  # Set button as parent
+                right_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
 
                 button_layout.addWidget(left_label)
                 button_layout.addWidget(middle_label)
