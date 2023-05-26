@@ -250,6 +250,12 @@ class Page(QWidget):
         if self.isFloat(self.ui.GoalFund_4.text()):
             f = float(self.ui.GoalFund_4.text())
             self.curUser.getSummary().addFund(goal_id, f)
+            goal_obj = self.curUser.getSummary().getGoalById(goal_id)
+            if goal_obj.getAmount() < goal_obj.getProgress():
+                self.showPopUp(
+                    "Error", "The fund added exceeds target please try again"
+                )
+                return
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
@@ -271,7 +277,8 @@ class Page(QWidget):
                     return False
             except:
                 return False
-        return True
+            return True
+        return False
 
     def on_defundButton_clicked(self):
         button = self.sender()
@@ -279,6 +286,12 @@ class Page(QWidget):
         if self.isFloat(self.ui.GoalDefund_5.text()):
             f = float(self.ui.GoalDefund_5.text())
             self.curUser.getSummary().defund(goal_id, f)
+            goal_obj = self.curUser.getSummary().getGoalById(goal_id)
+            if goal_obj.getProgress() < 0:
+                self.showPopUp(
+                    "Error", "The current fund is less than amount defunding"
+                )
+                return
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
