@@ -1164,36 +1164,6 @@ QPushButton#goAccountButton:pressed {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="tabsButton">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_63">
       <property name="geometry">
        <rect>
@@ -1588,7 +1558,6 @@ QPushButton#notiButton:pressed {
      <zorder>label_56</zorder>
      <zorder>spentLabel</zorder>
      <zorder>label_59</zorder>
-     <zorder>tabsButton</zorder>
      <zorder>goTransButton</zorder>
      <zorder>label_65</zorder>
      <zorder>label_66</zorder>
@@ -1876,36 +1845,6 @@ QPushButton#goAccountButton_2:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_2 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_2:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_91">
@@ -2396,7 +2335,6 @@ QPushButton#notiButton_2:pressed {
      </widget>
      <zorder>label_83</zorder>
      <zorder>label_88</zorder>
-     <zorder>tabsButton_2</zorder>
      <zorder>label_91</zorder>
      <zorder>goTransButton_2</zorder>
      <zorder>goGoalButton_2</zorder>
@@ -2700,36 +2638,6 @@ QPushButton#goAccountButton_12:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_12">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_12 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_12:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_190">
@@ -3105,7 +3013,6 @@ QPushButton#notiButton_3:pressed {
      </widget>
      <zorder>label_186</zorder>
      <zorder>label_187</zorder>
-     <zorder>tabsButton_12</zorder>
      <zorder>label_192</zorder>
      <zorder>scrollArea_8</zorder>
      <zorder>line_28</zorder>
@@ -3394,36 +3301,6 @@ QPushButton#goAccountButton_3:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_3">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_3 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_3:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_96">
@@ -3764,7 +3641,6 @@ QPushButton#notiButton_4:pressed {
      <zorder>label_22</zorder>
      <zorder>label_96</zorder>
      <zorder>label_84</zorder>
-     <zorder>tabsButton_3</zorder>
      <zorder>goTransButton_3</zorder>
      <zorder>label_18</zorder>
      <zorder>closeButton_5</zorder>
@@ -4050,36 +3926,6 @@ QPushButton#goAccountButton_4:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_4">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_4 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_4:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_101">
@@ -4418,7 +4264,6 @@ QPushButton#notiButton_5:pressed {
      </widget>
      <zorder>label_85</zorder>
      <zorder>label_98</zorder>
-     <zorder>tabsButton_4</zorder>
      <zorder>label_23</zorder>
      <zorder>line_4</zorder>
      <zorder>label_80</zorder>
@@ -4711,36 +4556,6 @@ QPushButton#goAccountButton_5:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_5">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_5 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_5:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_106">
@@ -5198,7 +5013,6 @@ QPushButton#notiButton_6:pressed {
      <zorder>widget_12</zorder>
      <zorder>label_86</zorder>
      <zorder>label_103</zorder>
-     <zorder>tabsButton_5</zorder>
      <zorder>label_28</zorder>
      <zorder>line_5</zorder>
      <zorder>label_82</zorder>
@@ -5500,36 +5314,6 @@ QPushButton#goAccountButton_7:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_7">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_7 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_7:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_121">
@@ -6052,7 +5836,6 @@ QPushButton#goBillsButton_7:pressed {
      <zorder>widget_16</zorder>
      <zorder>addButton_5</zorder>
      <zorder>label_117</zorder>
-     <zorder>tabsButton_7</zorder>
      <zorder>label_116</zorder>
      <zorder>closeButton_9</zorder>
      <zorder>catLineEdit_2</zorder>
@@ -6343,36 +6126,6 @@ QPushButton#goAccountButton_8:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_8">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_8 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_8:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_129">
@@ -7363,7 +7116,6 @@ QPushButton#goBillsButton_8:pressed {
      <zorder>label_126</zorder>
      <zorder>label_74</zorder>
      <zorder>label_125</zorder>
-     <zorder>tabsButton_8</zorder>
      <zorder>label_129</zorder>
      <zorder>goTransButton_8</zorder>
      <zorder>label_43</zorder>
@@ -7684,36 +7436,6 @@ QPushButton#goAccountButton_14:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_14">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_14 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_14:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_220">
@@ -8048,7 +7770,6 @@ QPushButton#notiButton_9:pressed {
      </widget>
      <zorder>label_216</zorder>
      <zorder>label_217</zorder>
-     <zorder>tabsButton_14</zorder>
      <zorder>label_220</zorder>
      <zorder>label_226</zorder>
      <zorder>line_32</zorder>
@@ -8346,36 +8067,6 @@ QPushButton#goAccountButton_16:pressed {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="tabsButton_16">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>50</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#tabsButton_16 {
-    border: none;
-    background-color: rgb(81,74,248);
-   qproperty-iconSize: 40px;
-    border-radius: 10px; /* set the initial border radius */
-}
-
-QPushButton#tabsButton_16:hover {
-    background-color: rgb(81,74,170);
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resources/img.qrc">
-        <normaloff>:/pics/images/menu.png</normaloff>:/pics/images/menu.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_246">
@@ -8866,7 +8557,6 @@ QPushButton#notiButton_10:pressed {
      </widget>
      <zorder>label_242</zorder>
      <zorder>label_243</zorder>
-     <zorder>tabsButton_16</zorder>
      <zorder>label_246</zorder>
      <zorder>goTransButton_16</zorder>
      <zorder>label_248</zorder>

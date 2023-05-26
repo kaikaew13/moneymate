@@ -442,23 +442,6 @@ class Ui_Form(object):
         self.label_62.setStyleSheet(u"")
         self.label_62.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_62.setScaledContents(True)
-        self.tabsButton = QPushButton(self.widget_3)
-        self.tabsButton.setObjectName(u"tabsButton")
-        self.tabsButton.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton.setStyleSheet(u"QPushButton#tabsButton {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        icon1 = QIcon()
-        icon1.addFile(u":/pics/images/menu.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabsButton.setIcon(icon1)
         self.label_63 = QLabel(self.widget_3)
         self.label_63.setObjectName(u"label_63")
         self.label_63.setGeometry(QRect(0, 100, 251, 701))
@@ -621,7 +604,6 @@ class Ui_Form(object):
         self.label_56.raise_()
         self.spentLabel.raise_()
         self.label_59.raise_()
-        self.tabsButton.raise_()
         self.goTransButton.raise_()
         self.label_65.raise_()
         self.label_66.raise_()
@@ -743,21 +725,6 @@ class Ui_Form(object):
         self.label_90.setStyleSheet(u"")
         self.label_90.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_90.setScaledContents(True)
-        self.tabsButton_2 = QPushButton(self.widget_4)
-        self.tabsButton_2.setObjectName(u"tabsButton_2")
-        self.tabsButton_2.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_2.setStyleSheet(u"QPushButton#tabsButton_2 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_2:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_2.setIcon(icon1)
         self.label_91 = QLabel(self.widget_4)
         self.label_91.setObjectName(u"label_91")
         self.label_91.setGeometry(QRect(0, 100, 251, 701))
@@ -911,7 +878,6 @@ class Ui_Form(object):
         self.label_30.setPixmap(QPixmap(u":/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png"))
         self.label_83.raise_()
         self.label_88.raise_()
-        self.tabsButton_2.raise_()
         self.label_91.raise_()
         self.goTransButton_2.raise_()
         self.goGoalButton_2.raise_()
@@ -1049,21 +1015,6 @@ class Ui_Form(object):
         self.label_189.setStyleSheet(u"")
         self.label_189.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_189.setScaledContents(True)
-        self.tabsButton_12 = QPushButton(self.widget_6)
-        self.tabsButton_12.setObjectName(u"tabsButton_12")
-        self.tabsButton_12.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_12.setStyleSheet(u"QPushButton#tabsButton_12 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_12:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_12.setIcon(icon1)
         self.label_190 = QLabel(self.widget_6)
         self.label_190.setObjectName(u"label_190")
         self.label_190.setGeometry(QRect(0, 100, 251, 701))
@@ -1210,7 +1161,6 @@ class Ui_Form(object):
         self.label_31.setPixmap(QPixmap(u":/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png"))
         self.label_186.raise_()
         self.label_187.raise_()
-        self.tabsButton_12.raise_()
         self.label_192.raise_()
         self.scrollArea_8.raise_()
         self.line_28.raise_()
@@ -1333,21 +1283,6 @@ class Ui_Form(object):
         self.label_95.setStyleSheet(u"")
         self.label_95.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_95.setScaledContents(True)
-        self.tabsButton_3 = QPushButton(self.widget_5)
-        self.tabsButton_3.setObjectName(u"tabsButton_3")
-        self.tabsButton_3.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_3.setStyleSheet(u"QPushButton#tabsButton_3 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_3:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_3.setIcon(icon1)
         self.label_96 = QLabel(self.widget_5)
         self.label_96.setObjectName(u"label_96")
         self.label_96.setGeometry(QRect(0, 100, 251, 701))
@@ -1477,7 +1412,6 @@ class Ui_Form(object):
         self.label_22.raise_()
         self.label_96.raise_()
         self.label_84.raise_()
-        self.tabsButton_3.raise_()
         self.goTransButton_3.raise_()
         self.label_18.raise_()
         self.closeButton_5.raise_()
@@ -1597,21 +1531,6 @@ class Ui_Form(object):
         self.label_100.setStyleSheet(u"")
         self.label_100.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_100.setScaledContents(True)
-        self.tabsButton_4 = QPushButton(self.widget_8)
-        self.tabsButton_4.setObjectName(u"tabsButton_4")
-        self.tabsButton_4.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_4.setStyleSheet(u"QPushButton#tabsButton_4 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_4:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_4.setIcon(icon1)
         self.label_101 = QLabel(self.widget_8)
         self.label_101.setObjectName(u"label_101")
         self.label_101.setGeometry(QRect(0, 100, 251, 701))
@@ -1743,7 +1662,6 @@ class Ui_Form(object):
         self.label_136.setPixmap(QPixmap(u":/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png"))
         self.label_85.raise_()
         self.label_98.raise_()
-        self.tabsButton_4.raise_()
         self.label_23.raise_()
         self.line_4.raise_()
         self.label_80.raise_()
@@ -1870,21 +1788,6 @@ class Ui_Form(object):
         self.label_105.setStyleSheet(u"")
         self.label_105.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_105.setScaledContents(True)
-        self.tabsButton_5 = QPushButton(self.widget_11)
-        self.tabsButton_5.setObjectName(u"tabsButton_5")
-        self.tabsButton_5.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_5.setStyleSheet(u"QPushButton#tabsButton_5 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_5:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_5.setIcon(icon1)
         self.label_106 = QLabel(self.widget_11)
         self.label_106.setObjectName(u"label_106")
         self.label_106.setGeometry(QRect(0, 100, 251, 701))
@@ -2060,7 +1963,6 @@ class Ui_Form(object):
         self.widget_12.raise_()
         self.label_86.raise_()
         self.label_103.raise_()
-        self.tabsButton_5.raise_()
         self.label_28.raise_()
         self.line_5.raise_()
         self.label_82.raise_()
@@ -2196,21 +2098,6 @@ class Ui_Form(object):
         self.label_120.setStyleSheet(u"")
         self.label_120.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_120.setScaledContents(True)
-        self.tabsButton_7 = QPushButton(self.widget_15)
-        self.tabsButton_7.setObjectName(u"tabsButton_7")
-        self.tabsButton_7.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_7.setStyleSheet(u"QPushButton#tabsButton_7 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_7:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_7.setIcon(icon1)
         self.label_121 = QLabel(self.widget_15)
         self.label_121.setObjectName(u"label_121")
         self.label_121.setGeometry(QRect(0, 100, 251, 711))
@@ -2421,7 +2308,6 @@ class Ui_Form(object):
         self.widget_16.raise_()
         self.addButton_5.raise_()
         self.label_117.raise_()
-        self.tabsButton_7.raise_()
         self.label_116.raise_()
         self.closeButton_9.raise_()
         self.catLineEdit_2.raise_()
@@ -2546,21 +2432,6 @@ class Ui_Form(object):
         self.label_128.setStyleSheet(u"")
         self.label_128.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_128.setScaledContents(True)
-        self.tabsButton_8 = QPushButton(self.widget_17)
-        self.tabsButton_8.setObjectName(u"tabsButton_8")
-        self.tabsButton_8.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_8.setStyleSheet(u"QPushButton#tabsButton_8 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_8:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_8.setIcon(icon1)
         self.label_129 = QLabel(self.widget_17)
         self.label_129.setObjectName(u"label_129")
         self.label_129.setGeometry(QRect(0, 100, 251, 711))
@@ -2933,7 +2804,6 @@ class Ui_Form(object):
         self.label_126.raise_()
         self.label_74.raise_()
         self.label_125.raise_()
-        self.tabsButton_8.raise_()
         self.label_129.raise_()
         self.goTransButton_8.raise_()
         self.label_43.raise_()
@@ -3088,21 +2958,6 @@ class Ui_Form(object):
         self.label_219.setStyleSheet(u"")
         self.label_219.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_219.setScaledContents(True)
-        self.tabsButton_14 = QPushButton(self.widget_23)
-        self.tabsButton_14.setObjectName(u"tabsButton_14")
-        self.tabsButton_14.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_14.setStyleSheet(u"QPushButton#tabsButton_14 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_14:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_14.setIcon(icon1)
         self.label_220 = QLabel(self.widget_23)
         self.label_220.setObjectName(u"label_220")
         self.label_220.setGeometry(QRect(0, 100, 251, 701))
@@ -3223,7 +3078,6 @@ class Ui_Form(object):
         self.label_140.setPixmap(QPixmap(u":/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png"))
         self.label_216.raise_()
         self.label_217.raise_()
-        self.tabsButton_14.raise_()
         self.label_220.raise_()
         self.label_226.raise_()
         self.line_32.raise_()
@@ -3355,21 +3209,6 @@ class Ui_Form(object):
         self.label_245.setStyleSheet(u"")
         self.label_245.setPixmap(QPixmap(u":/pics/images/trans.png"))
         self.label_245.setScaledContents(True)
-        self.tabsButton_16 = QPushButton(self.widget_24)
-        self.tabsButton_16.setObjectName(u"tabsButton_16")
-        self.tabsButton_16.setGeometry(QRect(50, 50, 41, 41))
-        self.tabsButton_16.setStyleSheet(u"QPushButton#tabsButton_16 {\n"
-"    border: none;\n"
-"    background-color: rgb(81,74,248);\n"
-"   qproperty-iconSize: 40px;\n"
-"    border-radius: 10px; /* set the initial border radius */\n"
-"}\n"
-"\n"
-"QPushButton#tabsButton_16:hover {\n"
-"    background-color: rgb(81,74,170);\n"
-"}\n"
-"")
-        self.tabsButton_16.setIcon(icon1)
         self.label_246 = QLabel(self.widget_24)
         self.label_246.setObjectName(u"label_246")
         self.label_246.setGeometry(QRect(0, 100, 251, 711))
@@ -3561,7 +3400,6 @@ class Ui_Form(object):
         self.label_141.setPixmap(QPixmap(u":/pics/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png"))
         self.label_242.raise_()
         self.label_243.raise_()
-        self.tabsButton_16.raise_()
         self.label_246.raise_()
         self.goTransButton_16.raise_()
         self.label_248.raise_()
@@ -3664,7 +3502,6 @@ class Ui_Form(object):
         self.goAccountButton.setText(QCoreApplication.translate("Form", u"Account", None))
         self.label_61.setText("")
         self.label_62.setText("")
-        self.tabsButton.setText("")
         self.label_63.setText("")
         self.goTransButton.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_64.setText("")
@@ -3689,7 +3526,6 @@ class Ui_Form(object):
         self.label_88.setText("")
         self.label_89.setText("")
         self.label_90.setText("")
-        self.tabsButton_2.setText("")
         self.label_91.setText("")
         self.goTransButton_2.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_94.setText("")
@@ -3719,7 +3555,6 @@ class Ui_Form(object):
         self.label_187.setText("")
         self.label_188.setText("")
         self.label_189.setText("")
-        self.tabsButton_12.setText("")
         self.label_190.setText("")
         self.goTransButton_12.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_191.setText("")
@@ -3743,7 +3578,6 @@ class Ui_Form(object):
         self.label_92.setText("")
         self.label_93.setText("")
         self.label_95.setText("")
-        self.tabsButton_3.setText("")
         self.label_96.setText("")
         self.goTransButton_3.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_97.setText("")
@@ -3766,7 +3600,6 @@ class Ui_Form(object):
         self.label_98.setText("")
         self.label_99.setText("")
         self.label_100.setText("")
-        self.tabsButton_4.setText("")
         self.label_101.setText("")
         self.goTransButton_4.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_102.setText("")
@@ -3788,7 +3621,6 @@ class Ui_Form(object):
         self.label_103.setText("")
         self.label_104.setText("")
         self.label_105.setText("")
-        self.tabsButton_5.setText("")
         self.label_106.setText("")
         self.goTransButton_5.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_107.setText("")
@@ -3818,7 +3650,6 @@ class Ui_Form(object):
         self.label_118.setText("")
         self.label_119.setText("")
         self.label_120.setText("")
-        self.tabsButton_7.setText("")
         self.label_121.setText("")
         self.goTransButton_7.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_122.setText("")
@@ -3845,7 +3676,6 @@ class Ui_Form(object):
         self.label_126.setText("")
         self.label_127.setText("")
         self.label_128.setText("")
-        self.tabsButton_8.setText("")
         self.label_129.setText("")
         self.goTransButton_8.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_130.setText("")
@@ -3892,7 +3722,6 @@ class Ui_Form(object):
         self.label_217.setText("")
         self.label_218.setText("")
         self.label_219.setText("")
-        self.tabsButton_14.setText("")
         self.label_220.setText("")
         self.goTransButton_14.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_221.setText("")
@@ -3915,7 +3744,6 @@ class Ui_Form(object):
         self.label_243.setText("")
         self.label_244.setText("")
         self.label_245.setText("")
-        self.tabsButton_16.setText("")
         self.label_246.setText("")
         self.goTransButton_16.setText(QCoreApplication.translate("Form", u"Transactions", None))
         self.label_247.setText("")
