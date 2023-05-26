@@ -849,18 +849,28 @@ class Page(QWidget):
                     """
                     #{id} {{
                         border: 1px solid black;
+                        background-color: rgb(255,255,255);
+                        border-radius: 10px;
+                        border-color: rgb(230, 230, 230);
                     }}
                     #{id}:pressed {{
-                        background-color: rgb(255, 255, 255);
+                        background-color: rgb(192, 192, 192);
                     }}
                     """.format(
                         id=button.objectName()
                     )
                 )
                 button_layout = QVBoxLayout(button)
+                textColor = "green" if g.getPercentage() == 100 else "black"
                 top_label = QLabel(g.getName(), button)
+                top_label.setStyleSheet(
+                    f"QLabel {{font-size: 16px; font-weight: 600;}}"
+                )
+                top_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({g.getPercentage()}%)'
                 bottom_label = QLabel(progressStr, button)
+                bottom_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
+                bottom_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 button_layout.addWidget(top_label)
                 button_layout.addWidget(bottom_label)
                 button.setLayout(button_layout)
