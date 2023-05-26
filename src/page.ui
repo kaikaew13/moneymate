@@ -1534,20 +1534,38 @@ QPushButton#goBillsButton:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton {
+       <string notr="true">QPushButton#notiButton {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton:hover {
+	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton:pressed {
+QPushButton#notiButton:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_108</zorder>
@@ -1588,6 +1606,7 @@ QPushButton#goBillsButton:pressed {
      <zorder>horizontalLayoutWidget</zorder>
      <zorder>goBillsButton</zorder>
      <zorder>notiButton</zorder>
+     <zorder>label_29</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addPage">
@@ -2341,20 +2360,38 @@ QPushButton#goBillsButton_2:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_2 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
 	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_2:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_2:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_83</zorder>
@@ -2395,6 +2432,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>GoalDesc</zorder>
      <zorder>goBillsButton_2</zorder>
      <zorder>notiButton_2</zorder>
+     <zorder>label_30</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="BillsPage">
@@ -3032,20 +3070,37 @@ QPushButton#addBillsButton:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_3 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_3:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_3:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_186</zorder>
@@ -3071,6 +3126,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>label_189</zorder>
      <zorder>label_191</zorder>
      <zorder>notiButton_3</zorder>
+     <zorder>label_31</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="TransactionPage">
@@ -3671,20 +3727,37 @@ QPushButton#goBillsButton_3:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_4 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_4:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_4:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_92</zorder>
@@ -3709,6 +3782,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>goBillsButton_3</zorder>
      <zorder>line_9</zorder>
      <zorder>notiButton_4</zorder>
+     <zorder>label_32</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalPage">
@@ -4309,20 +4383,37 @@ QPushButton#goBillsButton_4:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_5 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_5:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_5:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_136">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_85</zorder>
@@ -4347,6 +4438,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>addButton_3</zorder>
      <zorder>goBillsButton_4</zorder>
      <zorder>notiButton_5</zorder>
+     <zorder>label_136</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="accountPage">
@@ -5070,20 +5162,37 @@ QPushButton#goBillsButton_5:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_6 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_6:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_6:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_137">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>widget_12</zorder>
@@ -5118,6 +5227,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>ttBalance</zorder>
      <zorder>label_255</zorder>
      <zorder>notiButton_6</zorder>
+     <zorder>label_137</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="transactionDetailPage">
@@ -5894,20 +6004,37 @@ QPushButton#goBillsButton_6:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_7 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#goBillsButton_7:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_7:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_138">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_118</zorder>
@@ -5943,6 +6070,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>label_68</zorder>
      <zorder>goBillsButton_6</zorder>
      <zorder>notiButton_7</zorder>
+     <zorder>label_138</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalDetailPage">
@@ -7199,20 +7327,37 @@ QPushButton#goBillsButton_7:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_8 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#goBillsButton_8:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#goBillsButton_8:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_139">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_126</zorder>
@@ -7269,6 +7414,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>deFundGoalButton</zorder>
      <zorder>goBillsButton_7</zorder>
      <zorder>notiButton_8</zorder>
+     <zorder>label_139</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="addBillPage">
@@ -7867,20 +8013,37 @@ QPushButton#goBillsButton_14:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_9 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_9:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_9:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_140">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_216</zorder>
@@ -7910,6 +8073,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>label_254</zorder>
      <zorder>calendarWidget_2</zorder>
      <zorder>notiButton_9</zorder>
+     <zorder>label_140</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="billDetailPage">
@@ -8667,20 +8831,37 @@ QPushButton#goBillsButton_16:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#goBillsButton_2 {
+       <string notr="true">QPushButton#notiButton_10 {
     border: none;
     border-radius: 10px; /* set the initial border radius */
-	color: rgb(0,0,0);
-}
-QPushButton#goBillsButton_2:hover {
+	color: rgb(0,0,0);	color: rgb(255,255,255);
     background-color: rgb(81,74,200);
 }
-QPushButton#goBillsButton_2:pressed {
+QPushButton#notiButton_10:hover {
+    background-color: rgb(81,74,200);
+}
+QPushButton#notiButton_10:pressed {
     background-color: rgb(61, 54, 180);
 }</string>
       </property>
       <property name="text">
        <string>Notification</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_141">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../resources/images/Vzt78rEMgwJJdAAAAABJRU5ErkJggg==.png</pixmap>
       </property>
      </widget>
      <zorder>label_242</zorder>
@@ -8715,6 +8896,7 @@ QPushButton#goBillsButton_2:pressed {
      <zorder>label_247</zorder>
      <zorder>calendarWidget</zorder>
      <zorder>notiButton_10</zorder>
+     <zorder>label_141</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="page"/>
