@@ -169,7 +169,7 @@ class Page(QWidget):
                 messageStr += f" - Bill Name: {b.getName()}\n\tAmount: {'{:.2f}'.format(b.getAmount())} Pay Before: {b.getDueDate().date()}\n"
         messageStr += "\n"
         if len(goals) > 0:
-            messageStr += "goals that almost reach the target:\n"
+            messageStr += "goals that are near completed or completed:\n"
             for g in goals:
                 messageStr += f" - Goal Name: {g.getName()}\n\tProgress: {'{:.2f}'.format(g.getProgress())}/{'{:.2f}'.format(g.getAmount())} Percentage: {g.getPercentage()}%"
         self.showPopUp("Notification", messageStr)
@@ -249,14 +249,14 @@ class Page(QWidget):
         goal_id = button.objectName()
         if self.isFloat(self.ui.GoalFund_4.text()):
             f = float(self.ui.GoalFund_4.text())
-            self.curUser.getSummary().addFund(goal_id, f)
             goal_obj = self.curUser.getSummary().getGoalById(goal_id)
-            if goal_obj.getAmount() < goal_obj.getProgress():
+            if goal_obj.getAmount() < goal_obj.getProgress() + f:
                 self.showPopUp(
                     "Error", "The fund added exceeds target please try again"
                 )
                 self.ui.GoalFund_4.setText("")
                 return
+            self.curUser.getSummary().addFund(goal_id, f)
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
@@ -287,14 +287,14 @@ class Page(QWidget):
         goal_id = button.objectName()
         if self.isFloat(self.ui.GoalDefund_5.text()):
             f = float(self.ui.GoalDefund_5.text())
-            self.curUser.getSummary().defund(goal_id, f)
             goal_obj = self.curUser.getSummary().getGoalById(goal_id)
-            if goal_obj.getProgress() < 0:
+            if goal_obj.getProgress() - f < 0:
                 self.showPopUp(
                     "Error", "The current fund is less than amount defunding"
                 )
                 self.ui.GoalDefund_5.setText("")
                 return
+            self.curUser.getSummary().defund(goal_id, f)
             transaction.commit()
             self.updateDynamicComponent(optional_id=goal_id)
             self.switchPage(GOALDETAIL_PAGE)
@@ -371,6 +371,9 @@ class Page(QWidget):
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(BILLS_PAGE)
+            return
+        self.showPopUp("failed", "incorrect password")
+        self.ui.PasswordField_4.setText("")
 
     def on_deleteGoalsButton_clicked(self, goal_id):
         password = self.ui.PasswordField_2.text()
@@ -382,6 +385,9 @@ class Page(QWidget):
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(GOAL_PAGE)
+            return
+        self.showPopUp("failed", "incorrect password")
+        self.ui.PasswordField_2.setText("")
 
     def on_deleteTransButton_clicked(self, transaction_id):
         password = self.ui.PasswordField.text()
@@ -393,6 +399,9 @@ class Page(QWidget):
             transaction.commit()
             self.updateDynamicComponent()
             self.switchPage(TRANSACTION_PAGE)
+            return
+        self.showPopUp("Failed", "incorrect password")
+        self.ui.PasswordField.setText("")
 
     def on_goal_clicked(self):
         self.ui.GoalnameLineEdit_3.setReadOnly(True)
@@ -719,6 +728,8 @@ class Page(QWidget):
         self.clearLineEdits()
 
     def clearLineEdits(self):
+        self.ui.billsnameLineEdit.setText("")
+        self.ui.billsamountLineedit.setText("")
         self.ui.PasswordField.setText("")
         self.ui.transnameLineEdit.setText("")
         self.ui.catLineEdit.setText("")
@@ -1048,8 +1059,10 @@ class Page(QWidget):
                 middle_label = QLabel(
                     str("{:.2f}".format(g.getAmount())), button
                 )  # Set button as parent
-                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({round(g.getProgress() / g.getAmount() * 100)}%)'
+                textColor = "green" if g.getPercentage() == 100 else "black"
+                progressStr = f'{"{:.2f}".format(g.getProgress())}/{"{:.2f}".format(g.getAmount())} ({g.getPercentage()}%)'
                 right_label = QLabel(progressStr, button)  # Set button as parent
+                right_label.setStyleSheet(f"QLabel {{color: {textColor};}}")
 
                 button_layout.addWidget(left_label)
                 button_layout.addWidget(middle_label)

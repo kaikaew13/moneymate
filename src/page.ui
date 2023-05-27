@@ -1012,7 +1012,7 @@ QPushButton#closeButton_3:hover {
      <widget class="QLabel" name="label_56">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>290</x>
         <y>120</y>
         <width>241</width>
         <height>21</height>
@@ -1027,7 +1027,7 @@ QPushButton#closeButton_3:hover {
        <string notr="true">color: rgb(0,0,0);</string>
       </property>
       <property name="text">
-       <string>← User Account</string>
+       <string>Dashboard</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_57">
