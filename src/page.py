@@ -822,7 +822,7 @@ class Page(QWidget):
         scroll_widget = self.ui.scrollArea_2.widget()
         scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
         layout = scroll_widget.layout()
-        layout.setSpacing(0)  # Set spacing to 0
+        layout.setSpacing(15)  # Set spacing to 0
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
@@ -835,18 +835,6 @@ class Page(QWidget):
 
                 button.setObjectName(str(t.getID()))  # Set object name
 
-                button.setStyleSheet(
-                    """
-                    #{id} {{
-                        border: 1px solid black;
-                    }}
-                    #{id}:pressed {{
-                        background-color: rgb(192, 192, 192);
-                    }}
-                    """.format(
-                        id=button.objectName()
-                    )
-                )
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(t.getName(), button)  # Set button as parent
@@ -925,7 +913,7 @@ class Page(QWidget):
         scroll_widget = self.ui.scrollArea_8.widget()
         scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
         layout = scroll_widget.layout()
-        layout.setSpacing(0)  # Set spacing to 0
+        layout.setSpacing(15)  # Set spacing to 0
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
@@ -935,18 +923,18 @@ class Page(QWidget):
 
                 button.setObjectName(str(b.getID()))  # Set object name
 
-                button.setStyleSheet(
-                    """
-                    #{id} {{
-                        border: 1px solid black;
-                    }}
-                    #{id}:pressed {{
-                        background-color: rgb(192, 192, 192);
-                    }}
-                    """.format(
-                        id=button.objectName()
-                    )
-                )
+                # button.setStyleSheet(
+                #     """
+                #     #{id} {{
+                #         border: 1px solid black;
+                #     }}
+                #     #{id}:pressed {{
+                #         background-color: rgb(192, 192, 192);
+                #     }}
+                #     """.format(
+                #         id=button.objectName()
+                #     )
+                # )
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(b.getName(), button)  # Set button as parent
@@ -979,7 +967,7 @@ class Page(QWidget):
         scroll_widget = self.ui.scrollArea.widget()
         scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
         layout = scroll_widget.layout()
-        layout.setSpacing(0)  # Set spacing to 0
+        layout.setSpacing(15)  # Set spacing to 0
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
@@ -989,18 +977,18 @@ class Page(QWidget):
 
                 button.setObjectName(str(t.getID()))  # Set object name
 
-                button.setStyleSheet(
-                    """
-                    #{id} {{
-                        border: 1px solid black;
-                    }}
-                    #{id}:pressed {{
-                        background-color: rgb(192, 192, 192);
-                    }}
-                    """.format(
-                        id=button.objectName()
-                    )
-                )
+                # button.setStyleSheet(
+                #     """
+                #     #{id} {{
+                #         border: 1px solid black;
+                #     }}
+                #     #{id}:pressed {{
+                #         background-color: rgb(192, 192, 192);
+                #     }}
+                #     """.format(
+                #         id=button.objectName()
+                #     )
+                # )
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(t.getName(), button)  # Set button as parent
@@ -1030,7 +1018,7 @@ class Page(QWidget):
         scroll_widget = self.ui.scrollArea_3.widget()
         scroll_widget.setStyleSheet("background-color: rgb(255, 255, 255);")
         layout = scroll_widget.layout()
-        layout.setSpacing(0)  # Set spacing to 0
+        layout.setSpacing(15)  # Set spacing to 0
         layout.setAlignment(Qt.AlignmentFlag.AlignTop)  # Align to top
 
         if self.curUser:
@@ -1040,18 +1028,18 @@ class Page(QWidget):
 
                 button.setObjectName(str(g.getID()))  # Set object name
 
-                button.setStyleSheet(
-                    """
-                    #{id} {{
-                        border: 1px solid black;
-                    }}
-                    #{id}:pressed {{
-                        background-color: rgb(192, 192, 192);
-                    }}
-                    """.format(
-                        id=button.objectName()
-                    )
-                )
+                # button.setStyleSheet(
+                #     """
+                #     #{id} {{
+                #         border: 1px solid black;
+                #     }}
+                #     #{id}:pressed {{
+                #         background-color: rgb(192, 192, 192);
+                #     }}
+                #     """.format(
+                #         id=button.objectName()
+                #     )
+                # )
 
                 button_layout = QHBoxLayout(button)
 
