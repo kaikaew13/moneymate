@@ -126,13 +126,14 @@ class Summary(persistent.Persistent):
                 return bill
         return None
 
-    def editTransaction(self, transaction_id, name, amount, category, description):
+    def editTransaction(self, transaction_id, name, amount, category, description,date):
         for transaction in self.__transactions:
             if str(transaction.getID()) == transaction_id:
                 transaction.setName(name)
                 transaction.setAmount(float(amount))
                 transaction.setCategory(category)
                 transaction.setDesc(description)
+                transaction.setDate(date)
                 print(transaction.getName())
 
                 self._p_changed = True

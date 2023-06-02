@@ -326,12 +326,15 @@ class Page(QWidget):
                 self.ui.transamountLineEdit_2.text(),
                 self.ui.catLineEdit_2.text(),
                 self.ui.transDesc_2.toPlainText(),
+                self.ui.dateTimeEdit_2.dateTime(),
             )
             self.ui.EditButton.setEnabled(True)
             self.ui.transamountLineEdit_2.setReadOnly(True)
             self.ui.catLineEdit_2.setReadOnly(True)
             self.ui.transnameLineEdit_2.setReadOnly(True)
             self.ui.transDesc_2.setReadOnly(True)
+            self.ui.dateTimeEdit_2.setReadOnly(True)
+
             self.ui.SaveButton.setEnabled(False)
             transaction.commit()
             self.updateDynamicComponent()
@@ -345,9 +348,9 @@ class Page(QWidget):
         self.ui.transnameLineEdit_2.setReadOnly(False)
 
         self.ui.transDesc_2.setReadOnly(False)
+        self.ui.dateTimeEdit_2.setReadOnly(False)
         self.ui.EditButton.setEnabled(False)
         self.ui.SaveButton.setEnabled(True)
-
         # self.ui.DeleteTransButton.clicked.connect(self.on_deleteTransButton_clicked)
 
     def on_logoutButton_clicked(self):
@@ -657,11 +660,12 @@ class Page(QWidget):
             transCat = self.ui.catLineEdit.text()
             transAmount = self.ui.transamountLineEdit.text()
             transDesc = self.ui.transDesc.toPlainText()
+            transDate = self.ui.dateTimeEdit.dateTime()
 
             if self.ui.income_radio.isChecked():
                 tmp = self.root["user"]
                 user = tmp[self.curUser.getUsername()]
-                inc = Income(transName, transAmount, transCat, transDesc)
+                inc = Income(transName, transAmount, transCat, transDesc, transDate)
                 user.getSummary().addTransaction(inc)
                 transaction.commit()
                 self.updateDynamicComponent()
@@ -671,7 +675,7 @@ class Page(QWidget):
             elif self.ui.expense_radio.isChecked():
                 tmp = self.root["user"]
                 user = tmp[self.curUser.getUsername()]
-                exp = Expense(transName, transAmount, transCat, transDesc)
+                exp = Expense(transName, transAmount, transCat, transDesc, transDate)
                 user.getSummary().addTransaction(exp)
                 transaction.commit()
                 self.updateDynamicComponent()

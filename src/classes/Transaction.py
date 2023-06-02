@@ -4,9 +4,9 @@ import persistent
 
 
 class Transaction(persistent.Persistent):
-    def __init__(self, amount=0):
+    def __init__(self, amount=0,date=datetime.now()):
         self.__amount = amount
-        self.__date = datetime.now()
+        self.__date = date
         # generate random uuid
         self.__id = uuid.uuid4()
 
@@ -16,6 +16,8 @@ class Transaction(persistent.Persistent):
     def setAmount(self, amount):
         self.__amount = amount
 
+    def setDate(self, date):
+        self.__date = date
     def updateAmount(self, amount):
         self.setAmount(amount)
 

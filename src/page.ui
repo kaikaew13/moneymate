@@ -2254,9 +2254,9 @@ QPushButton#goTransButton_2:pressed {
       <property name="geometry">
        <rect>
         <x>560</x>
-        <y>210</y>
+        <y>200</y>
         <width>431</width>
-        <height>261</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -2366,6 +2366,35 @@ QPushButton#notiButton_2:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
       </property>
      </widget>
+     <widget class="QDateTimeEdit" name="dateTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>270</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>MMMM d yy HH:mm</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_142">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>240</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date/Time</string>
+      </property>
+     </widget>
      <zorder>label_83</zorder>
      <zorder>label_88</zorder>
      <zorder>label_91</zorder>
@@ -2405,6 +2434,8 @@ QPushButton#notiButton_2:pressed {
      <zorder>notiButton_2</zorder>
      <zorder>label_30</zorder>
      <zorder>bellicon_2</zorder>
+     <zorder>dateTimeEdit</zorder>
+     <zorder>label_142</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="BillsPage">
@@ -5939,6 +5970,32 @@ QPushButton#goBillsButton_7:pressed {
        <pixmap resource="../resources/img.qrc">:/pics/images/k1DgxNmG74K3Ehe5GBarWemJDbD6cZYezwDPqoDrKR6n9dLZP+TlCbMGG3akiX8bAAAAAElFTkSuQmCC.png</pixmap>
       </property>
      </widget>
+     <widget class="QDateTimeEdit" name="dateTimeEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>490</y>
+        <width>194</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_143">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>460</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Date time</string>
+      </property>
+     </widget>
      <zorder>label_118</zorder>
      <zorder>label_37</zorder>
      <zorder>line_24</zorder>
@@ -5973,6 +6030,8 @@ QPushButton#goBillsButton_7:pressed {
      <zorder>notiButton_7</zorder>
      <zorder>label_138</zorder>
      <zorder>bellicon_7</zorder>
+     <zorder>dateTimeEdit_2</zorder>
+     <zorder>label_143</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="goalDetailPage">

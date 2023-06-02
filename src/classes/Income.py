@@ -1,11 +1,11 @@
 import persistent
-
+from datetime import datetime
 from classes.Transaction import Transaction
 
 
 class Income(Transaction, persistent.Persistent):
-    def __init__(self, name, amount, category, desc=''):
-        super().__init__(amount)
+    def __init__(self, name, amount, category, desc='', date = datetime.now()):
+        super().__init__(amount,date)
         self.__category = category
         self.__desc = desc
         self.__name = name

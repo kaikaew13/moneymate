@@ -1,5 +1,5 @@
 import persistent
-
+from datetime import datetime
 from classes.Transaction import Transaction
 
 # expense categories (to add more)
@@ -13,8 +13,8 @@ PERSONAL = 'Personal'
 
 
 class Expense(Transaction, persistent.Persistent):
-    def __init__(self, name, amount, category, desc=''):
-        super().__init__(amount)
+    def __init__(self, name, amount, category, desc='',date = datetime.now()):
+        super().__init__(amount,date)
         self.__name = name
         self.__category = category
         self.__desc = desc
