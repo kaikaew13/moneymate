@@ -561,36 +561,6 @@ class Page(QWidget):
                 self.ui.label_5.setText("Username not found")
                 self.ui.label_5.setStyleSheet("color: red")
             self.ui.lineEditPassLogin.setText("")
-            # try:
-            #     uri = mongodb_uri
-            #     # Create a new client and connect to the server
-            #     client = MongoClient(uri, server_api=ServerApi('1'))
-            #     db = client.get_database('MoneyMate')
-            #     # db = client.MoneyMate
-
-            #     userData = db.Username
-            #     query = {"_User__username": username}
-            #     # TODO: query for username, then unhash and check password.
-            #     fetchedData = userData.find_one(query)
-            #     if fetchedData:
-            #         # Compare the hashed password with the provided password
-            #         hashedpass = fetchedData['_User__hashedpass']
-            #         if bcrypt.checkpw(password.encode('utf-8'), hashedpass):
-            #             self.switchPage(DASHBOARD_PAGE)
-            #             self.setWindowFlags(Qt.Window)
-            #             self.setAttribute(Qt.WA_OpaquePaintEvent)
-            #             self.show()
-            #         else:
-            #             print("Wrong password")
-            #             self.ui.label_5.setText("Password does not match")
-            #             self.ui.label_5.setStyleSheet("color: red")
-            #     else:
-            #         print("Username not found")
-            #         self.ui.label_5.setText("Username not found")
-            #         self.ui.label_5.setStyleSheet("color: red")
-            #     client.close()
-            # except Exception as e:
-            #     print(e)
 
     def on_registerButton_clicked(self):
         username = self.ui.lineEditUserRegister.text()
@@ -617,30 +587,6 @@ class Page(QWidget):
                 # self.conn.close()
                 self.ui.label_10.setText("User created")
                 self.ui.label_10.setStyleSheet("color: green")
-
-            # if password == confirmpassword:
-
-            #     user = User(username, password)
-            #     try:
-            #         uri = mongodb_uri
-            #         # Create a new client and connect to the server
-            #         client = MongoClient(uri, server_api=ServerApi('1'))
-            #         db = client.get_database('MoneyMate')
-            #         # db = client.MoneyMate
-            #         userData = db.Username
-            #         user1 = user.__dict__
-            #         if userData.find_one({"_User__username": user.getUsername()}):
-            #             self.ui.label_10.setText("User already exists")
-            #             self.ui.label_10.setStyleSheet("color: red")
-            #             raise ValueError("User already exists")
-
-            #         p_id = userData.insert_one(user1).inserted_id
-            #         self.ui.label_10.setText("User created")
-            #         self.ui.label_10.setStyleSheet("color: green")
-            #         print(p_id)
-            #     except Exception as e:
-            #         print(e)
-            #     client.close()
             else:
                 self.ui.label_10.setText("Password does not match")
                 self.ui.label_10.setStyleSheet("color: red")
@@ -922,19 +868,6 @@ class Page(QWidget):
                 button = QPushButton()
 
                 button.setObjectName(str(b.getID()))  # Set object name
-
-                # button.setStyleSheet(
-                #     """
-                #     #{id} {{
-                #         border: 1px solid black;
-                #     }}
-                #     #{id}:pressed {{
-                #         background-color: rgb(192, 192, 192);
-                #     }}
-                #     """.format(
-                #         id=button.objectName()
-                #     )
-                # )
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(b.getName(), button)  # Set button as parent
@@ -1028,19 +961,6 @@ class Page(QWidget):
 
                 button.setObjectName(str(g.getID()))  # Set object name
 
-                # button.setStyleSheet(
-                #     """
-                #     #{id} {{
-                #         border: 1px solid black;
-                #     }}
-                #     #{id}:pressed {{
-                #         background-color: rgb(192, 192, 192);
-                #     }}
-                #     """.format(
-                #         id=button.objectName()
-                #     )
-                # )
-
                 button_layout = QHBoxLayout(button)
 
                 left_label = QLabel(g.getName(), button)  # Set button as parent
@@ -1059,8 +979,6 @@ class Page(QWidget):
                 button.setLayout(button_layout)
                 button.setMinimumHeight(50)  # Set minimum height here
 
-                # Add bottom border to the button
-                # button.clicked.connect(self.on_transaction_clicked)
                 button.clicked.connect(self.on_goal_clicked)
                 scroll_widget.layout().addWidget(button)
 
@@ -1097,36 +1015,3 @@ class Page(QWidget):
         self.ui.ttBalance.setText(
             str("{:.2f}".format(self.curUser.getSummary().getCurrentBalance()))
         )
-
-
-# class ButtonWithLabels(QWidget):
-#     def __init__(self, parent=None):
-#         super().__init__(parent)
-#         layout = QVBoxLayout(self)
-#         self.label1 = QLabel(self)
-#         self.label2 = QLabel(self)
-#         self.button = QPushButton("Button with Labels", self)
-#         layout.addWidget(self.label1)
-#         layout.addWidget(self.label2)
-#         layout.addWidget(self.button)
-#         self.setLayout(layout)
-
-#     def setLabel1(self, text):
-#         self.label1.setText(text)
-
-#     def setLabel2(self, text):
-#         self.label2.setText(text)
-
-
-# if __name__ == "__main__":
-#     storage = ZODB.FileStorage.FileStorage('testdata.fs')
-#     db = ZODB.DB(storage)
-#     conn = db.open()
-#     root = conn.root()
-#     if ('user' not in root):
-#         root['user'] = {}
-
-#     app = QApplication(sys.argv)
-#     loginPage = loginPage()
-#     loginPage.show()
-#     sys.exit(app.exec())
